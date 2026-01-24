@@ -1,0 +1,108 @@
+// Dashicon
+.dashicons {
+	font-family: dashicons !important;
+}
+
+
+
+.wp-block-bssb-social-share {
+	* {
+		box-sizing: border-box;
+	}
+
+
+	.scd-pro-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.4);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		text-align: center;
+		backdrop-filter: blur(3px);
+		border-radius: 10px;
+		z-index: 10;
+		padding: 65px 10px;
+        margin: -17px;
+
+
+		.overlay-inner {
+			background: rgba(255, 255, 255, 0.1);
+			padding: 1px 30px;
+			border-radius: 10px;
+		}
+		h3{
+			font-size: 27px;
+		}
+
+		.upgrade-btn {
+			display: inline-block;
+			margin-top: -10px;
+			padding: 8px 14px;
+			background: #ff4757;
+			color: white;
+			text-decoration: none;
+			border-radius: 5px;
+			font-weight: 600;
+		}
+	}
+
+	ul.bssbSocialShare {
+		list-style-type: none;
+		line-height: 1;
+		margin: 0;
+		padding: 5px;
+		display: inline-flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		li {
+			color: #4e4e4e;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			cursor: pointer;
+
+			&:first-child {
+				margin-left: 0 !important;
+			}
+
+			&:last-child {
+				margin-right: 0 !important;
+			}
+
+			i {
+				font-style: inherit;
+			}
+
+			img {
+				max-width: unset;
+			}
+		}
+
+		.bss-animation {
+			animation: bounce 3s ease-in-out infinite;
+			transition-property: all;
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+			transition-duration: 300ms;
+		}
+
+		@keyframes bounce {
+
+			0%,
+			100% {
+				transform: translateY(-25%);
+				animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+			}
+
+			50% {
+				transform: none;
+				animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+			}
+		}
+
+
+	}
+}
