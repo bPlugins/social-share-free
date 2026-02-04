@@ -21,6 +21,7 @@ export const socialNetworks = [
 	{ label: __('Pinterest', 'social-share'), value: 'pinterest' },
 	{ label: __('Blogger', 'social-share'), value: 'blogger' },
 	{ label: __('WordPress', 'social-share'), value: 'wordpress' },
+	{ label: __('Copy Link', 'social-share'), value: 'copy' },
 	{ label: __('Tumblr', 'social-share'), value: 'tumblr' },
 	{ label: __('Reddit', 'social-share'), value: 'reddit' },
 	{ label: __('Digg', 'social-share'), value: 'digg' },
@@ -63,6 +64,7 @@ export const iconClassList = [
 	['pinterest', 'fab fa-pinterest-p'],
 	['blogger', 'fab fa-blogger-b'],
 	['wordpress', 'fa-brands fa-wordpress'],
+	['copy', 'fas fa-link'],
 	['tumblr', 'fab fa-tumblr'],
 	['reddit', 'fab fa-reddit-alien'],
 	['digg', 'fab fa-digg'],
@@ -90,6 +92,7 @@ export const iconColorList = [
 	['pinterest', '#bd081c'],
 	['blogger', '#fc4f08'],
 	['wordpress', '#0073aa'],
+	['copy', '#555'],
 	['tumblr', '#35465d'],
 	['reddit', '#ff4500'],
 	['digg', '#1b1a19'],
@@ -117,6 +120,7 @@ export const isUpIconList = [
 	['pinterest', false],
 	['blogger', false],
 	['wordpress', false],
+	['copy', false],
 	['tumblr', false],
 	['reddit', false],
 	['digg', false],
@@ -198,5 +202,3 @@ export const toolTipPresets = [
 		isPro: true
 	}
 ];
-
-

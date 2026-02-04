@@ -58,13 +58,10 @@ if (!class_exists('bssPlugin')) {
                 wp_enqueue_script('goodshare', BSSB_DIR_URL . 'assets/js/goodshare.min.js', [], BSSB_PLUGIN_VERSION, true);
             }
         }
-
         public function bss_admin_enqueue_scripts($screen)
         {
 
             global $typenow;
-
-
             if ('social_share_cpt' === $typenow) {
                 wp_enqueue_script('shortcode-js', BSSB_DIR_URL . '/build/shortcode.js', [], BSSB_PLUGIN_VERSION, true);
                 wp_enqueue_style('shortcode-css', BSSB_DIR_URL . '/build/shortcode.css', [], BSSB_PLUGIN_VERSION);
@@ -76,47 +73,22 @@ if (!class_exists('bssPlugin')) {
             }
 
         }
-
         public function bss_shortcode_handler($atts)
         {
-
-            if (isset($atts['id'])) {
-                $post = get_post($atts['id']);
-
-                if ($post) {
-                    $blocks = parse_blocks($post->post_content);
-                    if ($blocks) {
-                        foreach ($blocks as $block) {
-                            return render_block($block);
-                        }
-                    }
-                } else {
-                    $overlayHTML = '
-
-                                        <style>
-                                            .bcb-premium-slider-wrapper { position: relative; }
-                                            .bcb-premium-overlay { top: 382px; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 999; }
-                                            .bcb-premium-overlay-content { text-align: center; padding: 20px 30px; border-radius: 10px; max-width: 300px; color: white; }
-                                            .bcb-upgrade-btn { display: inline-block; margin-top: 10px; padding: 8px 18px; background-color: #0073aa; color: #fff; text-decoration: none; font-weight: 600; border-radius: 5px; transition: background-color 0.3s ease; }
-                                            .bcb-upgrade-btn:hover { background-color: #005177; }
-                                            @media (max-width: 480px) { .bcb-premium-overlay-content { padding: 15px 20px; } .bcb-upgrade-btn { padding: 6px 14px; } }
-                                        </style>
-                                        <div class="bcb-premium-overlay">
-                                            <div class="bcb-premium-overlay-content">
-                                            <p>This shortcode Theme is available in the Pro version. If you are using the Pro version, please activate your license.</p>
-                                            <a href="' . esc_url(admin_url('edit.php?post_type=accordion_block&page=bab_Dashboard#/pricing')) . '" class="bcb-upgrade-btn">Upgrade to Pro</a>
-                                            </div>
-                                        </div>';
-
-                    return '
-                                    <div class="bcb-premium-slider-wrapper">
-                                        ' . $overlayHTML . '
-                                    </div>';
-                }
+            if (!isset($atts['id'])) {
+                return '<p>Please provide a valid ID.</p>';
             }
-
+            $post = get_post($atts['id']);
+            if ($post) {
+                $blocks = parse_blocks($post->post_content);
+                if (!empty($blocks)) {
+                    foreach ($blocks as $block) {
+                            return render_block($block);
+                    }
+                }
+            } else {
+                return '<p>Error: Social Share block with ID ' . esc_html($atts['id']) . ' not found.</p>';
+            }
         }
-
     }
-
 }

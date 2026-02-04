@@ -2,7 +2,7 @@
 /**
  * Plugin Name: B Social Share - Block
  * Description: Share your website/website-page link to social networks and mobile messengers
- * Version: 1.0.6
+ * Version: 2.0.0
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -21,7 +21,7 @@ if (function_exists('bss_fs')) {
     bss_fs()->set_basename(true, __FILE__);
 } else {
 
-    define('BSSB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && ('localhost' === $_SERVER['HTTP_HOST'] || 'counter-block.local' === $_SERVER['HTTP_HOST']) ? time() : '1.0.6');
+    define('BSSB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && ('localhost' === $_SERVER['HTTP_HOST'] || 'counter-block.local' === $_SERVER['HTTP_HOST']) ? time() : '2.0.0');
     define('BSSB_DIR_PATH', plugin_dir_path(__FILE__));
     define('BSSB_DIR_URL', plugin_dir_url(__FILE__));
     define("BSSB_DIR", __DIR__);

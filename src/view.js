@@ -3,7 +3,9 @@ import './style.scss';
 import Style from './Components/Common/Style';
 
 document.addEventListener('DOMContentLoaded', () => {
+
 	const socialShareEls = document.querySelectorAll('.wp-block-bssb-social-share');
+
 	socialShareEls.forEach(socialShareEl => {
 		const attributes = JSON.parse(socialShareEl.dataset.attributes);
 
@@ -18,21 +20,76 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		createRoot(bssbStyle).render(
 			<>
-				<Style attributes={{ ...attributes, isBackend: false }} id={socialShareEl.id} />
+				<Style
+					attributes={{ ...attributes, isBackend: false }}
+					id={socialShareEl.id}
+				/>
+
 				{showOverlay && (
 					<div className="scd-pro-overlay">
 						<div className="overlay-inner">
 							<h3>🚫 Premium Theme</h3>
-							<a href={siteLocation} rel="noreferrer" target="_blank" className="upgrade-btn">
+							<a
+								href={siteLocation}
+								rel="noreferrer"
+								target="_blank"
+								className="upgrade-btn"
+							>
 								Upgrade Now
 							</a>
 						</div>
 					</div>
 				)}
 			</>
-
 		);
 
-		socialShareEl?.removeAttribute('data-attributes');
+		if (!bssbIsPipeChecker) {
+			socialShareEl
+				.querySelectorAll('[data-copy="true"]')
+				.forEach((el) => {
+					el.classList.add('is-disabled');
+					el.setAttribute('data-tooltip', 'Pro Feature Icon');
+				});
+		}
+
+		socialShareEl.removeAttribute('data-attributes');
 	});
 });
+
+
+document.addEventListener('click', function (e) {
+	const copyEl = e.target.closest('[data-copy="true"]');
+	if (!copyEl) return;
+
+	
+	if (!bssbIsPipeChecker || copyEl.classList.contains('is-disabled')) {
+		return;
+	}
+
+	const url = window.location.href;
+
+	if (navigator.clipboard && navigator.clipboard.writeText) {
+		navigator.clipboard.writeText(url).then(() => {
+			showCopied(copyEl);
+		});
+	} else {
+		const tempInput = document.createElement('input');
+		tempInput.value = url;
+		document.body.appendChild(tempInput);
+		tempInput.select();
+		document.execCommand('copy');
+		document.body.removeChild(tempInput);
+
+		showCopied(copyEl);
+	}
+});
+
+function showCopied(el) {
+	el.setAttribute('data-tooltip', 'Copied!');
+	el.classList.add('copied');
+
+	setTimeout(() => {
+		el.setAttribute('data-tooltip', 'Copy link');
+		el.classList.remove('copied');
+	}, 2000);
+}

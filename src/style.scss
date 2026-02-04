@@ -4,7 +4,6 @@
 }
 
 
-
 .wp-block-bssb-social-share {
 	* {
 		box-sizing: border-box;
@@ -24,7 +23,7 @@
 		border-radius: 10px;
 		z-index: 10;
 		padding: 65px 10px;
-        margin: -17px;
+		margin: -17px;
 
 
 		.overlay-inner {
@@ -32,7 +31,8 @@
 			padding: 1px 30px;
 			border-radius: 10px;
 		}
-		h3{
+
+		h3 {
 			font-size: 27px;
 		}
 
@@ -105,4 +105,41 @@
 
 
 	}
+
+	.bssbSocialShare li[data-tooltip] {
+		position: relative;
+	}
+
+	.bssbSocialShare li[data-tooltip]::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		bottom: 120%;
+		left: 50%;
+		transform: translateX(-50%);
+		background: #000;
+		color: #fff;
+		font-size: 12px;
+		padding: 4px 8px;
+		border-radius: 4px;
+		white-space: nowrap;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity .2s ease;
+	}
+
+	.bssbSocialShare li:hover::after {
+		opacity: 1;
+	}
+
+	//
+	.bssbSocialShare li.locked {
+		opacity: .5;
+		cursor: not-allowed;
+	}
+
+	.bssbSocialShare li.locked i {
+		filter: grayscale(1);
+	}
+
+
 }
