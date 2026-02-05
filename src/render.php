@@ -52,7 +52,7 @@ wp_set_script_translations(
 			}
 			?>
 
-			<li class="<?php echo esc_attr(implode(' ', $li_classes)); ?>" data-social="<?php echo esc_attr($network); ?>" <?php echo $style_attr; ?> 	<?php if ($network === 'copy'): ?> data-copy="true" data-tooltip="Pro Feature Icon" <?php endif; ?>>
+			<li class="<?php echo esc_attr(implode(' ', $li_classes)); ?>" data-social="<?php echo esc_attr($network); ?>" <?php echo $style_attr; ?> <?php if ($network === 'copy'): ?> data-copy="true"  <?php endif; ?>>
 				<?php echo wp_kses_post($filterIconEl); ?>
 				<?php if ($is_theme_four): ?>
 					<p><?php echo esc_attr($network); ?></p>

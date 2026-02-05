@@ -106,11 +106,11 @@
 
 	}
 
-	.bssbSocialShare li[data-tooltip] {
+	.bssbSocialShare li[data-copy] {
 		position: relative;
 	}
 
-	.bssbSocialShare li[data-tooltip]::after {
+	.bssbSocialShare li[data-copy]::after {
 		content: attr(data-tooltip);
 		position: absolute;
 		bottom: 120%;
@@ -131,15 +131,12 @@
 		opacity: 1;
 	}
 
-	//
-	.bssbSocialShare li.locked {
+	.bssbSocialShare li.is-disabled {
 		opacity: .5;
-		cursor: not-allowed;
 	}
 
-	.bssbSocialShare li.locked i {
+	.bssbSocialShare li.is-disabled i {
 		filter: grayscale(1);
 	}
-
 
 }

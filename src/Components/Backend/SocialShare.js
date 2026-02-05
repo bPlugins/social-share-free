@@ -4,14 +4,19 @@ const SocialShare = ({ attributes, isBackend = false, custom }) => <ul className
 	{attributes.socials?.map((item, index) => {
 		const { network, isUpIcon, icon, upIcon } = item;
 		const isThemeThree = attributes?.theme === 'theme4';
+		const isPro = bssbIsPipeChecker;
 		const isCopy = network === 'copy';
 
 		return <li
 			key={index}
-			onClick={() => {
-				if (network === 'copy' && !isBackend) {
-					navigator.clipboard.writeText(window.location.href);
+			onClick={(e) => {
+				if (isCopy && !isPro) {
+					e.preventDefault();
 					return;
+				}
+
+				if (isCopy && isPro && !isBackend) {
+					navigator.clipboard.writeText(window.location.href);
 				}
 
 				if (isBackend) {
@@ -19,11 +24,11 @@ const SocialShare = ({ attributes, isBackend = false, custom }) => <ul className
 				}
 			}}
 			style={isThemeThree ? { animationDelay: `${index * 0.3}s` } : undefined}
-			className={`icon ${attributes?.theme === 'theme4' ? `bss-animation` : ''} icon-${index} ${isBackend && index === custom.activeIndex ? '' : ''}`}
+			className={`icon ${isCopy && !isPro ? 'is-disabled' : ''} ${attributes?.theme === 'theme4' ? `bss-animation` : ''} icon-${index} ${isBackend && index === custom.activeIndex ? '' : ''}`}
 			data-social={network}
 			{...(isCopy && {
 				'data-copy': 'true',
-				'data-tooltip': 'Pro Feature Icon',
+				'data-tooltip': !isPro ? 'Pro Feature' : 'Copy link',
 			})}
 		>
 

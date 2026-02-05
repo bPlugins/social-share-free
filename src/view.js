@@ -44,12 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		);
 
 		if (!bssbIsPipeChecker) {
-			socialShareEl
-				.querySelectorAll('[data-copy="true"]')
-				.forEach((el) => {
+			socialShareEl.querySelectorAll('[data-copy="true"]').forEach((el) => {
+				if (!bssbIsPipeChecker) {
 					el.classList.add('is-disabled');
-					el.setAttribute('data-tooltip', 'Pro Feature Icon');
-				});
+					el.setAttribute('data-tooltip', 'Pro Feature');
+				} else {
+					el.classList.remove('is-disabled');
+					el.setAttribute('data-tooltip', 'Copy link');
+				}
+			});
 		}
 
 		socialShareEl.removeAttribute('data-attributes');
@@ -61,10 +64,7 @@ document.addEventListener('click', function (e) {
 	const copyEl = e.target.closest('[data-copy="true"]');
 	if (!copyEl) return;
 
-	
-	if (!bssbIsPipeChecker || copyEl.classList.contains('is-disabled')) {
-		return;
-	}
+	if (!bssbIsPipeChecker) return;
 
 	const url = window.location.href;
 
@@ -83,6 +83,7 @@ document.addEventListener('click', function (e) {
 		showCopied(copyEl);
 	}
 });
+
 
 function showCopied(el) {
 	el.setAttribute('data-tooltip', 'Copied!');
