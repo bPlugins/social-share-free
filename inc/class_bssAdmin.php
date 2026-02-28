@@ -1,7 +1,6 @@
 <?php
 
 if (!class_exists('bssAdmin')) {
-
     class bssAdmin
     {
         public function __construct()
@@ -58,6 +57,7 @@ if (!class_exists('bssAdmin')) {
                 'version' => BSSB_PLUGIN_VERSION,
                 'isPremium' => bssbIsPremium(),
                 'hasPro' => BSSB_HAS_PRO,
+                'licenseActiveNonce' => wp_create_nonce('csbLicenseActive')
             ])); ?>'></div>
             <?php
         }
@@ -79,7 +79,5 @@ if (!class_exists('bssAdmin')) {
             }
         }
     }
-
     new bssAdmin();
-
 }

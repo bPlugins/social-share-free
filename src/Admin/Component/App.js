@@ -1,86 +1,67 @@
 import {
-    HashRouter as Router,
-    Routes,
-    Route,
-    Navigate,
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate,
 } from "react-router-dom";
-import ListDemos from "../../../../bpl-tools/Admin/Demos/ListDemos";
-import Pricing from "../../../../bpl-tools/Admin/Pricing/Pricing";
-import FeatureCompare from "../../../../bpl-tools/Admin/FeatureCompare/FeatureCompare";
-import FSCheckoutForm from "../../../../bpl-tools/Admin/FSCheckoutForm/FSCheckoutForm";
+
+// import Blocks from '../../../../bpl-tools/Admin/Blocks';
+import Demos from "../../../../bpl-tools/Admin/Demos";
+import Pricing from "../../../../bpl-tools/Admin/Pricing";
+import FeatureCompare from "../../../../bpl-tools/Admin/FeatureCompare";
+import Activation from "../../../../bpl-tools/Admin/Activation";
+import OurPlugins from "../../../../bpl-tools/Admin/OurPlugins";
 
 import Layout from "./Layout";
-import {
-    demoInfo,
-    pricingInfo,
-    featureCompareInfo,
-} from "../Utils/data";
 import Welcome from "./Welcome";
+import { demoInfo, pricingInfo } from '../utilsData/data';
+
 
 const App = (props) => {
+  const { isPremium, hasPro } = props;
 
-    const { name, isPremium, freemius } = props;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout {...props} />}>
+          <Route index element={<Welcome {...props} />} />
 
+          <Route path="welcome" element={<Welcome {...props} />} />
 
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Layout {...props} />}>
-                    <Route index element={<Welcome {...props} />} />
+          {/* <Route path='blocks' element={<Blocks {...props} allBlocks={blocks} />} /> */}
 
-                    <Route path="welcome" element={<Welcome {...props} />} />
+          <Route
+            path="demos"
+            element={<Demos demoInfo={demoInfo} {...props} />}
+          />
 
-                    <Route
-                        path="demos"
-                        element={
-                            <ListDemos demoInfo={demoInfo} {...props}>
-                                {!isPremium && <button
-                                    type='button'
-                                    className='bPlButton variant-secondary'
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        window.location.hash = '#/pricing';
-                                    }}
-                                >Buy Now</button>}
-                            </ListDemos>
-                        }
-                    />
+          {!isPremium && (
+            <Route
+            path="pricing"
+            element={
+              <Pricing pricingInfo={pricingInfo} options={{}} {...props} />
+            }
+          />
+          )}
+          
 
+          {!isPremium && (
+            <Route
+              path="feature-comparison"
+              element={<FeatureCompare plans={["free", "pro"]} {...props} />}
+            />
+          )}
 
-                    {!isPremium && (
-                        <Route
-                            path="pricing"
-                            element={
-                                <Pricing pricingInfo={pricingInfo} options={{}} {...props} />
-                            }
-                        />
-                    )}
+          {hasPro && (
+            <Route path="activation" element={<Activation {...props} />} />
+          )}
 
-                    {!isPremium && (
-                        <Route
-                            path="purchase"
-                            element={
-                                <FSCheckoutForm freemius={freemius} options={{ title: name }} />
-                            }
-                        />
-                    )}
+          <Route path="our-plugins" element={<OurPlugins {...props} />} />
 
-                    {!isPremium && (
-                        <Route
-                            path="feature-comparison"
-                            element={
-                                <FeatureCompare
-                                    featureCompareInfo={featureCompareInfo}
-                                    {...props}
-                                />
-                            }
-                        />
-                    )}
-
-                    <Route path="*" element={<Navigate to="/welcome" replace />} />
-                </Route>
-            </Routes>
-        </Router>
-    );
+          <Route path="*" element={<Navigate to="/welcome" replace />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 };
 export default App;
