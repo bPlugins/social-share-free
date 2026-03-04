@@ -7,7 +7,7 @@ import { Label, Background, BBlocksAds, HelpPanel, IconControl, InlineDetailMedi
 import { BorderControl, ShadowControl } from '../../../../../bpl-tools/Components/Deprecated';
 import { gearIcon } from '../../../../../bpl-tools/utils/icons';
 import { pxUnit, perUnit, emUnit } from '../../../../../bpl-tools/utils/options';
-import { gradient, primaryColor } from '../../../../../bpl-tools/utils/data';
+import { primaryColor } from '../../../../../bpl-tools/utils/data';
 
 import { themes, networkTypes, socialNetworks, mobileNetworks, iconClassList, iconColorList, isUpIconList, toolTipPresets } from '../../../utils/options';
 import { compareAndReturn } from '../../../utils/functions';
@@ -29,7 +29,6 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 	const siteLocation = `${siteUrl}/wp-admin/edit.php?post_type=social_share_cpt&page=social_share_Dashboard#/pricing`;
 
 	const premiumProps = { isPremium, setIsProModalOpen };
-
 
 	const addSocial = () => {
 		setAttributes({
@@ -111,6 +110,8 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 	const { networkType = '', network = '', isUpIcon = false, icon = {}, upIcon = {} } = socials[activeIndex] || {};
 
 	const primaryColors = '#4527a4';
+    
+	const gradientValue = 'linear-gradient(135deg, #4527a4, #8344c5)';
 
 	return <>
 		<InspectorControls>
@@ -192,7 +193,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 
 							'theme1' === val && (
 								setAttributes({
-									background: { type: 'gradient', gradient },
+									background: { type: 'gradient',  gradient: gradientValue },
 									border: { width: '0', color: '#0000' },
 									transform: "0px",
 									shadow: { hOffset: "0px", vOffset: "0px" }
@@ -212,7 +213,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 
 							'theme3' === val && (
 								setAttributes({
-									background: { type: 'gradient', gradient },
+									background: { type: 'gradient',  gradient: gradientValue },
 									border: { width: '0', radius: "5%", color: '#0000' },
 									transform: "0px",
 									shadow: { color: "rgba(115, 121, 215, 1)", hOffset: "1px", vOffset: "3px" }
@@ -231,7 +232,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 							);
 							'theme5' === val && (
 								setAttributes({
-									background: { type: 'gradient', gradient },
+									background: { type: 'gradient',  gradient: gradientValue },
 									border: { width: '0px', radius: "5%", color: primaryColors },
 									transform: "0px",
 									shadow: { hOffset: "0px", vOffset: "0px" }
@@ -241,7 +242,8 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 						}} options={themes} />
 				</PanelRow>
 
-				<Background label={__('Background:', 'social-share')} value={background} onChange={val => setAttributes({ background: val })} defaults={{ color: '#0000' }} />
+				{/* <Background label={__('Background:', 'social-share')} value={background} onChange={val => setAttributes({ background: val })} defaults={{ color: '#0000' }} /> */}
+				<Background label={__('Background:', 'social-share')} value={background} onChange={val => setAttributes({ background: val })} />
 
 				<SelectControl
 					label="Layout Direction"
@@ -391,7 +393,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 
 					'theme1' === val && (
 						setAttributes({
-							background: { type: 'gradient', gradient },
+							background: { type: 'gradient', gradient: gradientValue },
 							border: { width: '0', color: '#0000' },
 							transform: "0px",
 							shadow: { hOffset: "0px", vOffset: "0px" }
@@ -411,7 +413,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 
 					'theme3' === val && (
 						setAttributes({
-							background: { type: 'gradient', gradient },
+							background: { type: 'gradient', gradient: gradientValue },
 							border: { width: '0', radius: "5%", color: '#0000' },
 							transform: "0px",
 							shadow: { color: "rgba(115, 121, 215, 1)", hOffset: "1px", vOffset: "3px" }
@@ -430,7 +432,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 					);
 					'theme5' === val && (
 						setAttributes({
-							background: { type: 'gradient', gradient },
+							background: { type: 'gradient', gradient: gradientValue },
 							border: { width: '0px', radius: "5%", color: primaryColors },
 							transform: "0px",
 							shadow: { hOffset: "0px", vOffset: "0px" }

@@ -3,8 +3,6 @@ const slug = "b-social-share";
 export const dashboardInfo = (info) => {
     const { version, isPremium, hasPro, licenseActiveNonce } = info;
 
-    console.log('v', version)
-
     const proSuffix = isPremium ? ' Pro' : '';
 
     return {
@@ -39,7 +37,7 @@ export const dashboardInfo = (info) => {
         licenseActiveNonce,
         changelogs: [
             {
-                version: "2.0.1 – 28 Feb 26",
+                version: "2.0.1 – 02 Mar 26",
                 list: ["Add New Dashboard."],
             },
             {

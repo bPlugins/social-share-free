@@ -76,6 +76,3 @@ if (function_exists('bss_fs')) {
         require_once BSSB_DIR_PATH . 'inc/LicenseActivation.php';
     }
 }
-
-
-
