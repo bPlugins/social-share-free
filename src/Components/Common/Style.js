@@ -2,7 +2,7 @@ import { getBackgroundCSS, getBorderCSS, getIconCSS, getShadowCSS } from '../../
 
 const Style = ({ attributes, id }) => {
 	const { socials, alignment, background, size, theme, padding, margin, border, shadow,
-		direction = '', transform = '', gap = '', positionType, isBackend, positionOption = {} } = attributes;
+		direction = '', transform = '', hoverBorder = {}, gap = '', hoverBackground = {}, positionType, isBackend, hoverIconColor="",  positionOption = {} } = attributes;
 
 	const { top, bottom, left, right } = positionOption;
 
@@ -10,7 +10,9 @@ const Style = ({ attributes, id }) => {
 
 	const mainSl = `#${id}`;
 	const UlSl = `${mainSl} ul.bssbSocialShare`;
+	const IconSl = `${mainSl} ul.bssbSocialShare li i:hover`;
 	const liSl = `${mainSl} ul.bssbSocialShare li.icon`;
+	const hoverliSl = `${mainSl} ul.bssbSocialShare li.icon:hover`;
 	const labelSl = `${mainSl} ul.bssbSocialShare li p`;
 	const IconHoverSl = `${mainSl} ul.bssbSocialShare li:hover`;
 	const OverlaySl = `.wp-block-bssb-social-share`;
@@ -46,9 +48,16 @@ const Style = ({ attributes, id }) => {
 				${getBorderCSS(border)}
 				box-shadow: ${getShadowCSS(shadow)};
 			}
+			${hoverliSl}{
+			    ${getBackgroundCSS(hoverBackground)};
+				${getBorderCSS(hoverBorder)}
+			}
             ${UlSl}{
 			   flex-direction: ${direction};
 			   row-gap: ${gap};
+			}
+			${IconSl}{
+			  color: ${hoverIconColor} !important;  
 			}
 			${!isBackend ? `		
 				${UlSl}{
@@ -66,7 +75,7 @@ const Style = ({ attributes, id }) => {
 			       }
 					` : ``
 
-			}
+				}
 			
 			${IconHoverSl}{
 			  transform: translateY(-${transform});

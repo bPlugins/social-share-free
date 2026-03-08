@@ -103,6 +103,12 @@
 				"color": "#0000"
 			}
 		},
+		"hoverBackground": {
+			"type": "object",
+			"default": {
+				"color": ""
+			}
+		},
 		"positionType": {
 			"type": "string",
 			"default": ""
@@ -136,6 +142,16 @@
 			"type": "object",
 			"default": {
 				"radius": "50%"
+			}
+		},
+		"hoverIconColor":{
+			"type": "string",
+			"default": ""
+		},
+		"hoverBorder": {
+			"type": "object",
+			"default": {
+				"radius": ""
 			}
 		},
 		"shadow": {

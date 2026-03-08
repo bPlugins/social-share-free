@@ -3,7 +3,7 @@ import { AlignmentToolbar, BlockControls, InspectorControls } from '@wordpress/b
 import { PanelBody, PanelRow, SelectControl, ToggleControl, Button, Dashicon, __experimentalUnitControl as UnitControl } from '@wordpress/components';
 import { produce } from 'immer';
 
-import { Label, Background, BBlocksAds, HelpPanel, IconControl, InlineDetailMediaUpload } from '../../../../../bpl-tools/Components';
+import { Label, Background, BBlocksAds, HelpPanel, IconControl, InlineDetailMediaUpload, ColorControl } from '../../../../../bpl-tools/Components';
 import { BorderControl, ShadowControl } from '../../../../../bpl-tools/Components/Deprecated';
 import { gearIcon } from '../../../../../bpl-tools/utils/icons';
 import { pxUnit, perUnit, emUnit } from '../../../../../bpl-tools/utils/options';
@@ -20,10 +20,9 @@ import { BControlPro } from '../../../../../bpl-tools/ProControls';
 
 
 const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, setActiveIndex }) => {
-	const { socials, alignment, direction = '', theme, background, size, padding, margin, border, shadow, transform = '', label, positionType = "", gap = '', positionOption = {} } = attributes || {};
+	const { socials, alignment, direction = '', theme, background, size, padding, margin, border, shadow, transform = '', label, positionType = "", hoverBorder ={}, hoverBackground = {}, gap = '', positionOption = {}, hoverIconColor="" } = attributes || {};
 
 	const { top, bottom, left, right } = positionOption;
-
 
 	const [isProModalOpen, setIsProModalOpen] = useState(false);
 	const siteLocation = `${siteUrl}/wp-admin/edit.php?post_type=social_share_cpt&page=social_share_Dashboard#/pricing`;
@@ -110,8 +109,9 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 	const { networkType = '', network = '', isUpIcon = false, icon = {}, upIcon = {} } = socials[activeIndex] || {};
 
 	const primaryColors = '#4527a4';
-    
+
 	const gradientValue = 'linear-gradient(135deg, #4527a4, #8344c5)';
+
 
 	return <>
 		<InspectorControls>
@@ -159,7 +159,10 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 						<Label>{__('Icon:', 'social-share')}</Label>
 						<InlineDetailMediaUpload className='mt10' value={upIcon} onChange={val => updateSocial('upIcon', val)} placeholder={__('Enter Icon URL', 'social-share')} />
 					</> :
-						<IconControl label={__('Icon:', 'social-share')} value={icon} onChange={val => updateSocial('icon', val)} defaults={{ class: 'fab fa-facebook-f', color: primaryColor }} isSize={false} />}
+						<>
+							<IconControl label={__('Icon:', 'social-share')} value={icon} onChange={val => updateSocial('icon', val)} defaults={{ class: 'fab fa-facebook-f', color: primaryColor }} isSize={false} />
+						</>
+					}
 
 					<PanelRow className='itemAction mt20 mb15'>
 						{1 < socials?.length && <Button className='removeItem' label={__('Remove', 'social-share')} onClick={removeSocial} ><Dashicon icon='no' />{__('Remove', 'social-share')}</Button>}
@@ -172,11 +175,9 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 					<Button label={__('Add New Social', 'social-share')} onClick={addSocial}><Dashicon icon='plus' />{__('Add New Social', 'social-share')}</Button>
 				</div>
 			</PanelBody>
-
-
-			<PanelBody className='bPlPanelBody' title={__('Social Icon', 'social-share')}>
+			<PanelBody className='bPlPanelBody' title={__('Theme Option', 'social-share')}>
 				<PanelRow>
-					<Label className=''>{__('Theme:', 'social-share')}</Label>
+					<Label className=''>{__('Theme :', 'social-share')}</Label>
 					<SelectControl
 						value={theme}
 						onChange={val => {
@@ -193,7 +194,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 
 							'theme1' === val && (
 								setAttributes({
-									background: { type: 'gradient',  gradient: gradientValue },
+									background: { type: 'gradient', gradient: gradientValue },
 									border: { width: '0', color: '#0000' },
 									transform: "0px",
 									shadow: { hOffset: "0px", vOffset: "0px" }
@@ -213,7 +214,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 
 							'theme3' === val && (
 								setAttributes({
-									background: { type: 'gradient',  gradient: gradientValue },
+									background: { type: 'gradient', gradient: gradientValue },
 									border: { width: '0', radius: "5%", color: '#0000' },
 									transform: "0px",
 									shadow: { color: "rgba(115, 121, 215, 1)", hOffset: "1px", vOffset: "3px" }
@@ -232,7 +233,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 							);
 							'theme5' === val && (
 								setAttributes({
-									background: { type: 'gradient',  gradient: gradientValue },
+									background: { type: 'gradient', gradient: gradientValue },
 									border: { width: '0px', radius: "5%", color: primaryColors },
 									transform: "0px",
 									shadow: { hOffset: "0px", vOffset: "0px" }
@@ -241,10 +242,6 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 							);
 						}} options={themes} />
 				</PanelRow>
-
-				{/* <Background label={__('Background:', 'social-share')} value={background} onChange={val => setAttributes({ background: val })} defaults={{ color: '#0000' }} /> */}
-				<Background label={__('Background:', 'social-share')} value={background} onChange={val => setAttributes({ background: val })} />
-
 				<SelectControl
 					label="Layout Direction"
 					value={direction}
@@ -254,10 +251,23 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 					]}
 					onChange={(value) => setAttributes({ direction: value })}
 				/>
+				{
+					direction === 'column' && <UnitControl className='mt20' label={__('Row Gap:', 'social-share')} labelPosition='left' value={gap} onChange={val => setAttributes({ gap: val })} units={[pxUnit(), perUnit(), emUnit()]} />
+				}
+			</PanelBody>
+
+
+			<PanelBody className='bPlPanelBody' title={__('Social Icon Style', 'social-share')}  initialOpen={false} >
+
+				<BControlPro label={__('Hover Icon Color:', 'social-share')} value={hoverIconColor} onChange={val => setAttributes({ hoverIconColor: val })} Component={ColorControl}
+					{...premiumProps} />
+
+				<Background label={__('Background:', 'social-share')} value={background} onChange={val => setAttributes({ background: val })} />
+				{/* hover background */}
+				<BControlPro label={__('Hover Background:', 'social-share')} value={hoverBackground} onChange={val => setAttributes({ hoverBackground: val })} Component={Background}
+					{...premiumProps} />
 
 				<UnitControl className='mt20' label={__('Size:', 'social-share')} labelPosition='left' value={size} onChange={val => setAttributes({ size: val })} units={[pxUnit(), perUnit(), emUnit()]} />
-
-				<UnitControl className='mt20' label={__('Row Gap:', 'social-share')} labelPosition='left' value={gap} onChange={val => setAttributes({ gap: val })} units={[pxUnit(), perUnit(), emUnit()]} />
 
 				<UnitControl className='mt20' label={__('Padding:', 'social-share')} labelPosition='left' value={padding} onChange={val => setAttributes({ padding: val })} units={[pxUnit(), perUnit(), emUnit()]} />
 
@@ -278,7 +288,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 
 				<BControlPro
 					className='mt20'
-					label={__('Hover TransformY:', 'social-share')}
+					label={__('Hover Animation:', 'social-share')}
 					labelPosition='left'
 					value={transform}
 					onChange={val => setAttributes({ transform: val })}
@@ -288,6 +298,9 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 				/>
 
 				<BorderControl label={__('Border:', 'social-share')} value={border} onChange={val => setAttributes({ border: val })} defaults={{ radius: '50%' }} />
+
+				<BControlPro label={__('Hover Border:', 'social-share')} value={hoverBorder} onChange={val => setAttributes({ hoverBorder : val })} Component={BorderControl}
+					{...premiumProps}/>
 
 				<ShadowControl label={__('Shadow:', 'social-share')} value={shadow} onChange={val => setAttributes({ shadow: val })} />
 			</PanelBody>
@@ -482,6 +495,12 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 					{__("Label : ", "social-share")}
 				</strong>
 				{__("Social Name  Label.", "social-share")}
+			</li>
+			<li>
+				<strong>
+					{__("Icon Hover Style : ", "social-share")}
+				</strong>
+				{__("Icon Hover Color, Background, Border.", "social-share")}
 			</li>
 		</AboutProModal>
 	</>;
