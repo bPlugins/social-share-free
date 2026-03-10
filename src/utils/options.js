@@ -1,5 +1,11 @@
 import { __ } from '@wordpress/i18n';
 
+
+export const generalStyleTabs = [
+	{ name: 'general', title: __('General', 'accordion') },
+	{ name: 'style', title: __('Style', 'accordion') }
+];
+
 export const themes = [
 	{ label: __('Default', 'social-share'), value: 'default' },
 	{ label: __('Theme 1', 'social-share'), value: 'theme1' },

@@ -7,37 +7,51 @@ const SocialShare = ({ attributes, isBackend = false, custom }) => <ul className
 		const isPro = bssbIsPipeChecker;
 		const isCopy = network === 'copy';
 
-		return <li
-			key={index}
-			onClick={(e) => {
-				if (isCopy && !isPro) {
-					e.preventDefault();
-					return;
+		return <>
+			<li
+				key={index}
+				onClick={(e) => {
+					if (isCopy && !isPro) {
+						e.preventDefault();
+						return;
+					}
+
+					if (isCopy && isPro && !isBackend) {
+						navigator.clipboard.writeText(window.location.href);
+					}
+
+					if (isBackend) {
+						custom.setActiveIndex(index);
+					}
+				}}
+				style={isThemeThree ? { animationDelay: `${index * 0.3}s` } : undefined}
+				className={`icon ${isCopy && !isPro ? 'is-disabled' : ''} ${attributes?.theme === 'theme4' ? `bss-animation` : ''} icon-${index} ${isBackend && index === custom.activeIndex ? '' : ''}`}
+				// data-social={network}
+				{...(isCopy && {
+					'data-copy': 'true',
+					'data-tooltip': !isPro ? 'Pro Feature' : 'Copy link',
+				})}
+			>
+
+				{/* {isUpIcon ? <img src={upIcon?.url} alt={upIcon?.alt} /> : icon?.class && <i className={icon?.class}></i>}
+			<span className="share-counter" data-counter={network}></span> */}
+				<a data-social={network}>
+
+					{isUpIcon ? <img src={upIcon?.url} alt={upIcon?.alt} /> : icon?.class && <i className={icon?.class}></i>}
+					<span className="share-counter" data-counter={network}></span>
+
+				</a>
+
+				{
+					attributes?.theme === 'theme5' && attributes?.label === true && <p>{network}</p>
 				}
 
-				if (isCopy && isPro && !isBackend) {
-					navigator.clipboard.writeText(window.location.href);
-				}
-
-				if (isBackend) {
-					custom.setActiveIndex(index);
-				}
-			}}
-			style={isThemeThree ? { animationDelay: `${index * 0.3}s` } : undefined}
-			className={`icon ${isCopy && !isPro ? 'is-disabled' : ''} ${attributes?.theme === 'theme4' ? `bss-animation` : ''} icon-${index} ${isBackend && index === custom.activeIndex ? '' : ''}`}
-			data-social={network}
-			{...(isCopy && {
-				'data-copy': 'true',
-				'data-tooltip': !isPro ? 'Pro Feature' : 'Copy link',
-			})}
-		>
-
-			{isUpIcon ? <img src={upIcon?.url} alt={upIcon?.alt} /> : icon?.class && <i className={icon?.class}></i>}
-			{
-				attributes?.theme === 'theme5' && attributes?.label === true && <p>{network}</p>
-			}
-
-		</li>;
-	})}
+			</li>
+		</>;
+	})}	
+	{
+		attributes?.isCounter === true && <h4 className='bss-counter-title'>{attributes?.counterText}: <span>{attributes?.counterNumber}</span></h4>
+	}
+	
 </ul>;
 export default SocialShare;

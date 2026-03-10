@@ -1,8 +1,8 @@
-import { getBackgroundCSS, getBorderCSS, getIconCSS, getShadowCSS } from '../../../../bpl-tools/utils/getCSS';
+import { getBackgroundCSS, getBorderCSS, getIconCSS, getShadowCSS, getTypoCSS } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
 	const { socials, alignment, background, size, theme, padding, margin, border, shadow,
-		direction = '', transform = '', hoverBorder = {}, gap = '', hoverBackground = {}, positionType, isBackend, hoverIconColor="",  positionOption = {} } = attributes;
+		direction = '', transform = '', hoverBorder = {}, gap = '', hoverBackground = {}, positionType, isBackend, hoverIconColor="", counterTypo={}, counterColor ='',  positionOption = {} } = attributes;
 
 	const { top, bottom, left, right } = positionOption;
 
@@ -11,6 +11,7 @@ const Style = ({ attributes, id }) => {
 	const mainSl = `#${id}`;
 	const UlSl = `${mainSl} ul.bssbSocialShare`;
 	const IconSl = `${mainSl} ul.bssbSocialShare li i:hover`;
+	const counterTitle= `${mainSl} .bss-counter-title`;
 	const liSl = `${mainSl} ul.bssbSocialShare li.icon`;
 	const hoverliSl = `${mainSl} ul.bssbSocialShare li.icon:hover`;
 	const labelSl = `${mainSl} ul.bssbSocialShare li p`;
@@ -20,6 +21,8 @@ const Style = ({ attributes, id }) => {
 	return <>
 		<style dangerouslySetInnerHTML={{
 			__html: `
+			${getTypoCSS('', counterTypo)?.googleFontLink}
+			${getTypoCSS(`${counterTitle}`, counterTypo)?.styles}
 			${mainSl}{
 				text-align: ${alignment};
 			}
@@ -33,14 +36,15 @@ const Style = ({ attributes, id }) => {
 				${liSl}{
 				width: auto;
 				}
-				${UlSl}{
-				 align-items: stretch !important;
-				}
+				
 				` : `
 				${liSl}{
 					width: calc( ${size} + ${padding} + ${padding} );
 				}
 			`}
+			${counterTitle}{
+			  color: ${counterColor};
+			}
 			${liSl}{
 				font-size: ${size};
 				${getBackgroundCSS(background)}
