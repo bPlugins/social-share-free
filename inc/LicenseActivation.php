@@ -3,7 +3,7 @@ namespace BSSB;
 
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
-if( !class_exists( 'LicenseActivation' ) ){
+if( !class_exists( LicenseActivation::class )){
 	class LicenseActivation {
 		private $fs_callable;
 		private $fs;

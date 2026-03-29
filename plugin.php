@@ -53,7 +53,6 @@ if (function_exists('bss_fs')) {
                     'has_premium_version' => true,
                     'has_addons' => false,
                     'has_paid_plans' => true,
-                    'has_affiliation' => 'selected',
                     'menu' => array(
                         'slug' => 'edit.php?post_type=social_share_cpt',
                         'first-path' => 'edit.php?post_type=social_share_cpt&page=social_share_Dashboard',

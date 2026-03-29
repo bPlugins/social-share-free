@@ -139,7 +139,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
-= 2.2.0 - 2026-03-11 =
+= 2.2.0 - 2026-03-29 =
 * **Update:** Improved block sidebar user interface for better usability
 * **Update:** Added new style customization options
 * **Update:** Minor UI improvements and code optimization

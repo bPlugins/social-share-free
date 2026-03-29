@@ -37,7 +37,7 @@ export const dashboardInfo = (info) => {
         licenseActiveNonce,
         changelogs: [
             {
-                version: "2.2.0 – 11 Mar 26",
+                version: "2.2.0 – 29 Mar 26",
                 list: ["Improved block sidebar layout and user experience", "Added new styling customization options"],
             },
             {
