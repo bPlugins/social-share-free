@@ -2,9 +2,9 @@
 Contributors: bplugins, abuhayat, charlescormier , prosanta10
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, share, social share, page share, Gutenberg block
-Requires at least: 6.2+
+Requires at least: 6.2
 Tested up to: 6.9
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -26,7 +26,7 @@ Forget bulky scripts that bloat your page. Our block is built specifically for t
 
 ### ⭐ Key Features
 - 4 **Free** Social Share themes  
-- 2 **Premium** Social Share themes in Pro  
+- 2 **Premium** Social Share themes in Pro   
 - Popular Social Networks Support
 - Layout Direction – Row , Column
 - Lightweight & Fast – Optimized for speed and performance
@@ -99,6 +99,38 @@ We’d love to hear from you:
 1. Download and upload the **B Social Share** plugin to the **`/wp-content/plugins/`** directory
 2. Activate the plugin through the Plugins menu in WordPress
 
+
+== External Services ==
+
+This plugin utilizes `goodshare.min.js` to provide share count functionality for certain networks. In order to fetch share counts, it makes direct JSONP requests to the following external services when those specific networks are enabled:
+
+*   **Facebook**: Fetches share counts from `graph.facebook.com`. ([Terms of Use](https://www.facebook.com/legal/terms), [Privacy Policy](https://www.facebook.com/privacy/policy/))
+*   **Tumblr**: Fetches share stats from `api.tumblr.com`. ([Terms of Use](https://www.tumblr.com/policy/terms-of-service), [Privacy Policy](https://www.tumblr.com/policy/en/privacy))
+*   **Mail.ru**: Fetches share counts from `appsmail.ru`. ([Terms of Use](https://help.mail.ru/legal/terms/mail/eng), [Privacy Policy](https://help.mail.ru/legal/terms/privacypolicy/eng))
+*   **Buffer**: Fetches share links from `api.bufferapp.com`. ([Terms of Use](https://buffer.com/legal/terms), [Privacy Policy](https://buffer.com/legal/privacy))
+*   **Pinterest**: Fetches url counts from `api.pinterest.com`. ([Terms of Use](https://policy.pinterest.com/en/terms-of-service), [Privacy Policy](https://policy.pinterest.com/en/privacy-policy))
+
+These requests are necessary to display the share counts on the frontend. By using this plugin and enabling the share count features for these networks, you acknowledge that these external requests will be made.
+
+== Build Tools and Third-Party Libraries ==
+
+This plugin uses standard Node.js and NPM tools to build its distributed production code (such as minified JavaScript and CSS files located in the `build/` directory).
+To review, study, or adapt the uncompiled source code, or to compile the assets yourself:
+1. Ensure you have Node.js and npm installed.
+2. Navigate to the plugin root directory in your terminal.
+3. Run `npm install` to install dependencies.
+4. Run `npm run build` to compile the production code.
+
+The source code for the generated files can be found in the `src/` directory. 
+The plugin uses the following third-party libraries for development and building:
+- **@wordpress/scripts**: For building WordPress blocks. ([Repository](https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts))
+- **immer**: For immutable state management. ([Repository](https://github.com/immerjs/immer))
+- **react-router-dom**: For routing. ([Repository](https://github.com/remix-run/react-router))
+
+The plugin also includes local versions of:
+- **Font Awesome**: Used for social icons.
+- **Goodshare.js**: Used for fetching share counts.
+- **Freemius SDK**: Used for secure opt-in and licensing.
 
 == Frequently Asked Questions ==
 

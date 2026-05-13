@@ -5,23 +5,22 @@ import Style from '../Common/Style';
 import SocialShare from './SocialShare';
 import { useBlockProps } from '@wordpress/block-editor';
 import { withSelect } from "@wordpress/data";
-import ClipBoard from '../../shortcode/ClipBoard';
+import ClipBoard from '../../shortcode/CopyShortcode';
+
 
 
 const Edit = props => {
 	const { attributes, setAttributes, clientId, isSelected, postType, postId } = props;
 	const blockProps = useBlockProps();
 
-	useEffect(() => tabController(), [isSelected]);
+	useEffect(() => tabController(), [isSelected]); 
 
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	const id = `bssbSocialShare-${clientId}`;
 
-	const isPremium = bssbIsPipeChecker;
-
 	return <>
-		<Settings attributes={attributes} setAttributes={setAttributes} activeIndex={activeIndex} setActiveIndex={setActiveIndex} isPremium={isPremium}/>
+		<Settings attributes={attributes} setAttributes={setAttributes} activeIndex={activeIndex} setActiveIndex={setActiveIndex}/>
 
 		<div {...blockProps} id={id}>
 			<Style  attributes={{ ...attributes, isBackend: true }} id={id} />
@@ -43,4 +42,4 @@ export default withSelect((select) => {
 		postType: getCurrentPostType(),
 		postId: getCurrentPostId(),
 	};
-})(Edit);
+})(Edit); 

@@ -10,10 +10,8 @@ export const themes = [
 	{ label: __('Default', 'social-share'), value: 'default' },
 	{ label: __('Theme 1', 'social-share'), value: 'theme1' },
 	{ label: __('Theme 2', 'social-share'), value: 'theme2' },
-	{ label: __('Theme 3', 'social-share'), value: 'theme3' },
-	{ label: __('Theme 4', 'social-share'), value: 'theme4' },
-	{ label: __('Theme 5', 'social-share'), value: 'theme5' }
-];
+	{ label: __('Theme 3', 'social-share'), value: 'theme3' }
+]; 
 
 export const networkTypes = [
 	{ label: __('Social Networks', 'social-share'), value: 'socialNetworks' },
@@ -164,47 +162,27 @@ export const toolTipPresets = [
 		value: "default",
 		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-1.png",
 		height: "auto",
-		width: "160px",
-		isPro: false
+		width: "160px"
 	},
 	{
 		label: "Theme One",
 		value: "theme1",
 		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-6.png",
 		height: "auto",
-		width: "160px",
-		isPro: false
+		width: "160px"
 	},
 	{
 		label: "Theme Two",
 		value: "theme2",
 		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-2.png",
 		height: "auto",
-		width: "160px",
-		isPro: false
+		width: "160px"
 	},
 	{
 		label: "Theme Three",
 		value: "theme3",
 		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-3.png",
 		height: "auto",
-		width: "160px",
-		isPro: false
-	},
-	{
-		label: "Theme Four",
-		value: "theme4",
-		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-4.png",
-		height: "auto",
-		width: "160px",
-		isPro: true
-	},
-	{
-		label: "Theme Five",
-		value: "theme5",
-		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-5.png",
-		height: "auto",
-		width: "160px",
-		isPro: true
+		width: "160px"
 	}
 ];

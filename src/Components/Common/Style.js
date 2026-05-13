@@ -1,12 +1,11 @@
 import { getBackgroundCSS, getBorderCSS, getIconCSS, getShadowCSS, getTypoCSS } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
-	const { socials, alignment, background, size, theme, padding, margin, border, shadow,
+	const { socials, alignment, background, size, padding, margin, border, shadow,
 		direction = '', transform = '', hoverBorder = {}, gap = '', hoverBackground = {}, positionType, isBackend, hoverIconColor="", counterTypo={}, counterColor ='',  positionOption = {} } = attributes;
 
 	const { top, bottom, left, right } = positionOption;
 
-	const isPremium = bssbIsPipeChecker;
 
 	const mainSl = `#${id}`;
 	const UlSl = `${mainSl} ul.bssbSocialShare`;
@@ -16,7 +15,6 @@ const Style = ({ attributes, id }) => {
 	const hoverliSl = `${mainSl} ul.bssbSocialShare li.icon:hover`;
 	const labelSl = `${mainSl} ul.bssbSocialShare li p`;
 	const IconHoverSl = `${mainSl} ul.bssbSocialShare li:hover`;
-	const OverlaySl = `.wp-block-bssb-social-share`;
 
 	return <>
 		<style dangerouslySetInnerHTML={{
@@ -26,22 +24,10 @@ const Style = ({ attributes, id }) => {
 			${mainSl}{
 				text-align: ${alignment};
 			}
-			${isPremium === false ? `
-				${OverlaySl}{
-				   position: relative;
-				}
-				`: ``}
 			
-			${theme === 'theme5' ? `
-				${liSl}{
-				width: auto;
-				}
-				
-				` : `
-				${liSl}{
-					width: calc( ${size} + ${padding} + ${padding} );
-				}
-			`}
+			${liSl}{
+				width: calc( ${size} + ${padding} + ${padding} );
+			}
 			${counterTitle}{
 			  color: ${counterColor};
 			}

@@ -1,19 +1,16 @@
 const slug = "b-social-share";
 
 export const dashboardInfo = (info) => {
-    const { version, isPremium, hasPro, licenseActiveNonce } = info;
+    const { version, licenseActiveNonce } = info;
 
-    const proSuffix = isPremium ? ' Pro' : '';
 
     return {
-        name: `B Social Share${proSuffix}`,
-        displayName: `B Social Share ${proSuffix} -  Social Sharing Buttons for Posts and Pages`,
+        name: `B Social Share`,
+        displayName: `B Social Share - Social Sharing Buttons for Posts and Pages`,
         description:
             "B Social Share is a lightweight and easy-to-use WordPress plugin that allows visitors to share your website pages or posts across popular social networks and messaging platforms. It helps increase your content reach and engagement by making social sharing simple and accessible for users.",
         slug,
         version,
-        isPremium,
-        hasPro,
         displayOurPlugins: true,
         media: {
             logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,

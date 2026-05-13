@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
 import { AlignmentToolbar, BlockControls, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, PanelRow, SelectControl, ToggleControl, Button, Dashicon, __experimentalUnitControl as UnitControl, TabPanel, TextControl, __experimentalNumberControl as NumberControl } from '@wordpress/components';
+import { PanelBody, PanelRow, SelectControl, ToggleControl, Button, Dashicon, __experimentalUnitControl as UnitControl, TabPanel } from '@wordpress/components';
 import { produce } from 'immer';
 
-import { Label, Background, BBlocksAds, HelpPanel, IconControl, InlineDetailMediaUpload, ColorControl, Typography } from '../../../../../bpl-tools/Components';
+import { Label, Background, BBlocksAds, Notice, HelpPanel, IconControl, InlineDetailMediaUpload, ColorControl, Typography } from '../../../../../bpl-tools/Components';
 import { BorderControl, ShadowControl } from '../../../../../bpl-tools/Components/Deprecated';
 import { gearIcon } from '../../../../../bpl-tools/utils/icons';
 import { pxUnit, perUnit, emUnit } from '../../../../../bpl-tools/utils/options';
@@ -11,25 +11,15 @@ import { primaryColor } from '../../../../../bpl-tools/utils/data';
 
 import { themes, networkTypes, socialNetworks, mobileNetworks, iconClassList, iconColorList, isUpIconList, toolTipPresets, generalStyleTabs } from '../../../utils/options';
 import { compareAndReturn } from '../../../utils/functions';
-import BlockPreview from '../../../utils/panel/BlockPreview ';
-import { useState } from 'react';
-import { compose } from '@wordpress/compose';
-import { withSelect } from '@wordpress/data';
-import { AboutProModal } from "../../../../../bpl-tools/ProControls";
-import { BControlPro } from '../../../../../bpl-tools/ProControls';
+import BlockPreview from '../../../utils/panel/BlockPreview';
+import { AdvertiseCard } from "../../../../../bpl-tools/ProControls";
 
 
-const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, setActiveIndex }) => {
-	const { socials, alignment, direction = '', theme, background, size, padding, margin, border, shadow, transform = '', label, positionType = "", hoverBorder = {}, hoverBackground = {}, gap = '', positionOption = {}, hoverIconColor = "", isCounter, counterColor = '', counterTypo = {}, counterText = '', counterNumber } = attributes || {};
 
-	const { top, bottom, left, right } = positionOption;
+const Settings = ({ attributes, setAttributes, activeIndex, setActiveIndex }) => {
+	const { socials, alignment, direction = '', theme, background, size, padding, margin, border, shadow, gap = '', isCounter, counterColor = '', counterTypo = {} } = attributes || {};
 
-	const [isProModalOpen, setIsProModalOpen] = useState(false);
-	const siteLocation = `${siteUrl}/wp-admin/edit.php?post_type=social_share_cpt&page=social_share_Dashboard#/pricing`;
-
-	console.log('edit', isCounter)
-
-	const premiumProps = { isPremium, setIsProModalOpen };
+	const pricingUrl = 'edit.php?post_type=social_share_cpt&page=social_share_Dashboard#/pricing';
 
 	const addSocial = () => {
 		setAttributes({
@@ -169,25 +159,6 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 										}),
 										updateAllSocial('icon', '#fff', 'color')
 									);
-
-									'theme4' === val && (
-										setAttributes({
-											background: { type: 'solid', color: '#0000' },
-											border: { width: '1px', radius: "5%", color: primaryColors },
-											transform: "0px",
-											shadow: { hOffset: "0px", vOffset: "0px" }
-										}),
-										updateAllSocial('icon', primaryColors, 'color')
-									);
-									'theme5' === val && (
-										setAttributes({
-											background: { type: 'gradient', gradient: gradientValue },
-											border: { width: '0px', radius: "5%", color: primaryColors },
-											transform: "0px",
-											shadow: { hOffset: "0px", vOffset: "0px" }
-										}),
-										updateAllSocial('icon', '#fff', 'color')
-									);
 								}} options={themes} />
 						</PanelRow>
 						<SelectControl
@@ -258,154 +229,27 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 						</div>
 					</PanelBody>
 
-					<PanelBody className='bPlPanelBody' title={__('Position Settings', 'social-share')}>
-						<BControlPro
-							label="Position Type"
-							value={positionType}
-							options={[
-								{ label: 'Relative', value: 'relative' },
-								{ label: 'Absolute', value: 'absolute' },
-								{ label: 'Fixed', value: 'fixed' }
-							]}
-							onChange={(value) => setAttributes({ positionType: value })}
-							Component={SelectControl}
-							{...premiumProps}
-						/>
-						{positionType == 'absolute' || positionType == 'fixed' ? (
-							<>
-								<BControlPro
-									label="Top"
-									value={top}
-									onChange={(value) =>
-										setAttributes({
-											positionOption: {
-												...positionOption,
-												top: value
-											}
-										})
-									}
-									Component={UnitControl}
-									{...premiumProps}
-								/>
-
-								<BControlPro
-									label="Left"
-									value={left}
-									onChange={(value) =>
-										setAttributes({
-											positionOption: {
-												...positionOption,
-												left: value
-											}
-										})
-									}
-									Component={UnitControl}
-									{...premiumProps}
-								/>
-
-								<BControlPro
-									label="Bottom"
-									value={bottom}
-									onChange={(value) =>
-										setAttributes({
-											positionOption: {
-												...positionOption,
-												bottom: value
-											}
-										})
-									}
-									Component={UnitControl}
-									{...premiumProps}
-								/>
-
-								<BControlPro
-									label="Right"
-									value={right}
-									onChange={(value) =>
-										setAttributes({
-											positionOption: {
-												...positionOption,
-												right: value
-											}
-										})
-									}
-									Component={UnitControl}
-									{...premiumProps}
-								/>
-
-							</>
-						) : ''}
-
-					</PanelBody>
-					<PanelBody className='bPlPanelBody' title={__('Share Counter Option', 'social-share')} initialOpen={false}>
-						<BControlPro className='mt20' label={__('Counter Show/Hide', 'social-share')} checked={isCounter} onChange={val => setAttributes({ isCounter: val })} Component={ToggleControl}
-							{...premiumProps} />
-
-						{
-							isCounter === true && <>
-								<TextControl
-									label="Text"
-									className='mt20'
-									value={counterText}
-									onChange={(value) => setAttributes({ counterText: value })}
-								/>
-								<NumberControl
-									label="Number"
-									shiftStep={5}
-									step={5}
-									value={counterNumber}
-									onChange={(value) => setAttributes({ counterNumber: value })}
-								/>
-							</>
-						}
-					</PanelBody>
+					<Notice status='premium' isIcon={true}>{__('Premium Themes, Floating Social Share Button, and Static Total Share Counter features are available in the Premium version.', 'social-share')}</Notice>
+					{/* advertiseCard */}
+					<AdvertiseCard planLink={pricingUrl} />
 				</>}
 
 				{'style' === tab.name && <>
 					<PanelBody className='bPlPanelBody' title={__('Social Icon Style', 'social-share')}  >
 
-						<BControlPro label={__('Hover Icon Color:', 'social-share')} value={hoverIconColor} onChange={val => setAttributes({ hoverIconColor: val })} Component={ColorControl}
-							{...premiumProps} />
-
 						<Background label={__('Background:', 'social-share')} value={background} onChange={val => setAttributes({ background: val })} />
-						{/* hover background */}
-						<BControlPro label={__('Hover Background:', 'social-share')} value={hoverBackground} onChange={val => setAttributes({ hoverBackground: val })} Component={Background}
-							{...premiumProps} />
+						<Notice status='premium' isIcon={true}>{__('Premium Icon Color and Hover Background features are available in the Premium version.', 'social-share')}</Notice>
 
 						<UnitControl className='mt20' label={__('Size:', 'social-share')} labelPosition='left' value={size} onChange={val => setAttributes({ size: val })} units={[pxUnit(), perUnit(), emUnit()]} />
 
 						<UnitControl className='mt20' label={__('Padding:', 'social-share')} labelPosition='left' value={padding} onChange={val => setAttributes({ padding: val })} units={[pxUnit(), perUnit(), emUnit()]} />
 
-						{
-							theme === 'theme5' &&
-							<BControlPro
-								className='mt20'
-								label={__('Show Labels', 'social-share')}
-								labelPosition='right'
-								checked={label}
-								onChange={val => setAttributes({ label: val })}
-								Component={ToggleControl}
-								{...premiumProps}
-							/>
-						}
+						<Notice status='premium' isIcon={true}>{__('Social Share Label is available in the Premium version.', 'social-share')}</Notice>
 
 						<UnitControl className='mt20' label={__('Space Between:', 'social-share')} labelPosition='left' value={margin} onChange={val => setAttributes({ margin: val })} units={[pxUnit(), perUnit(), emUnit()]} />
 
-						<BControlPro
-							className='mt20'
-							label={__('Hover Animation:', 'social-share')}
-							labelPosition='left'
-							value={transform}
-							onChange={val => setAttributes({ transform: val })}
-							units={[pxUnit(), perUnit(), emUnit()]}
-							Component={UnitControl}
-							{...premiumProps}
-						/>
-
 						<BorderControl label={__('Border:', 'social-share')} value={border} onChange={val => setAttributes({ border: val })} defaults={{ radius: '50%' }} />
-
-						<BControlPro label={__('Hover Border:', 'social-share')} value={hoverBorder} onChange={val => setAttributes({ hoverBorder: val })} Component={BorderControl}
-							{...premiumProps} />
+						<Notice status='premium' isIcon={true}>{__('Premium Hover Animation and Hover Border features are available in the Premium version.', 'social-share')}</Notice>
 
 						<ShadowControl label={__('Shadow:', 'social-share')} value={shadow} onChange={val => setAttributes({ shadow: val })} />
 					</PanelBody>
@@ -429,7 +273,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 		<BlockControls>
 			<BlockPreview
 				options={toolTipPresets}
-				isPremium={isPremium}
+
 				value={theme}
 				onChange={val => {
 					setAttributes({ theme: val });
@@ -472,25 +316,6 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 						}),
 						updateAllSocial('icon', '#fff', 'color')
 					);
-
-					'theme4' === val && (
-						setAttributes({
-							background: { type: 'solid', color: '#0000' },
-							border: { width: '1px', radius: "5%", color: primaryColors },
-							transform: "0px",
-							shadow: { hOffset: "0px", vOffset: "0px" }
-						}),
-						updateAllSocial('icon', primaryColors, 'color')
-					);
-					'theme5' === val && (
-						setAttributes({
-							background: { type: 'gradient', gradient: gradientValue },
-							border: { width: '0px', radius: "5%", color: primaryColors },
-							transform: "0px",
-							shadow: { hOffset: "0px", vOffset: "0px" }
-						}),
-						updateAllSocial('icon', '#fff', 'color')
-					);
 				}}
 			/>
 		</BlockControls>
@@ -502,59 +327,7 @@ const Settings = ({ attributes, setAttributes, siteUrl, isPremium, activeIndex, 
 				{ title: __('Social Icons in right', 'social-share'), align: 'right', icon: 'align-right' }
 			]} />
 		</BlockControls>
-		<AboutProModal
-			isProModalOpen={isProModalOpen}
-			setIsProModalOpen={setIsProModalOpen}
-			link={siteLocation}
-		>
-			<li>
-				<strong>
-					{__("Layout Direction : ", "social-share")}
-				</strong>
-				{__("Direction – Row , Column", "social-share")}
-			</li>
-			<li>
-				<strong>
-					{__("Animation: ", "social-share")}
-				</strong>
-				{__("Hover Transform Animation.", "social-share")}
-			</li>
-			<li>
-				<strong>
-					{__("Position Option : ", "social-share")}
-				</strong>
-				{__("Relative, Absolute, Fixed Position Option.", "social-share")}
-			</li><li>
-				<strong>
-					{__("Premium Share Theme: ", "social-share")}
-				</strong>
-				{__("Premium Share Theme : Animation icon, Button with text", "social-share")}
-			</li><li>
-				<strong>
-					{__("Label : ", "social-share")}
-				</strong>
-				{__("Social Name  Label.", "social-share")}
-			</li>
-			<li>
-				<strong>
-					{__("Icon Hover Style : ", "social-share")}
-				</strong>
-				{__("Icon Hover Color, Background, Border.", "social-share")}
-			</li>
-			<li>
-				<strong>
-					{__("Total Shares  : ", "social-share")}
-				</strong>
-				{__("Show Total Share Counter with Design Customization", "social-share")}
-			</li>
-		</AboutProModal>
 	</>;
 };
 
-export default compose(
-	withSelect((select) => {
-		return {
-			siteUrl: select('core').getSite()?.url,
-		};
-	})
-)(Settings);
+export default Settings;
