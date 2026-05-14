@@ -16,12 +16,12 @@ const BlockPreview = ({ options, value, onChange }) => {
   };
 
   return (
-    <div className="bPlBlockPreviewWrapper">
+    <div className="bssbBlockPreviewWrapper">
       {options?.map((theme, idx) => (
         <div key={idx}>
           <div>
             <Button
-              className={`bPl-previewBtn ${ value === theme.value ? "bPl-activeBtn" : ""
+              className={`bssb-previewBtn ${ value === theme.value ? "bssb-activeBtn" : ""
               }`}
               onClick={() => handleButtonClick(theme.value, idx, theme.content)}
               onMouseEnter={() => handleMouseInteraction(idx, true)}

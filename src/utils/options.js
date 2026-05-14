@@ -1,9 +1,13 @@
 import { __ } from '@wordpress/i18n';
+import socialShare1 from '../../assets/images/social-share-1.png';
+import socialShare6 from '../../assets/images/social-share-6.png';
+import socialShare2 from '../../assets/images/social-share-2.png';
+import socialShare3 from '../../assets/images/social-share-3.png';
 
 
 export const generalStyleTabs = [
-	{ name: 'general', title: __('General', 'accordion') },
-	{ name: 'style', title: __('Style', 'accordion') }
+	{ name: 'general', title: __('General', 'social-share') },
+	{ name: 'style', title: __('Style', 'social-share') }
 ];
 
 export const themes = [
@@ -160,28 +164,28 @@ export const toolTipPresets = [
 	{
 		label: "Default",
 		value: "default",
-		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-1.png",
+		img: socialShare1,
 		height: "auto",
 		width: "160px"
 	},
 	{
 		label: "Theme One",
 		value: "theme1",
-		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-6.png",
+		img: socialShare6,
 		height: "auto",
 		width: "160px"
 	},
 	{
 		label: "Theme Two",
 		value: "theme2",
-		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-2.png",
+		img: socialShare2,
 		height: "auto",
 		width: "160px"
 	},
 	{
 		label: "Theme Three",
 		value: "theme3",
-		img: "https://templates.bplugins.com/wp-content/uploads/2026/01/social-share-3.png",
+		img: socialShare3,
 		height: "auto",
 		width: "160px"
 	}

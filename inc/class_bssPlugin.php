@@ -11,7 +11,7 @@ if (!class_exists('BSSB_Plugin')) {
             add_action('admin_enqueue_scripts', [$this, 'bssb_admin_enqueue_scripts']);
             add_shortcode('social-share', [$this, 'bssb_shortcode_handler']);
             add_action('wp_enqueue_scripts', [$this, 'bssb_frontend_enqueue_block_assets']);
-        }
+        } 
 
         public function bssb_register_block()
         {
@@ -24,6 +24,7 @@ if (!class_exists('BSSB_Plugin')) {
         public function bssb_plugins_dependency()
         {
             require_once BSSB_DIR_PATH . 'inc/class_bssAdmin.php';
+            new BSSB_Admin();
         }
 
         // Enqueue frontend + editor assets
@@ -56,10 +57,19 @@ if (!class_exists('BSSB_Plugin')) {
         }
         public function bssb_shortcode_handler($atts)
         {
-            if (!isset($atts['id'])) {
+            $atts = shortcode_atts(
+                array(
+                    'id' => '',
+                ),
+                $atts,
+                'social-share'
+            );
+
+            if (empty($atts['id'])) {
                 return '<p>Please provide a valid ID.</p>';
             }
-            $post = get_post($atts['id']);
+
+            $post = get_post(absint($atts['id']));
             if ($post) {
                 $blocks = parse_blocks($post->post_content);
                 if (!empty($blocks)) {

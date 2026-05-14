@@ -3,7 +3,7 @@ import { AlignmentToolbar, BlockControls, InspectorControls } from '@wordpress/b
 import { PanelBody, PanelRow, SelectControl, ToggleControl, Button, Dashicon, __experimentalUnitControl as UnitControl, TabPanel } from '@wordpress/components';
 import { produce } from 'immer';
 
-import { Label, Background, BBlocksAds, Notice, HelpPanel, IconControl, InlineDetailMediaUpload, ColorControl, Typography } from '../../../../../bpl-tools/Components';
+import { Label, Background, BBlocksAds, Notice, HelpPanel, IconControl, InlineDetailMediaUpload } from '../../../../../bpl-tools/Components';
 import { BorderControl, ShadowControl } from '../../../../../bpl-tools/Components/Deprecated';
 import { gearIcon } from '../../../../../bpl-tools/utils/icons';
 import { pxUnit, perUnit, emUnit } from '../../../../../bpl-tools/utils/options';
@@ -17,7 +17,7 @@ import { AdvertiseCard } from "../../../../../bpl-tools/ProControls";
 
 
 const Settings = ({ attributes, setAttributes, activeIndex, setActiveIndex }) => {
-	const { socials, alignment, direction = '', theme, background, size, padding, margin, border, shadow, gap = '', isCounter, counterColor = '', counterTypo = {} } = attributes || {};
+	const { socials, alignment, direction = '', theme, background, size, padding, margin, border, shadow, gap = '' } = attributes || {};
 
 	const pricingUrl = 'edit.php?post_type=social_share_cpt&page=social_share_Dashboard#/pricing';
 
@@ -253,16 +253,7 @@ const Settings = ({ attributes, setAttributes, activeIndex, setActiveIndex }) =>
 
 						<ShadowControl label={__('Shadow:', 'social-share')} value={shadow} onChange={val => setAttributes({ shadow: val })} />
 					</PanelBody>
-					{
-						isCounter === true && <PanelBody className='bPlPanelBody' title={__('Counter Style', 'social-share')} initialOpen={false}  >
-							<Typography
-								value={counterTypo}
-								onChange={val => setAttributes({ counterTypo: val })}
-							/>
-							<ColorControl label={__('Color:', 'social-share')} value={counterColor} onChange={val => setAttributes({ counterColor: val })} />
 
-						</PanelBody>
-					}
 
 				</>}
 			</>}</TabPanel>

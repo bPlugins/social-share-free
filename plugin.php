@@ -62,4 +62,4 @@ if (function_exists('bssb_fs')) {
 
     require_once BSSB_DIR_PATH . 'inc/class_bssPlugin.php';
     new BSSB_Plugin();
-}
+} 

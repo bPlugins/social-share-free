@@ -64,12 +64,11 @@ if (!class_exists('BSSB_Admin')) {
         }
         public function bssb_manage_custom_column($column_name, $post_id) {
             if ($column_name == 'shortcode') {
-                echo '<div class="bPlAdminShortcode" id="bPlAdminShortcode-' . esc_attr($post_id) . '">
-						<input value="[social-share id=' . esc_attr($post_id) . ']" onclick="copyBSSBAdminShortcode(\'' . esc_attr($post_id) . '\')" readonly>
+                echo '<div class="bssbAdminShortcode" id="bssbAdminShortcode-' . esc_attr($post_id) . '">
+						<input value="[social-share id=' . esc_attr($post_id) . ']" onclick="copyBssbAdminShortcode(\'' . esc_attr($post_id) . '\')" readonly>
 						<span class="tooltip">Copy To Clipboard</span>
 					  </div>';
-            }
+            } 
         }
     }
-    new BSSB_Admin();
 }

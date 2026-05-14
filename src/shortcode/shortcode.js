@@ -1,8 +1,8 @@
 import './shortcode.scss'
 
-window.copyBSSBAdminShortcode = id => {
-    var input = document.querySelector('#BSSBAdminShortcode-' + id + ' input');
-    var tooltip = document.querySelector('#BSSBAdminShortcode-' + id + ' .tooltip');
+window.copyBssbAdminShortcode = id => {
+    var input = document.querySelector('#bssbAdminShortcode-' + id + ' input');
+    var tooltip = document.querySelector('#bssbAdminShortcode-' + id + ' .tooltip');
     input.select();
     input.setSelectionRange(0, 30);
     document.execCommand('copy');

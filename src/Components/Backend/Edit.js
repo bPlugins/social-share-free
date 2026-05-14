@@ -13,17 +13,17 @@ const Edit = props => {
 	const { attributes, setAttributes, clientId, isSelected, postType, postId } = props;
 	const blockProps = useBlockProps();
 
-	useEffect(() => tabController(), [isSelected]); 
+	useEffect(() => tabController(), [isSelected]);
 
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	const id = `bssbSocialShare-${clientId}`;
 
 	return <>
-		<Settings attributes={attributes} setAttributes={setAttributes} activeIndex={activeIndex} setActiveIndex={setActiveIndex}/>
+		<Settings attributes={attributes} setAttributes={setAttributes} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
 
 		<div {...blockProps} id={id}>
-			<Style  attributes={{ ...attributes, isBackend: true }} id={id} />
+			<Style attributes={{ ...attributes, isBackend: true }} id={id} />
 			<div>
 				{postType == "social_share_cpt" && (
 					<ClipBoard shortcode={`[social-share id=${postId}]`} />
