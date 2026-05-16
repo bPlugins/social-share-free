@@ -1,9 +1,18 @@
 <?php
 if (!defined('ABSPATH')) exit;
 $bssb_id = wp_unique_id('bssbSocialShare-');
-extract($attributes);
+$socials = $attributes['socials'] ?? [];
+$has_fa_icon = false;
+if (is_array($socials)) {
+	foreach ($socials as $bssb_social) {
+		if (!empty($bssb_social['icon']['class'])) {
+			$has_fa_icon = true;
+			break;
+		}
+	}
+}
 
-if (isset($icon['class']) && !empty($icon['class'])) {
+if ($has_fa_icon) {
 	wp_enqueue_style('font-awesome-7');
 }
 

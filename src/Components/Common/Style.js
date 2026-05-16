@@ -2,7 +2,7 @@ import { getBackgroundCSS, getBorderCSS, getIconCSS, getShadowCSS, getTypoCSS } 
 
 const Style = ({ attributes, id }) => {
 	const { socials, alignment, background, size, padding, margin, border, shadow,
-		direction = '', transform = '', hoverBorder = {}, gap = '', hoverBackground = {}, positionType, isBackend, hoverIconColor="", counterTypo={}, counterColor ='',  positionOption = {} } = attributes;
+		direction = '', transform = '', hoverBorder = {}, gap = '', hoverBackground = {}, positionType, isBackend, hoverIconColor = "", counterTypo = {}, counterColor = '', positionOption = {} } = attributes;
 
 	const { top, bottom, left, right } = positionOption;
 
@@ -10,7 +10,7 @@ const Style = ({ attributes, id }) => {
 	const mainSl = `#${id}`;
 	const UlSl = `${mainSl} ul.bssbSocialShare`;
 	const IconSl = `${mainSl} ul.bssbSocialShare li i:hover`;
-	const counterTitle= `${mainSl} .bss-counter-title`;
+	const counterTitle = `${mainSl} .bss-counter-title`;
 	const liSl = `${mainSl} ul.bssbSocialShare li.icon`;
 	const hoverliSl = `${mainSl} ul.bssbSocialShare li.icon:hover`;
 	const labelSl = `${mainSl} ul.bssbSocialShare li p`;

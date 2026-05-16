@@ -183,7 +183,7 @@
 			"default": "Total Share"
 		},
 		"counterNumber": {
-			"type": "Number",
+			"type": "number",
 			"default": 120
 		},
 		"counterTypo": {

@@ -15,7 +15,7 @@ export const themes = [
 	{ label: __('Theme 1', 'social-share'), value: 'theme1' },
 	{ label: __('Theme 2', 'social-share'), value: 'theme2' },
 	{ label: __('Theme 3', 'social-share'), value: 'theme3' }
-]; 
+];
 
 export const networkTypes = [
 	{ label: __('Social Networks', 'social-share'), value: 'socialNetworks' },

@@ -28,6 +28,8 @@ if (!class_exists('BSSB_Admin')) {
                 ],
                 'public' => false,
                 'show_ui' => true,
+                'capability_type' => 'post',
+                'map_meta_cap' => true,
                 'show_in_rest' => true,
                 'menu_position' => 20,
                 'menu_icon' => 'dashicons-share',
@@ -41,7 +43,7 @@ if (!class_exists('BSSB_Admin')) {
                 'edit.php?post_type=social_share_cpt',
                 'Demo & Help',
                 'Demo & Help',
-                'manage_options',
+                'manage_options', 
                 'social_share_Dashboard',
                 [$this, 'bssb_social_share_Dashboard_page']
             );

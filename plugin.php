@@ -11,7 +11,7 @@
  * Domain Path:  /languages
  * Requires at least: 6.2
  * Tested up to: 6.9
- * Requires PHP: 7.1
+ * Requires PHP: 7.4
  */ 
 
 if (!defined('ABSPATH')) {
@@ -22,10 +22,10 @@ if (function_exists('bssb_fs')) {
     bssb_fs()->set_basename(true, __FILE__);
 } else {
 
-    define('BSSB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && ('localhost' === $_SERVER['HTTP_HOST'] || 'counter-block.local' === $_SERVER['HTTP_HOST']) ? time() : '2.2.1');
+    define('BSSB_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && ('localhost' === $_SERVER['HTTP_HOST']) ? time() : '2.2.1');
     define('BSSB_DIR_PATH', plugin_dir_path(__FILE__));
     define('BSSB_DIR_URL', plugin_dir_url(__FILE__));
-    define("BSSB_DIR", __DIR__);
+    define("BSSB_DIR", __DIR__); 
 
     if (!function_exists('bssb_fs')) {
         function bssb_fs()

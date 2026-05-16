@@ -5,7 +5,7 @@ Tags: block, share, social share, page share, Gutenberg block
 Requires at least: 6.2
 Tested up to: 6.9
 Stable tag: 2.2.1
-Requires PHP: 7.1
+Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -231,13 +231,6 @@ This plugin bundles the following third-party JavaScript/PHP libraries.
 * **Purpose:** Used to display documentation and tutorial videos in the admin dashboard.
 * **Privacy:** Loading or interacting with the video player connects to YouTube servers and is subject to YouTube's privacy policy.
 
-= Font Awesome =
-* **Source:** https://fontawesome.com/
-* **Purpose:** Used for social icons.
-
-= Goodshare.js =
-* **Source:** https://github.com/koddr/goodshare.js
-* **Purpose:** Used for fetching share counts.
 
 This plugin utilizes `goodshare.min.js` to provide share count functionality for certain networks. In order to fetch share counts, it makes direct JSONP requests to the following external services when those specific networks are enabled:
 
@@ -255,10 +248,19 @@ These requests are necessary to display the share counts on the frontend. By usi
 
 
 
-== Third-Party Libraries == 
+== Third-Party Libraries ==
+
+= Font Awesome =
+* **Source:** https://fontawesome.com/
+* **Purpose:** Used for social icons.
+
+= Goodshare.js =
+* **Source:** https://github.com/koddr/goodshare.js
+* **Purpose:** Used for fetching share counts.
 
 = bpl-tools =
 * Source / GitHub: https://github.com/bPlugins/bpl-tools
 * License: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
 * Purpose: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
-* External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made
+* External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made.
+
