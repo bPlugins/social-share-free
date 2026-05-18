@@ -1,13 +1,13 @@
 === Social Share Block – Social Sharing Buttons for Posts and Pages ===
 Contributors: bplugins, abuhayat, charlescormier , prosanta10
 Donate link: https://www.buymeacoffee.com/abuhayat
-Tags: block, share, social share, page share, Gutenberg block
-Requires at least: 6.2
+Tags: block, share, social share, share buttons, social sharing
+Requires at least: 6.5
 Tested up to: 6.9
 Stable tag: 2.2.1
 Requires PHP: 7.4
 License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
 Share your website/website-page link to social networks and mobile messengers.
 
@@ -36,7 +36,7 @@ Forget bulky scripts that bloat your page. Our block is built specifically for t
 - Shortcode support for any page or widget  
 
 
-### 🔥 Pro Features
+### 🔥 Available in the Premium Features
 Upgrade to the Pro version for full customization:
 
 - **Premium Share Theme** : Animation icon, Button with text
@@ -126,9 +126,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 == Screenshots ==
 
 1. Social Share Admin Dashboard
-2. Add New FAQ (ShortCode)
+2. Add New Social Share (ShortCode)
 3. Default 
-4. Theme One 
+4. Theme One
 5. Theme Two
 6. Theme Three
 7. Theme Four
@@ -139,7 +139,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
-= 2.2.1 - 2026-05-14 =
+= 2.2.1 - 2026-05-18 =
 * **Fix:** Removed trialware and premium feature gating to fully comply with WordPress.org guidelines.
 * **Fix:** Added public GitHub repository link to provide access to uncompiled source code.
 * **Fix:** Corrected "Requires at least" version formatting to use major version numbers.
@@ -240,7 +240,10 @@ This plugin utilizes `goodshare.min.js` to provide share count functionality for
 *   **Buffer**: Fetches share links from `api.bufferapp.com`. ([Terms of Use](https://buffer.com/legal/terms), [Privacy Policy](https://buffer.com/legal/privacy))
 *   **Pinterest**: Fetches url counts from `api.pinterest.com`. ([Terms of Use](https://policy.pinterest.com/en/terms-of-service), [Privacy Policy](https://policy.pinterest.com/en/privacy-policy))
 
-These requests are necessary to display the share counts on the frontend. By using this plugin and enabling the share count features for these networks, you acknowledge that these external requests will be made.
+Additionally, when WeChat sharing is selected by the user, the plugin generates sharing QR codes securely using Google APIs:
+*   **WeChat (Google APIs)**: Generates sharing QR codes via `chart.apis.google.com` for mobile scanning when WeChat sharing is clicked. ([Privacy Policy](https://policies.google.com/privacy))
+
+These requests are necessary to display the share counts and sharing QR codes on the frontend. By using this plugin and enabling these networks, you acknowledge that these external requests will be made.
 
 = react-router-dom =
 * **Source:** https://github.com/remix-run/react-router
@@ -252,10 +255,12 @@ These requests are necessary to display the share counts on the frontend. By usi
 
 = Font Awesome =
 * **Source:** https://fontawesome.com/
+* License: SIL OFL 1.1 (Icons) / MIT (CSS)
 * **Purpose:** Used for social icons.
 
 = Goodshare.js =
 * **Source:** https://github.com/koddr/goodshare.js
+* License: MIT
 * **Purpose:** Used for fetching share counts.
 
 = bpl-tools =

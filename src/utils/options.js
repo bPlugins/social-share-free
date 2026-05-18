@@ -6,63 +6,63 @@ import socialShare3 from '../../assets/images/social-share-3.png';
 
 
 export const generalStyleTabs = [
-	{ name: 'general', title: __('General', 'social-share') },
-	{ name: 'style', title: __('Style', 'social-share') }
+	{ name: 'general', title: __('General', 'b-social-share') },
+	{ name: 'style', title: __('Style', 'b-social-share') }
 ];
 
 export const themes = [
-	{ label: __('Default', 'social-share'), value: 'default' },
-	{ label: __('Theme 1', 'social-share'), value: 'theme1' },
-	{ label: __('Theme 2', 'social-share'), value: 'theme2' },
-	{ label: __('Theme 3', 'social-share'), value: 'theme3' }
+	{ label: __('Default', 'b-social-share'), value: 'default' },
+	{ label: __('Theme 1', 'b-social-share'), value: 'theme1' },
+	{ label: __('Theme 2', 'b-social-share'), value: 'theme2' },
+	{ label: __('Theme 3', 'b-social-share'), value: 'theme3' }
 ];
 
 export const networkTypes = [
-	{ label: __('Social Networks', 'social-share'), value: 'socialNetworks' },
-	{ label: __('Mobile Messenger', 'social-share'), value: 'mobileMessenger' }
+	{ label: __('Social Networks', 'b-social-share'), value: 'socialNetworks' },
+	{ label: __('Mobile Messenger', 'b-social-share'), value: 'mobileMessenger' }
 ];
 
 export const socialNetworks = [
-	{ label: __('Facebook', 'social-share'), value: 'facebook' },
-	{ label: __('Twitter', 'social-share'), value: 'twitter' },
-	{ label: __('LinkedIn', 'social-share'), value: 'linkedin' },
-	{ label: __('Pinterest', 'social-share'), value: 'pinterest' },
-	{ label: __('Blogger', 'social-share'), value: 'blogger' },
-	{ label: __('WordPress', 'social-share'), value: 'wordpress' },
-	{ label: __('Copy Link', 'social-share'), value: 'copy' },
-	{ label: __('Tumblr', 'social-share'), value: 'tumblr' },
-	{ label: __('Reddit', 'social-share'), value: 'reddit' },
-	{ label: __('Digg', 'social-share'), value: 'digg' },
-	{ label: __('LiveJournal', 'social-share'), value: 'livejournal' },
-	{ label: __('Evernote', 'social-share'), value: 'evernote' },
-	{ label: __('Flipboard', 'social-share'), value: 'flipboard' },
-	{ label: __('Mix', 'social-share'), value: 'mix' },
-	{ label: __('Pocket', 'social-share'), value: 'pocket' },
-	{ label: __('Buffer', 'social-share'), value: 'buffer' },
-	{ label: __('Instapaper', 'social-share'), value: 'instapaper' },
+	{ label: __('Facebook', 'b-social-share'), value: 'facebook' },
+	{ label: __('Twitter', 'b-social-share'), value: 'twitter' },
+	{ label: __('LinkedIn', 'b-social-share'), value: 'linkedin' },
+	{ label: __('Pinterest', 'b-social-share'), value: 'pinterest' },
+	{ label: __('Blogger', 'b-social-share'), value: 'blogger' },
+	{ label: __('WordPress', 'b-social-share'), value: 'wordpress' },
+	{ label: __('Copy Link', 'b-social-share'), value: 'copy' },
+	{ label: __('Tumblr', 'b-social-share'), value: 'tumblr' },
+	{ label: __('Reddit', 'b-social-share'), value: 'reddit' },
+	{ label: __('Digg', 'b-social-share'), value: 'digg' },
+	{ label: __('LiveJournal', 'b-social-share'), value: 'livejournal' },
+	{ label: __('Evernote', 'b-social-share'), value: 'evernote' },
+	{ label: __('Flipboard', 'b-social-share'), value: 'flipboard' },
+	{ label: __('Mix', 'b-social-share'), value: 'mix' },
+	{ label: __('Pocket', 'b-social-share'), value: 'pocket' },
+	{ label: __('Buffer', 'b-social-share'), value: 'buffer' },
+	{ label: __('Instapaper', 'b-social-share'), value: 'instapaper' },
 
-	{ label: __('Meneame', 'social-share'), value: 'meneame' },
+	{ label: __('Meneame', 'b-social-share'), value: 'meneame' },
 
-	{ label: __('Baidu', 'social-share'), value: 'baidu' },
-	{ label: __('Weibo', 'social-share'), value: 'weibo' },
-	{ label: __('Xing', 'social-share'), value: 'xing' },
-	{ label: __('RenRen', 'social-share'), value: 'renren' },
+	{ label: __('Baidu', 'b-social-share'), value: 'baidu' },
+	{ label: __('Weibo', 'b-social-share'), value: 'weibo' },
+	{ label: __('Xing', 'b-social-share'), value: 'xing' },
+	{ label: __('RenRen', 'b-social-share'), value: 'renren' },
 
-	{ label: __('Vkontakte (VK)', 'social-share'), value: 'vkontakte' },
-	{ label: __('Odnoklassniki', 'social-share'), value: 'odnoklassniki' },
-	{ label: __('My World@Mail.Ru', 'social-share'), value: 'moimir' },
-	{ label: __('Surfingbird', 'social-share'), value: 'surfingbird' },
-	{ label: __('LiveInternet', 'social-share'), value: 'liveinternet' },
+	{ label: __('Vkontakte (VK)', 'b-social-share'), value: 'vkontakte' },
+	{ label: __('Odnoklassniki', 'b-social-share'), value: 'odnoklassniki' },
+	{ label: __('My World@Mail.Ru', 'b-social-share'), value: 'moimir' },
+	{ label: __('Surfingbird', 'b-social-share'), value: 'surfingbird' },
+	{ label: __('LiveInternet', 'b-social-share'), value: 'liveinternet' },
 ];
 
 export const mobileNetworks = [
-	{ label: __('SMS', 'social-share'), value: 'sms' },
-	{ label: __('Skype', 'social-share'), value: 'skype' },
-	{ label: __('Telegram', 'social-share'), value: 'telegram' },
-	{ label: __('Viber', 'social-share'), value: 'viber' },
-	{ label: __('WhatsApp', 'social-share'), value: 'whatsapp' },
-	{ label: __('WeChat', 'social-share'), value: 'wechat' },
-	{ label: __('LINE', 'social-share'), value: 'line' },
+	{ label: __('SMS', 'b-social-share'), value: 'sms' },
+	{ label: __('Skype', 'b-social-share'), value: 'skype' },
+	{ label: __('Telegram', 'b-social-share'), value: 'telegram' },
+	{ label: __('Viber', 'b-social-share'), value: 'viber' },
+	{ label: __('WhatsApp', 'b-social-share'), value: 'whatsapp' },
+	{ label: __('WeChat', 'b-social-share'), value: 'wechat' },
+	{ label: __('LINE', 'b-social-share'), value: 'line' },
 ];
 
 export const iconClassList = [

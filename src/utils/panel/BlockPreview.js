@@ -27,7 +27,7 @@ const BlockPreview = ({ options, value, onChange }) => {
               onMouseEnter={() => handleMouseInteraction(idx, true)}
               onMouseLeave={() => handleMouseInteraction(idx, false)}
             >
-              <span className="bplOpacity75">{theme.label}</span>
+              <span className="bssb-opacity-75 bplOpacity75">{theme.label}</span>
             </Button>
           </div>
           {activeIndex === idx && (

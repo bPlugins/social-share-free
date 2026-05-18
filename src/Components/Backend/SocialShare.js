@@ -4,8 +4,7 @@ const SocialShare = ({ attributes, isBackend = false, custom }) => <ul className
 	{attributes.socials?.map((item, index) => {
 		const { network, isUpIcon, icon, upIcon } = item;
 
-		return <> 
-			<li
+		return <li
 				key={index}
 				onClick={() => {
 					if (isBackend) {
@@ -19,8 +18,7 @@ const SocialShare = ({ attributes, isBackend = false, custom }) => <ul className
 					{isUpIcon ? <img src={upIcon?.url} alt={upIcon?.alt} /> : icon?.class && <i className={icon?.class}></i>}
 				</a>
 
-			</li>
-		</>;
+			</li>;
 	})}
 	
 </ul>;

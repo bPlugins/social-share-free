@@ -1,41 +1,44 @@
 <?php
 if (!defined('ABSPATH')) exit;
 $bssb_id = wp_unique_id('bssbSocialShare-');
-$socials = $attributes['socials'] ?? [];
-$has_fa_icon = false;
-if (is_array($socials)) {
-	foreach ($socials as $bssb_social) {
+$bssb_socials = $attributes['socials'] ?? [];
+$bssb_has_fa_icon = false;
+if (is_array($bssb_socials)) {
+	foreach ($bssb_socials as $bssb_social) {
 		if (!empty($bssb_social['icon']['class'])) {
-			$has_fa_icon = true;
+			$bssb_has_fa_icon = true;
 			break;
 		}
 	}
 }
 
-if ($has_fa_icon) {
-	wp_enqueue_style('font-awesome-7');
+if ($bssb_has_fa_icon) {
+	wp_enqueue_style('font-awesome-free');
 }
 
-wp_enqueue_script('goodshare');
-wp_set_script_translations(
-	'bssb-social-share-view-script',
-	'social-share',
-	BSSB_DIR_PATH . 'languages'
-);
-$bssb_allowed_attributes = $attributes;
-$bssb_pro_attributes = ['transform', 'positionOption', 'positionType', 'hoverIconColor', 'hoverBackground', 'hoverBorder', 'isCounter', 'counterText', 'counterNumber', 'counterTypo', 'counterColor', 'label'];
-foreach ($bssb_pro_attributes as $bssb_attr) {
-    if (isset($bssb_allowed_attributes[$bssb_attr])) {
-        unset($bssb_allowed_attributes[$bssb_attr]);
-    }
-}
+$bssb_frontend_keys = [
+	'align',
+	'socials',
+	'alignment',
+	'isBackend',
+	'theme',
+	'background',
+	'size',
+	'gap',
+	'padding',
+	'margin',
+	'border',
+	'shadow',
+	'direction'
+];
+$bssb_allowed_attributes = array_intersect_key( $attributes, array_flip( $bssb_frontend_keys ) );
 ?>
 
-<div <?php echo wp_kses_data(get_block_wrapper_attributes()); ?> id="<?php echo esc_attr($bssb_id); ?>" data-attributes="<?php echo esc_attr(wp_json_encode($bssb_allowed_attributes)); ?>">
+<div <?php echo wp_kses_data( get_block_wrapper_attributes() ); ?> id="<?php echo esc_attr( $bssb_id ); ?>" data-attributes="<?php echo esc_attr( wp_json_encode( $bssb_allowed_attributes ) ); ?>">
 	<div class="bssbStyle"></div>
 
 	<ul class="bssbSocialShare">
-		<?php foreach ($socials as $bssb_index => $bssb_social) {
+		<?php foreach ($bssb_socials as $bssb_index => $bssb_social) {
 
 			$bssb_network = $bssb_social['network'] ?? '';
 			$bssb_isUpIcon = $bssb_social['isUpIcon'] ?? false;
@@ -46,10 +49,6 @@ foreach ($bssb_pro_attributes as $bssb_attr) {
 			$bssb_upIconAlt = $bssb_upIcon['alt'] ?? '';
 			$bssb_iconClass = $bssb_icon['class'] ?? '';
 
-			$bssb_upIconEl = $bssb_upIconUrl ? '<img src="' . esc_url($bssb_upIconUrl) . '" alt="' . esc_attr($bssb_upIconAlt) . '" />' : '';
-			$bssb_iconEl = $bssb_iconClass ? '<i class="' . esc_attr($bssb_iconClass) . '"></i>' : '';
-
-			$bssb_filterIconEl = $bssb_isUpIcon ? $bssb_upIconEl : $bssb_iconEl;
 			// classes
 			$bssb_li_classes = [
 				'icon',
@@ -59,7 +58,11 @@ foreach ($bssb_pro_attributes as $bssb_attr) {
 			?>
 
 			<li class="<?php echo esc_attr(implode(' ', $bssb_li_classes)); ?>" data-social="<?php echo esc_attr($bssb_network); ?>" 	<?php if ($bssb_network === 'copy'): ?> data-copy="true" <?php endif; ?>>
-				<?php echo wp_kses_post($bssb_filterIconEl); ?>
+				<?php if ( $bssb_isUpIcon && $bssb_upIconUrl ) : ?>
+					<img src="<?php echo esc_url( $bssb_upIconUrl ); ?>" alt="<?php echo esc_attr( $bssb_upIconAlt ); ?>" />
+				<?php elseif ( $bssb_iconClass ) : ?>
+					<i class="<?php echo esc_attr( $bssb_iconClass ); ?>"></i>
+				<?php endif; ?>
 
 			</li>
 

@@ -12,7 +12,7 @@ const Welcome = (props) => {
         gridTemplateColumns: 'repeat(auto-fill, minmax(min(480px, 100%), 1fr))',
         gap: '32px'
       }}>
-        <Changelog {...props} limit={1} loadMoreLabel={__('View More Changelogs', 'social-share')} />
+        <Changelog {...props} limit={1} loadMoreLabel={__('View More Changelogs', 'b-social-share')} />
 
         <ProAds {...props} />
       </div>

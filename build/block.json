@@ -101,25 +101,11 @@
       "type": "string",
       "default": "default"
     },
-    "label": {
-      "type": "boolean",
-      "default": true
-    },
     "background": {
       "type": "object",
       "default": {
         "color": "#0000"
       }
-    },
-    "hoverBackground": {
-      "type": "object",
-      "default": {
-        "color": ""
-      }
-    },
-    "positionType": {
-      "type": "string",
-      "default": ""
     },
     "size": {
       "type": "string",
@@ -128,15 +114,6 @@
     "gap": {
       "type": "string",
       "default": "14px"
-    },
-    "positionOption": {
-      "type": "object",
-      "default": {
-        "top": "",
-        "left": "",
-        "bottom": "30px",
-        "right": "0px"
-      }
     },
     "padding": {
       "type": "string",
@@ -152,16 +129,6 @@
         "radius": "50%"
       }
     },
-    "hoverIconColor": {
-      "type": "string",
-      "default": ""
-    },
-    "hoverBorder": {
-      "type": "object",
-      "default": {
-        "radius": ""
-      }
-    },
     "shadow": {
       "type": "object",
       "default": {}
@@ -169,38 +136,6 @@
     "direction": {
       "type": "string",
       "default": "row"
-    },
-    "transform": {
-      "type": "string",
-      "default": "0px"
-    },
-    "isCounter": {
-      "type": "boolean",
-      "default": false
-    },
-    "counterText": {
-      "type": "string",
-      "default": "Total Share"
-    },
-    "counterNumber": {
-      "type": "number",
-      "default": 120
-    },
-    "counterTypo": {
-      "type": "object",
-      "default": {
-        "fontSize": {
-          "desktop": 22,
-          "tablet": 18,
-          "mobile": 16
-        },
-        "fontWeight": 500,
-        "fontFamily": "ABeeZee"
-      }
-    },
-    "counterColor": {
-      "type": "string",
-      "default": "black"
     }
   },
   "supports": {

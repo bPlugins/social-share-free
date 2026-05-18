@@ -6,9 +6,11 @@ import { dashboardInfo } from './utilsData/data';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const dashboardEl = document.getElementById('bssbDashboard');
-	const info = JSON.parse(dashboardEl.dataset.info);
+	if (dashboardEl) {
+		const info = JSON.parse(dashboardEl.dataset.info);
 
-	createRoot(dashboardEl).render(<App {...dashboardInfo(info)} />);
+		createRoot(dashboardEl).render(<App {...dashboardInfo(info)} />);
 
-	dashboardEl.removeAttribute('data-info');
+		dashboardEl.removeAttribute('data-info');
+	}
 });

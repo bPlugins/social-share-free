@@ -1,9 +1,9 @@
 {
 	"name": "social-share",
-	"version": "1.0.0",
-	"description": "Example block scaffolded with Create Block tool.",
+	"version": "2.2.1",
+	"description": "Share your website/website-page link to social networks and mobile messengers",
 	"author": "The WordPress Contributors",
-	"license": "GPL-2.0-or-later",
+	"license": "GPL-3.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
 		"packages-update": "wp-scripts packages-update",

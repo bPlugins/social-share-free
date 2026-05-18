@@ -1,8 +1,13 @@
-import { getBackgroundCSS, getBorderCSS, getIconCSS, getShadowCSS, getTypoCSS } from '../../../../bpl-tools/utils/getCSS';
+import { getBackgroundCSS, getBorderCSS, getIconCSS, getShadowCSS } from '../../../../bpl-tools/utils/getCSS';
+
+const sanitizeCSSValue = (val) => {
+	if (!val) return '';
+	return String(val).replace(/[<>]/g, "").trim();
+};
 
 const Style = ({ attributes, id }) => {
 	const { socials, alignment, background, size, padding, margin, border, shadow,
-		direction = '', transform = '', hoverBorder = {}, gap = '', hoverBackground = {}, positionType, isBackend, hoverIconColor = "", counterTypo = {}, counterColor = '', positionOption = {} } = attributes;
+		direction = '', transform = '', hoverBorder = {}, gap = '', hoverBackground = {}, positionType, isBackend, hoverIconColor = "", positionOption = {} } = attributes;
 
 	const { top, bottom, left, right } = positionOption;
 
@@ -10,7 +15,6 @@ const Style = ({ attributes, id }) => {
 	const mainSl = `#${id}`;
 	const UlSl = `${mainSl} ul.bssbSocialShare`;
 	const IconSl = `${mainSl} ul.bssbSocialShare li i:hover`;
-	const counterTitle = `${mainSl} .bss-counter-title`;
 	const liSl = `${mainSl} ul.bssbSocialShare li.icon`;
 	const hoverliSl = `${mainSl} ul.bssbSocialShare li.icon:hover`;
 	const labelSl = `${mainSl} ul.bssbSocialShare li p`;
@@ -19,22 +23,18 @@ const Style = ({ attributes, id }) => {
 	return <>
 		<style dangerouslySetInnerHTML={{
 			__html: `
-			${getTypoCSS('', counterTypo)?.googleFontLink}
-			${getTypoCSS(`${counterTitle}`, counterTypo)?.styles}
 			${mainSl}{
-				text-align: ${alignment};
+				text-align: ${sanitizeCSSValue(alignment)};
 			}
 			
 			${liSl}{
-				width: calc( ${size} + ${padding} + ${padding} );
+				width: calc( ${sanitizeCSSValue(size)} + ${sanitizeCSSValue(padding)} + ${sanitizeCSSValue(padding)} );
 			}
-			${counterTitle}{
-			  color: ${counterColor};
-			}
+
 			${liSl}{
-				font-size: ${size};
+				font-size: ${sanitizeCSSValue(size)};
 				${getBackgroundCSS(background)}
-				height: calc( ${size} + ${padding} + ${padding} );
+				height: calc( ${sanitizeCSSValue(size)} + ${sanitizeCSSValue(padding)} + ${sanitizeCSSValue(padding)} );
 				${getBorderCSS(border)}
 				box-shadow: ${getShadowCSS(shadow)};
 			}
@@ -43,24 +43,24 @@ const Style = ({ attributes, id }) => {
 				${getBorderCSS(hoverBorder)}
 			}
             ${UlSl}{
-			   flex-direction: ${direction};
-			   row-gap: ${gap};
+			   flex-direction: ${sanitizeCSSValue(direction)};
+			   row-gap: ${sanitizeCSSValue(gap)};
 			}
 			${IconSl}{
-			  color: ${hoverIconColor} !important;  
+			  color: ${sanitizeCSSValue(hoverIconColor)} !important;  
 			}
 			${!isBackend ? `		
 				${UlSl}{
 			        ${positionType == 'absolute' || positionType == 'fixed' ? `
-					    position: ${positionType};
-		                top: ${top || 'auto'};
-		                left: ${left || 'auto'};
-		                right: ${right || 'auto'};
-		                bottom: ${bottom || 'auto'};
+					    position: ${sanitizeCSSValue(positionType)};
+		                top: ${sanitizeCSSValue(top || 'auto')};
+		                left: ${sanitizeCSSValue(left || 'auto')};
+		                right: ${sanitizeCSSValue(right || 'auto')};
+		                bottom: ${sanitizeCSSValue(bottom || 'auto')};
 					}
 					` :
 						`
-					position : ${positionType} ;
+					position : ${sanitizeCSSValue(positionType)} ;
 			        `}
 			       }
 					` : ``
@@ -68,20 +68,20 @@ const Style = ({ attributes, id }) => {
 				}
 			
 			${IconHoverSl}{
-			  transform: translateY(-${transform});
+			  transform: translateY(-${sanitizeCSSValue(transform)});
 			}
 			${direction == 'row' ? `
 				${liSl}{
-				  margin: 0 calc( ${margin} / 2 );
+				  margin: 0 calc( ${sanitizeCSSValue(margin)} / 2 );
 			    }
 				` : `
                 ${liSl}{
-				  margin: calc( ${margin} / 2 ) 0;
+				  margin: calc( ${sanitizeCSSValue(margin)} / 2 ) 0;
 			    }
 			`}
 			
 			${liSl} img{
-				width: ${size};
+				width: ${sanitizeCSSValue(size)};
 			}
 			`.replace(/\s+/g, ' ')
 		}} />
