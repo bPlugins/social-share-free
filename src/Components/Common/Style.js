@@ -16,7 +16,6 @@ const Style = ({ attributes, id }) => {
 
 	const { top, bottom, left, right } = positionOption;
 
-
 	const mainSl = `#${id}`;
 	const UlSl = `${mainSl} ul.bssbSocialShare`;
 	const IconSl = `${mainSl} ul.bssbSocialShare li i:hover`;

@@ -11,6 +11,7 @@ if (!class_exists('BSSB_Plugin')) {
             add_action('plugins_loaded', [$this, 'bssb_plugins_dependency']);
             add_shortcode('social-share', [$this, 'bssb_shortcode_handler']);
             add_action('save_post_social_share_cpt', [$this, 'bssb_clear_shortcode_cache'], 10, 1);
+            add_action('wp_enqueue_scripts', [$this, 'bssb_enqueue_shortcode_assets']);
         }
 
         public function bssb_load_textdomain()
@@ -77,8 +78,22 @@ if (!class_exists('BSSB_Plugin')) {
             }
         }
 
+        public function bssb_enqueue_shortcode_assets()
+        {
+            global $post;
+            if (is_a($post, 'WP_Post') && has_shortcode($post->post_content, 'social-share')) {
+                wp_enqueue_style('bssb-font-awesome');
+                wp_enqueue_style('bssb-social-share-style');
+                wp_enqueue_script('bssb-social-share-view-script');
+            }
+        }
+
         public function bssb_shortcode_handler($atts)
         {
+            wp_enqueue_style('bssb-font-awesome');
+            wp_enqueue_style('bssb-social-share-style');
+            wp_enqueue_script('bssb-social-share-view-script');
+
             $atts = shortcode_atts(
                 array(
                     'id' => '',

@@ -17,7 +17,7 @@
  
 if (!defined('ABSPATH')) {
     exit;
-} 
+}
 
 define('BSSB_PLUGIN_VERSION', '2.2.2');
 define('BSSB_DIR_PATH', plugin_dir_path(__FILE__));

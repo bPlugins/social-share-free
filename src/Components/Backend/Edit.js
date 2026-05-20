@@ -7,8 +7,6 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { withSelect } from "@wordpress/data";
 import ClipBoard from '../../shortcode/CopyShortcode';
 
-
-
 const Edit = props => {
 	const { attributes, setAttributes, clientId, isSelected, postType, postId } = props;
 	const blockProps = useBlockProps();
