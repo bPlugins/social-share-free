@@ -3,8 +3,8 @@ Contributors: bplugins, abuhayat, charlescormier , prosanta10
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, share, social share, share buttons, social sharing
 Requires at least: 6.5
-Tested up to: 6.9
-Stable tag: 2.2.1
+Tested up to: 7.0
+Stable tag: 2.2.2
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -137,16 +137,15 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 10. Gutenberg Block Settings
 
 
-== Changelog ==
+== Changelog == 
 
-= 2.2.1 - 2026-05-18 =
-* **Fix:** Removed trialware and premium feature gating to fully comply with WordPress.org guidelines.
-* **Fix:** Added public GitHub repository link to provide access to uncompiled source code.
-* **Fix:** Corrected "Requires at least" version formatting to use major version numbers.
-* **Fix:** Removed disallowed remote external script dependencies and loaded them locally.
-* **Fix:** Documented `goodshare.min.js` third-party JSONP external requests in the readme.
-* **Fix:** Added proper output escaping to shortcode callback return values for better security.
-* **Fix:** Added `ABSPATH` checks to prevent direct file access in executable PHP files.
+= 2.2.2 - 2026-05-20 =
+* Fix: Removed all premium/trialware feature gating
+* Fix: Added source code repository link in readme
+* Fix: Corrected "Requires at least" version formatting to use major version numbers
+* Fix: Removed disallowed remote external script dependencies and loaded them locally
+* Fix: Added proper output escaping to shortcode callback return values for better security
+* Fix: Added `ABSPATH` checks to prevent direct file access in executable PHP files
 
 = 2.2.0 - 2026-03-29 =
 * **Update:** Improved block sidebar user interface for better usability
@@ -211,12 +210,43 @@ To understand how the source code maps to the compiled assets, see the list belo
 
 This plugin bundles the following third-party JavaScript/PHP libraries.
 
+= YouTube =
+* **Source:** https://www.youtube.com/
+* **Purpose:** Used to display documentation and tutorial videos in the admin dashboard.
+* **Privacy:** Loading or interacting with the video player connects to YouTube servers and is subject to YouTube's privacy policy.
+
+
+= WeChat (Google APIs) =
+* **Source:** https://chart.apis.google.com/
+* **Purpose:** Generates sharing QR codes via `chart.apis.google.com` for mobile scanning when WeChat sharing is clicked.
+* **Privacy:** Subject to Google's privacy policy: https://policies.google.com/privacy.
+
+
+== Third-Party Libraries ==
+
 = Immer =
 * **Version:** 11.1.8
 * **Source:** https://immerjs.github.io/immer/
 * **GitHub:** https://github.com/immerjs/immer
 * **License:** MIT
 * **Purpose:** Used for managing immutable state in a more convenient way.
+
+= Font Awesome =
+* **Source:** https://fontawesome.com/
+* **License:** SIL OFL 1.1 (Icons) / MIT (CSS)
+* **Purpose:** Used for social icons.
+* **Note:** The Font Awesome Free webfont files are licensed under the SIL OFL 1.1, which is GPL-incompatible. They are bundled as static design assets rather than linked software. All PHP/JS code in this plugin is under GPLv3+.
+
+= react-router-dom =
+* **Source:** https://github.com/remix-run/react-router
+* **License:** MIT
+* **Purpose:** Used for managing navigation routing inside the admin dashboard.
+
+= bpl-tools =
+* Source / GitHub: https://github.com/bPlugins/bpl-tools
+* License: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
+* Purpose: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
+* External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made.
 
 = Freemius Lite SDK =
 * **Version:** 2.2.0
@@ -225,47 +255,3 @@ This plugin bundles the following third-party JavaScript/PHP libraries.
 * **License:** GPL-2.0-or-later – [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
 * **Purpose:** Provides an opt-in consent form for usage tracking and analytics to help improve the plugin. No data is sent before explicit user consent.
 * **External Services:** Communicates with `api.bplugins.com` (activation events) and `wp.freemius.com` (opt-in processing) only after user opt-in. See [bPlugins Privacy Policy](https://bplugins.com/privacy-policy) and [Freemius Privacy Policy](https://freemius.com/privacy/).
-
-= YouTube =
-* **Source:** https://www.youtube.com/
-* **Purpose:** Used to display documentation and tutorial videos in the admin dashboard.
-* **Privacy:** Loading or interacting with the video player connects to YouTube servers and is subject to YouTube's privacy policy.
-
-
-This plugin utilizes `goodshare.min.js` to provide share count functionality for certain networks. In order to fetch share counts, it makes direct JSONP requests to the following external services when those specific networks are enabled:
-
-*   **Facebook**: Fetches share counts from `graph.facebook.com`. ([Terms of Use](https://www.facebook.com/legal/terms), [Privacy Policy](https://www.facebook.com/privacy/policy/))
-*   **Tumblr**: Fetches share stats from `api.tumblr.com`. ([Terms of Use](https://www.tumblr.com/policy/terms-of-service), [Privacy Policy](https://www.tumblr.com/policy/en/privacy))
-*   **Mail.ru**: Fetches share counts from `appsmail.ru`. ([Terms of Use](https://help.mail.ru/legal/terms/mail/eng), [Privacy Policy](https://help.mail.ru/legal/terms/privacypolicy/eng))
-*   **Buffer**: Fetches share links from `api.bufferapp.com`. ([Terms of Use](https://buffer.com/legal/terms), [Privacy Policy](https://buffer.com/legal/privacy))
-*   **Pinterest**: Fetches url counts from `api.pinterest.com`. ([Terms of Use](https://policy.pinterest.com/en/terms-of-service), [Privacy Policy](https://policy.pinterest.com/en/privacy-policy))
-
-Additionally, when WeChat sharing is selected by the user, the plugin generates sharing QR codes securely using Google APIs:
-*   **WeChat (Google APIs)**: Generates sharing QR codes via `chart.apis.google.com` for mobile scanning when WeChat sharing is clicked. ([Privacy Policy](https://policies.google.com/privacy))
-
-These requests are necessary to display the share counts and sharing QR codes on the frontend. By using this plugin and enabling these networks, you acknowledge that these external requests will be made.
-
-= react-router-dom =
-* **Source:** https://github.com/remix-run/react-router
-* **Purpose:** For routing.
-
-
-
-== Third-Party Libraries ==
-
-= Font Awesome =
-* **Source:** https://fontawesome.com/
-* License: SIL OFL 1.1 (Icons) / MIT (CSS)
-* **Purpose:** Used for social icons.
-
-= Goodshare.js =
-* **Source:** https://github.com/koddr/goodshare.js
-* License: MIT
-* **Purpose:** Used for fetching share counts.
-
-= bpl-tools =
-* Source / GitHub: https://github.com/bPlugins/bpl-tools
-* License: GPL-2.0-or-later – https://www.gnu.org/licenses/gpl-2.0.html
-* Purpose: Shared utility library providing admin dashboard components and common Gutenberg editor controls.
-* External Services: The library may connect to bPlugins, WordPress.org, and Freemius services for product data and checkout functionality. See full details: https://github.com/bPlugins/bpl-tools#external-requests--why-they-are-made.
-

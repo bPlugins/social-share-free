@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) exit;
 $bssb_id = wp_unique_id('bssbSocialShare-');
-$bssb_socials = $attributes['socials'] ?? [];
+$bssb_socials = is_array($attributes['socials'] ?? null) ? $attributes['socials'] : [];
 $bssb_has_fa_icon = false;
 if (is_array($bssb_socials)) {
 	foreach ($bssb_socials as $bssb_social) {
@@ -13,14 +13,13 @@ if (is_array($bssb_socials)) {
 }
 
 if ($bssb_has_fa_icon) {
-	wp_enqueue_style('font-awesome-free');
+	wp_enqueue_style('bssb-font-awesome');
 }
 
 $bssb_frontend_keys = [
 	'align',
 	'socials',
 	'alignment',
-	'isBackend',
 	'theme',
 	'background',
 	'size',
@@ -34,13 +33,24 @@ $bssb_frontend_keys = [
 $bssb_allowed_attributes = array_intersect_key( $attributes, array_flip( $bssb_frontend_keys ) );
 ?>
 
-<div <?php echo wp_kses_data( get_block_wrapper_attributes() ); ?> id="<?php echo esc_attr( $bssb_id ); ?>" data-attributes="<?php echo esc_attr( wp_json_encode( $bssb_allowed_attributes ) ); ?>">
+<div <?php echo get_block_wrapper_attributes(); ?> id="<?php echo esc_attr( $bssb_id ); ?>" data-attributes="<?php echo esc_attr( wp_json_encode( $bssb_allowed_attributes ) ); ?>">
 	<div class="bssbStyle"></div>
 
 	<ul class="bssbSocialShare">
-		<?php foreach ($bssb_socials as $bssb_index => $bssb_social) {
+		<?php 
+		$bssb_allowed_networks = [
+			'facebook', 'twitter', 'linkedin', 'pinterest', 'blogger', 'wordpress', 'copy',
+			'tumblr', 'reddit', 'digg', 'livejournal', 'evernote', 'flipboard', 'mix',
+			'pocket', 'buffer', 'instapaper', 'meneame', 'baidu', 'weibo', 'xing', 'renren',
+			'vkontakte', 'odnoklassniki', 'moimir', 'surfingbird', 'liveinternet',
+			'sms', 'skype', 'telegram', 'viber', 'whatsapp', 'wechat', 'line'
+		];
+		foreach ($bssb_socials as $bssb_index => $bssb_social) {
 
 			$bssb_network = $bssb_social['network'] ?? '';
+			if (!in_array($bssb_network, $bssb_allowed_networks, true)) {
+				continue;
+			}
 			$bssb_isUpIcon = $bssb_social['isUpIcon'] ?? false;
 			$bssb_upIcon = $bssb_social['upIcon'] ?? [];
 			$bssb_icon = $bssb_social['icon'] ?? [];

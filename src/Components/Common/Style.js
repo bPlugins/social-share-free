@@ -2,7 +2,12 @@ import { getBackgroundCSS, getBorderCSS, getIconCSS, getShadowCSS } from '../../
 
 const sanitizeCSSValue = (val) => {
 	if (!val) return '';
-	return String(val).replace(/[<>]/g, "").trim();
+	const str = String(val);
+	const regex = new RegExp('^[\\w\\s%.,#()\\-+/]+$');
+	if (regex.test(str)) {
+		return str;
+	}
+	return '';
 };
 
 const Style = ({ attributes, id }) => {

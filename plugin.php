@@ -3,15 +3,15 @@
  * Plugin Name: Social Share Block – Social Sharing Buttons for Posts and Pages
  * Plugin URI: https://bplugins.com/products/b-social-share
  * Description: Share your website/website-page link to social networks and mobile messengers
- * Version: 2.2.1
+ * Version: 2.2.2
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3 or later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
- * Text Domain: social-share
- * Domain Path:  /languages
+ * Text Domain: b-social-share
+ * Domain Path: /languages
  * Requires at least: 6.5
- * Tested up to: 6.9
+ * Tested up to: 7.0
  * Requires PHP: 7.4
  */ 
  
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
     exit;
 } 
 
-define('BSSB_PLUGIN_VERSION', (defined('WP_DEBUG') && WP_DEBUG) ? (string) time() : '2.2.1');
+define('BSSB_PLUGIN_VERSION', '2.2.2');
 define('BSSB_DIR_PATH', plugin_dir_path(__FILE__));
 define('BSSB_DIR_URL', plugin_dir_url(__FILE__)); 
 
@@ -59,15 +59,17 @@ if (function_exists('bssb_fs')) {
 }
 
 require_once BSSB_DIR_PATH . 'inc/class_bssPlugin.php';
-new BSSB_Plugin(); 
 
-register_activation_hook(__FILE__, 'bssb_plugin_activation');
-register_deactivation_hook(__FILE__, 'bssb_plugin_deactivation');
+register_activation_hook(__FILE__, 'bssb_activate');
+register_deactivation_hook(__FILE__, 'bssb_deactivate');
 
-function bssb_plugin_activation() {
+function bssb_activate() {
+    BSSB_Plugin::bssb_social_share_block_post_type();
     flush_rewrite_rules();
 }
 
-function bssb_plugin_deactivation() {
+function bssb_deactivate() {
     flush_rewrite_rules();
-} 
+}
+
+new BSSB_Plugin();

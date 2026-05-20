@@ -7,20 +7,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	const socialShareEls = document.querySelectorAll('.wp-block-bssb-social-share');
 
 	socialShareEls.forEach(socialShareEl => {
-		const attributes = JSON.parse(socialShareEl.dataset.attributes);
+		try {
+			const attributes = JSON.parse(socialShareEl.dataset.attributes);
 
-		const bssbStyle = socialShareEl.querySelector(`.bssbStyle`);
+			const bssbStyle = socialShareEl.querySelector(`.bssbStyle`);
 
-		createRoot(bssbStyle).render(
-			<>
-				<Style
-					attributes={{ ...attributes, isBackend: false }}
-					id={socialShareEl.id}
-				/>
+			createRoot(bssbStyle).render(
+				<>
+					<Style
+						attributes={{ ...attributes, isBackend: false }}
+						id={socialShareEl.id}
+					/>
 
-			</>
-		);
-		socialShareEl.removeAttribute('data-attributes');
+				</>
+			);
+		} catch (error) {
+			console.error('Error hydrating B Social Share block:', error);
+		} finally {
+			socialShareEl.removeAttribute('data-attributes');
+		}
 	});
 
 	// Modern Toast Notification for premium user feedback
@@ -86,23 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
 					showToast('Link copied to clipboard!');
 				}).catch(err => {
 					console.error('Could not copy link: ', err);
+					showToast('Failed to copy link. Please copy it manually.');
 				});
 			} else {
-				// Fallback for non-secure HTTP or older browsers
-				try {
-					const textarea = document.createElement("textarea");
-					textarea.value = window.location.href;
-					textarea.style.position = "fixed";
-					textarea.style.opacity = "0";
-					document.body.appendChild(textarea);
-					textarea.focus();
-					textarea.select();
-					document.execCommand("copy");
-					document.body.removeChild(textarea);
-					showToast('Link copied to clipboard!');
-				} catch (err) {
-					console.error('Copy fallback failed: ', err);
-				}
+				showToast('Clipboard API not supported. Please copy the URL manually.');
 			}
 			return;
 		}

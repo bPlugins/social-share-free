@@ -16,7 +16,6 @@ $bssb_posts = get_posts( [
 	'post_status'      => 'any',
 	'numberposts'      => -1,
 	'fields'           => 'ids',
-	'suppress_filters' => false,
 ] );
 
 if ( ! empty( $bssb_posts ) ) {
@@ -24,3 +23,13 @@ if ( ! empty( $bssb_posts ) ) {
 		wp_delete_post( $bssb_post_id, true );
 	}
 }
+
+// Clean up plugin options
+delete_option('fs_lite_accounts');
+delete_option('fs_lite_unique_id');
+delete_option('b-social-share-opt_in');
+delete_option('b-social-share-marketing-allowed');
+delete_option('b-social-share-redirect');
+delete_option('b-social-share_opt_in');
+delete_option('b-social-share_marketing-allowed');
+delete_option('b-social-share_redirect');

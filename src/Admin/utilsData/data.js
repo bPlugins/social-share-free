@@ -34,14 +34,14 @@ export const dashboardInfo = (info) => {
         licenseActiveNonce,
         changelogs: [
             {
-                version: "2.2.1 – 13 May 26",
-                list: ["Removed trialware and premium feature gating to fully comply with WordPress.org guidelines.",
-                    "Added public GitHub repository link to provide access to uncompiled source code.",
-                    "Corrected \"Requires at least\" version formatting to use major version numbers.",
-                    "Removed disallowed remote external script dependencies and loaded them locally.",
-                    "Documented `goodshare.min.js` third-party JSONP external requests in the readme.",
-                    "Added proper output escaping to shortcode callback return values for better security.",
-                    "Added `ABSPATH` checks to prevent direct file access in executable PHP files."],
+                version: "2.2.2 – 20 May 26",
+                list: ["Removed all premium/trialware feature gating",
+                "Added source code repository link in readme",
+                "Corrected \"Requires at least\" version formatting to use major version numbers.",
+                "Removed disallowed remote external script dependencies and loaded them locally.",
+                "Documented `goodshare.min.js` third-party JSONP external requests in the readme.",
+                "Added proper output escaping to shortcode callback return values for better security.",
+                "Added `ABSPATH` checks to prevent direct file access in executable PHP files."],
             },
             {
                 version: "2.2.0 – 29 Mar 26",

@@ -8,22 +8,15 @@ const ClipBoard = ({ shortcode }) => {
     const handleCopy = async () => {
         try {
             if (navigator.clipboard && navigator.clipboard.writeText) {
-                await navigator.clipboard?.writeText(shortcode);
+                await navigator.clipboard.writeText(shortcode);
+                setHasCopied(true);
+                setTimeout(() => setHasCopied(false), 2000);
             } else {
-                // fallback
-                const textarea = document.createElement("textarea");
-                textarea.value = shortcode;
-                textarea.style.position = "fixed";
-                document.body.appendChild(textarea);
-                textarea.focus();
-                textarea.select();
-                document.execCommand("copy");
-                document.body.removeChild(textarea);
+                alert(__('Clipboard API is not supported in this browser. Please copy the shortcode manually.', 'b-social-share'));
             }
-            setHasCopied(true);
-            setTimeout(() => setHasCopied(false), 2000);
         } catch (err) {
-            console.log("Failed to copy:", err);
+            console.error("Failed to copy:", err);
+            alert(__('Failed to copy shortcode automatically. Please copy it manually.', 'b-social-share'));
         }
     };
 

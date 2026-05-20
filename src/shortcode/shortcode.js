@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				if (navigator.clipboard && navigator.clipboard.writeText) {
 					navigator.clipboard.writeText(textToCopy).then(() => {
-						tooltip.innerHTML = wp.i18n.__('Copied Successfully!', 'b-social-share');
+						tooltip.textContent = wp.i18n.__('Copied Successfully!', 'b-social-share');
 						setTimeout(() => {
-							tooltip.innerHTML = wp.i18n.__('Copy to Clipboard', 'b-social-share');
+							tooltip.textContent = wp.i18n.__('Copy to Clipboard', 'b-social-share');
 						}, 1500);
 					}).catch(err => {
 						console.error('Failed to copy shortcode: ', err);
@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					try {
 						input.setSelectionRange(0, 99999);
 						document.execCommand('copy');
-						tooltip.innerHTML = wp.i18n.__('Copied Successfully!', 'b-social-share');
+						tooltip.textContent = wp.i18n.__('Copied Successfully!', 'b-social-share');
 						setTimeout(() => {
-							tooltip.innerHTML = wp.i18n.__('Copy to Clipboard', 'b-social-share');
+							tooltip.textContent = wp.i18n.__('Copy to Clipboard', 'b-social-share');
 						}, 1500);
 					} catch (err) {
 						console.error('Legacy fallback copy failed: ', err);

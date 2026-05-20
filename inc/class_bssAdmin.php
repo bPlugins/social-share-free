@@ -5,56 +5,17 @@ if (!class_exists('BSSB_Admin')) {
     {
         public function __construct()
         {
-            add_action('init', [$this, 'bssb_social_share_block_post_type']);
             add_action('admin_menu', [$this, 'bssb_social_share_sub_menu']);
             add_filter('manage_social_share_cpt_posts_columns', [$this, 'bssb_set_custom_column_edit']);
             add_action('manage_social_share_cpt_posts_custom_column', [$this, 'bssb_manage_custom_column'], 10, 2);
-        }
-
-        /**
-         * Registers the custom post type for social share templates.
-         *
-         * Note: 'template_lock' => 'all' is combined with 'show_in_rest' => true
-         * to enable layout composition and lock down template structure in the
-         * Gutenberg block editor, while 'publicly_queryable' => false restricts 
-         * public frontend single page queries.
-         */
-        public function bssb_social_share_block_post_type(){
-            register_post_type('social_share_cpt', [
-                'label' => __('B Social Share', 'social-share'),
-                'description' => __('This is a Social Share and SEO-friendly card', 'social-share'),
-                'labels' => [
-                    'name' => __('B Social Share', 'social-share'),
-                    'singular_name' => __('Social Share', 'social-share'),
-                    'add_new' => __('Add New', 'social-share'),
-                    'add_new_item' => __('Add New Social Share', 'social-share'),
-                    'edit_item' => __('Edit Social Share', 'social-share'),
-                    'new_item' => __('New Social Share', 'social-share'),
-                    'view_item' => __('View Social Share', 'social-share'),
-                    'search_items' => __('Search Social Share', 'social-share'),
-                    'not_found' => __('Sorry, we couldn\'t find the ShortCode you are looking for.', 'social-share')
-                ],
-                'public' => false,
-                'publicly_queryable' => false,
-                'show_ui' => true,
-                'capability_type' => 'post',
-                'map_meta_cap' => true,
-                'show_in_rest' => true,
-                'rest_base' => 'social_share_cpt',
-                'rest_namespace' => 'bssb/v1',
-                'menu_position' => 20,
-                'menu_icon' => 'dashicons-share',
-                'template' => [['bssb/social-share']],
-                'template_lock' => 'all',
-
-            ]);
+            add_action('admin_enqueue_scripts', [$this, 'bssb_admin_enqueue_scripts']);
         }
         public function bssb_social_share_sub_menu(){
             add_submenu_page(
                 'edit.php?post_type=social_share_cpt',
-                __('Demo & Help', 'social-share'),
-                __('Demo & Help', 'social-share'),
-                'edit_posts', 
+                __('Demo & Help', 'b-social-share'),
+                __('Demo & Help', 'b-social-share'),
+                'manage_options', 
                 'social_share_Dashboard',
                 [$this, 'bssb_social_share_Dashboard_page']
             );
@@ -68,31 +29,56 @@ if (!class_exists('BSSB_Admin')) {
             ])); ?>">
                 <noscript>
                     <div class="notice notice-error">
-                        <p><?php esc_html_e('JavaScript is required to load the B Social Share Dashboard.', 'social-share'); ?></p>
+                        <p><?php esc_html_e('JavaScript is required to load the B Social Share Dashboard.', 'b-social-share'); ?></p>
                     </div>
                 </noscript>
-                <p class="bssb-loading-placeholder"><?php esc_html_e('Loading Dashboard...', 'social-share'); ?></p>
+                <p class="bssb-loading-placeholder"><?php esc_html_e('Loading Dashboard...', 'b-social-share'); ?></p>
             </div>
             <?php
         }
 
         public function bssb_set_custom_column_edit($column) {
             unset($column['date']);
-            $column['shortcode'] = __('Shortcode', 'social-share');
-            $column['date'] = __('Date', 'social-share');
+            $column['shortcode'] = __('Shortcode', 'b-social-share');
+            $column['date'] = __('Date', 'b-social-share');
             return $column;
         }
         public function bssb_manage_custom_column($column_name, $post_id) {
-            if ($column_name == 'shortcode') {
+            if ( $column_name === 'shortcode' ) {
                 printf(
                     '<div class="bssbAdminShortcode" id="bssbAdminShortcode-%1$s">
                         <input value="[social-share id=%1$s]" readonly>
                         <span class="tooltip">%2$s</span>
                     </div>',
                     esc_attr($post_id),
-                    esc_html__('Copy to Clipboard', 'social-share')
+                    esc_html__('Copy to Clipboard', 'b-social-share')
                 );
             } 
+        }
+
+        public function bssb_admin_enqueue_scripts()
+        {
+            $screen = get_current_screen();
+
+            if ($screen && 'social_share_cpt' === $screen->post_type && in_array($screen->base, ['post', 'edit'], true)) {
+                wp_enqueue_script('bssb-shortcode-js', BSSB_DIR_URL . 'build/shortcode.js', ['wp-i18n'], BSSB_PLUGIN_VERSION, true);
+                wp_enqueue_style('bssb-shortcode-css', BSSB_DIR_URL . 'build/shortcode.css', [], BSSB_PLUGIN_VERSION);
+                wp_set_script_translations('bssb-shortcode-js', 'b-social-share', BSSB_DIR_PATH . 'languages');
+            }
+
+            if ($screen && $screen->id === 'social_share_cpt_page_social_share_Dashboard') {
+                $asset_file = BSSB_DIR_PATH . 'build/admin-dashboard.asset.php';
+                $dependencies = ['wp-util'];
+                if (file_exists($asset_file)) {
+                    $asset = include $asset_file;
+                    if (is_array($asset) && isset($asset['dependencies'])) {
+                        $dependencies = array_merge($asset['dependencies'], $dependencies);
+                    }
+                }
+                wp_enqueue_script('bssb-admin-script', BSSB_DIR_URL . 'build/admin-dashboard.js', $dependencies, BSSB_PLUGIN_VERSION, true);
+                wp_enqueue_style('bssb-admin-style', BSSB_DIR_URL . 'build/admin-dashboard.css', false, BSSB_PLUGIN_VERSION);
+                wp_set_script_translations('bssb-admin-script', 'b-social-share', BSSB_DIR_PATH . 'languages');
+            }
         }
     }
 }
