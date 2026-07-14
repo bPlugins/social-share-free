@@ -1,8 +1,10 @@
+import { elementorTabIcon, gutenbergTabIcon, shortcodeTabIcon } from './icons';
+import { dashboardThumbnail } from './thumbnailSvg';
+
 const slug = "b-social-share";
 
 export const dashboardInfo = (info) => {
-    const { version, licenseActiveNonce } = info;
-
+    const { version, isPremium, adminUrl = '', licenseActiveNonce } = info;
 
     return {
         name: `B Social Share`,
@@ -11,19 +13,17 @@ export const dashboardInfo = (info) => {
             "B Social Share is a lightweight and easy-to-use WordPress plugin that allows visitors to share your website pages or posts across popular social networks and messaging platforms. It helps increase your content reach and engagement by making social sharing simple and accessible for users.",
         slug,
         version,
+        isPremium,
+        adminUrl,
         displayOurPlugins: true,
         media: {
             logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
             banner: `https://ps.w.org/${slug}/assets/banner-772x250.png?rev=3401547`,
-            thumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}.png`,
-            // proThumbnail: `https://bplugins.com/wp-content/themes/b-technologies/assets/images/products/${slug}-pro.png`,
-            // video: 'https://www.youtube.com/watch?v=milYZrqLJsE',
-            // isYoutube: true
+            thumbnail: `data:image/svg+xml;utf8,${encodeURIComponent(dashboardThumbnail)}`,
         },
         pages: {
             org: `https://wordpress.org/plugins/${slug}/`,
             landing: `https://bplugins.com/products/${slug}/`,
-            // docs: `https://bplugins.com/docs/${slug}/`,
             pricing: `https://bplugins.com/products/${slug}/pricing/`,
         },
         freemius: {
@@ -32,71 +32,171 @@ export const dashboardInfo = (info) => {
             public_key: "pk_d6bd48e230834275b20b6a3ee1a68",
         },
         licenseActiveNonce,
-        changelogs: [
-            {
-                version: "2.2.2 – 20 May 26",
-                list: ["Removed all premium/trialware feature gating",
-                "Added source code repository link in readme",
-                "Corrected \"Requires at least\" version formatting to use major version numbers.",
-                "Removed disallowed remote external script dependencies and loaded them locally.",
-                "Documented `goodshare.min.js` third-party JSONP external requests in the readme.",
-                "Added proper output escaping to shortcode callback return values for better security.",
-                "Added `ABSPATH` checks to prevent direct file access in executable PHP files."],
-            },
-            {
-                version: "2.2.0 – 29 Mar 26",
-                list: ["Improved block sidebar layout and user experience", "Added new styling customization options"],
-            },
-            {
-                version: "2.0.1 – 02 Mar 26",
-                list: ["Add New Dashboard."],
-            },
-            {
-                version: "2.0.0 – 5 Feb 26",
-                list: ["Updated with new a lot features and major updates of the plugin.",],
-            },
-            {
-                version: "1.0.6 – 4 Aug 24",
-                list: ["Add translate feature."],
-            },
-            {
-                version: "1.0.5",
-                list: ["Add translate feature."],
-            },
-            {
-                version: "1.0.4",
-                list: ["Social Item Overflow fix."],
-            },
-            {
-                version: "1.0.3",
-                list: ["Reduce PHP Code", "Performance improvement."],
-            },
-            {
-                version: "1.0.2",
-                list: ["Reduce PHP Code."],
-            },
-            {
-                version: "1.0.1",
-                list: ["Performance improvement."],
-            },
-            {
-                version: "1.0.0",
-                list: ["Initial Release"],
-            },
-        ],
-        proFeatures: [
-            'Premium Share Theme : Animation icon, Button with text.',
-            'Hover Transform Animation',
-            'Shortcode support to display posts anywhere.',
-            'Absolute / Fixed Position Option',
-            'Color, icon, spacing & typography controls.'
-        ],
         startButton: {
             label: "Start Now",
-            url: `wp-admin/post-new.php?post_type=social_share_cpt`,
+            url: `${adminUrl}post-new.php?post_type=social_share_cpt`,
         },
-    }
-}
+    };
+};
+
+export const welcomeInfo = (adminUrl) => ({
+    keywords: ['Social Share', 'Sharing Buttons', 'Facebook Share', 'WhatsApp Share'],
+    keywordsLabel: 'Networks',
+    gettingStarted: {
+        tabs: [
+            {
+                key: 'gutenberg',
+                label: 'Gutenberg',
+                icon: gutenbergTabIcon,
+                steps: [
+                    {
+                        num: 1,
+                        title: 'Add the Social Share Block',
+                        body: 'Open the block editor on any page/post. Click <strong>+</strong> or type <strong>/Social Share</strong>.',
+                        link: { url: `${adminUrl}post-new.php`, label: 'Open Editor' }
+                    },
+                    { num: 2, title: 'Choose networks & theme', body: 'Select social networks, messenger platforms, and choose a theme.' },
+                    { num: 3, title: 'Customize style', body: 'Configure alignment, size, gap, margins, border radius, and animations.' },
+                    { num: 4, title: 'Publish', body: 'Hit Publish / Update to see the live sharing buttons on your site.' }
+                ]
+            },
+            {
+                key: 'shortcode',
+                label: 'Shortcode',
+                icon: shortcodeTabIcon,
+                steps: [
+                    {
+                        num: 1,
+                        title: 'Create sharing config',
+                        body: 'Go to B Social Share CPT page and add a new sharing button configuration.',
+                        link: { url: `${adminUrl}post-new.php?post_type=social_share_cpt`, label: 'Create New' }
+                    },
+                    { num: 2, title: 'Copy shortcode', body: 'Copy the shortcode generated for your layout (e.g., <code>[social-share id="123"]</code>) from the list table.', link: { url: `${adminUrl}edit.php?post_type=social_share_cpt`, label: 'All Layouts' } },
+                    { num: 3, title: 'Paste anywhere', body: 'Paste the shortcode into any post, page, widget, or page builder.' }
+                ]
+            },
+            {
+                key: 'elementor',
+                label: 'Elementor',
+                icon: elementorTabIcon,
+                steps: [
+                    {
+                        num: 1,
+                        title: 'Copy Shortcode',
+                        body: 'Create and configure your social share, then copy the shortcode <code>[social-share id=POST_ID]</code> from the list.'
+                    },
+                    {
+                        num: 2,
+                        title: 'Open Elementor',
+                        body: 'Open any page or post with the Elementor Editor.'
+                    },
+                    {
+                        num: 3,
+                        title: 'Add Shortcode Widget',
+                        body: 'Search for the <strong>Shortcode</strong> widget in the Elementor panel and drag it to your section.'
+                    },
+                    {
+                        num: 4,
+                        title: 'Paste and Save',
+                        body: 'Paste your timeline shortcode into the widget settings and save the page.'
+                    }
+                ]
+            }
+        ]
+    },
+    changelogs: [
+        {
+            version: "2.2.3 - 14 July 26",
+            list: [
+                "<strong>Update:</strong> Improved Admin Dashboard.",
+                "<strong>Fix:</strong> style and assets loading performance issue."
+            ]
+        },
+        {
+            version: "2.2.2 – 20 May 26",
+            list: [
+                "<strong>Remove:</strong> Removed all premium/trialware feature gating",
+                "<strong>New:</strong> Added source code repository link in readme",
+                "<strong>Fix:</strong> Corrected \"Requires at least\" version formatting to use major version numbers.",
+                "<strong>Fix:</strong> Removed disallowed remote external script dependencies and loaded them locally.",
+                "<strong>Update:</strong> Documented `goodshare.min.js` third-party JSONP external requests in the readme.",
+                "<strong>Fix:</strong> Added proper output escaping to shortcode callback return values for better security.",
+                "<strong>Fix:</strong> Added `ABSPATH` checks to prevent direct file access in executable PHP files."
+            ],
+        },
+        {
+            version: "2.2.0 – 29 Mar 26",
+            list: [
+                "<strong>Improvement:</strong> Improved block sidebar layout and user experience",
+                "<strong>New:</strong> Added new styling customization options"
+            ],
+        },
+        {
+            version: "2.0.1 – 02 Mar 26",
+            list: [
+                "<strong>New:</strong> Add New Dashboard."
+            ],
+        },
+        {
+            version: "2.0.0 – 5 Feb 26",
+            list: [
+                "<strong>Update:</strong> Updated with new a lot features and major updates of the plugin."
+            ],
+        },
+        {
+            version: "1.0.6 – 4 Aug 24",
+            list: [
+                "<strong>New:</strong> Add translate feature."
+            ],
+        },
+        {
+            version: "1.0.5",
+            list: [
+                "<strong>New:</strong> Add translate feature."
+            ],
+        },
+        {
+            version: "1.0.4",
+            list: [
+                "<strong>Fix:</strong> Social Item Overflow fix."
+            ],
+        },
+        {
+            version: "1.0.3",
+            list: [
+                "<strong>Improvement:</strong> Reduce PHP Code",
+                "<strong>Improvement:</strong> Performance improvement."
+            ],
+        },
+        {
+            version: "1.0.2",
+            list: [
+                "<strong>Improvement:</strong> Reduce PHP Code."
+            ],
+        },
+        {
+            version: "1.0.1",
+            list: [
+                "<strong>Improvement:</strong> Performance improvement."
+            ],
+        },
+        {
+            version: "1.0.0",
+            list: [
+                "<strong>New:</strong> Initial Release"
+            ],
+        },
+    ],
+    changelogsLimit: 5,
+    changelogsReadMoreLabel: 'View More Changelogs',
+    proFeatures: [
+        'Premium Share Theme: Animation icon, Button with text.',
+        'Hover Transform Animation.',
+        'Shortcode support to display posts anywhere.',
+        'Absolute / Fixed Position Option.',
+        'Color, icon, spacing & typography controls.'
+    ],
+});
 
 export const demoInfo = {
     allInOneLabel: 'See All Demos',
@@ -145,10 +245,10 @@ export const demoInfo = {
             url: 'https://bblockswp.com/demo/social-share-all-demo/'
         }
     ]
-}
+};
 
 export const pricingInfo = {
-    logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`, // Optional
+    logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
     pluginId: 20173,
     planId: 33459,
     licenses: [
@@ -160,7 +260,6 @@ export const pricingInfo = {
         label: 'Buy Now ➜'
     },
     featured: {
-        selected: 3, // choose from licenses item
+        selected: 3,
     }
-}
-
+};

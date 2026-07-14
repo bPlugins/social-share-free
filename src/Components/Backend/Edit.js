@@ -6,10 +6,13 @@ import SocialShare from './SocialShare';
 import { useBlockProps } from '@wordpress/block-editor';
 import { withSelect } from "@wordpress/data";
 import ClipBoard from '../../shortcode/CopyShortcode';
+import useIframeAssetSync from '../../utils/useIframeAssetSync';
 
 const Edit = props => {
 	const { attributes, setAttributes, clientId, isSelected, postType, postId } = props;
 	const blockProps = useBlockProps();
+
+	useIframeAssetSync(['bssb']);
 
 	useEffect(() => tabController(), [isSelected]);
 

@@ -5,33 +5,34 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import Welcome from "../../../../bpl-tools/Admin/Welcome";
 import Demos from "../../../../bpl-tools/Admin/Demos";
 import Pricing from "../../../../bpl-tools/Admin/Pricing";
 import FeatureCompare from "../../../../bpl-tools/Admin/FeatureCompare";
 import OurPlugins from "../../../../bpl-tools/Admin/OurPlugins";
 
 import Layout from "./Layout";
-import Welcome from "./Welcome";
-import { demoInfo, pricingInfo } from '../utilsData/data';
+import { demoInfo, pricingInfo, welcomeInfo } from '../utilsData/data';
 
 const App = (props) => {
+  const { isPremium, adminUrl } = props;
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Layout {...props} />}>
-          <Route index element={<Welcome {...props} />} />
-          <Route path="welcome" element={<Welcome {...props} />} />
+          <Route index element={<Welcome {...props} {...welcomeInfo(adminUrl)} />} />
+          <Route path="welcome" element={<Welcome {...props} {...welcomeInfo(adminUrl)} />} />
           <Route
             path="demos"
-            element={<Demos demoInfo={demoInfo} {...props} />}
+            element={<Demos {...props} demoInfo={demoInfo} />}
           />
-          <Route
+          {!isPremium && <Route
             path="pricing"
             element={
               <Pricing pricingInfo={pricingInfo} options={{}} {...props} />
             }
-          />
+          />}
           <Route
             path="feature-comparison"
             element={<FeatureCompare plans={["free", "pro"]} {...props} />}

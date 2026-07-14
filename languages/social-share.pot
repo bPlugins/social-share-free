@@ -1,0 +1,206 @@
+# Copyright (C) 2026 bPlugins
+# This file is distributed under the GPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Social Share Block – Social Sharing Buttons for Posts and Pages 2.2.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/b-social-share\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-14T08:33:53+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: b-social-share\n"
+
+#. Plugin Name of the plugin
+#: plugin.php
+msgid "Social Share Block – Social Sharing Buttons for Posts and Pages"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: plugin.php
+msgid "https://bplugins.com/products/b-social-share"
+msgstr ""
+
+#. Description of the plugin
+#: plugin.php
+msgid "Share your website/website-page link to social networks and mobile messengers"
+msgstr ""
+
+#. Author of the plugin
+#: plugin.php
+msgid "bPlugins"
+msgstr ""
+
+#. Author URI of the plugin
+#: plugin.php
+msgid "https://bplugins.com"
+msgstr ""
+
+#: inc/class_bssAdmin.php:18
+#: inc/class_bssAdmin.php:19
+msgid "Demo & Help"
+msgstr ""
+
+#: inc/class_bssAdmin.php:39
+msgid "JavaScript is required to load the B Social Share Dashboard."
+msgstr ""
+
+#: inc/class_bssAdmin.php:43
+msgid "Loading Dashboard..."
+msgstr ""
+
+#: inc/class_bssAdmin.php:51
+msgid "Shortcode"
+msgstr ""
+
+#: inc/class_bssAdmin.php:52
+msgid "Date"
+msgstr ""
+
+#: inc/class_bssAdmin.php:64
+#: build/shortcode.js:1
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: inc/class_bssPlugin.php:29
+#: inc/class_bssPlugin.php:32
+#: inc/class_bssPlugin.php:34
+msgid "B Social Share"
+msgstr ""
+
+#: inc/class_bssPlugin.php:30
+msgid "This is a Social Share and SEO-friendly card"
+msgstr ""
+
+#: inc/class_bssPlugin.php:33
+msgid "Social Share"
+msgstr ""
+
+#: inc/class_bssPlugin.php:35
+msgid "All Social Shares"
+msgstr ""
+
+#: inc/class_bssPlugin.php:36
+msgid "Add New"
+msgstr ""
+
+#: inc/class_bssPlugin.php:37
+msgid "Add New Social Share"
+msgstr ""
+
+#: inc/class_bssPlugin.php:38
+msgid "Edit Social Share"
+msgstr ""
+
+#: inc/class_bssPlugin.php:39
+msgid "New Social Share"
+msgstr ""
+
+#: inc/class_bssPlugin.php:40
+msgid "View Social Share"
+msgstr ""
+
+#: inc/class_bssPlugin.php:41
+msgid "View Social Shares"
+msgstr ""
+
+#: inc/class_bssPlugin.php:42
+msgid "Search Social Share"
+msgstr ""
+
+#: inc/class_bssPlugin.php:43
+msgid "Sorry, we couldn't find the ShortCode you are looking for."
+msgstr ""
+
+#: inc/class_bssPlugin.php:44
+msgid "Parent Social Share"
+msgstr ""
+
+#: inc/class_bssPlugin.php:45
+msgid "Parent Social Share:"
+msgstr ""
+
+#: inc/class_bssPlugin.php:46
+msgid "Update Social Share"
+msgstr ""
+
+#: inc/class_bssPlugin.php:107
+msgid "Please provide a valid numeric ID."
+msgstr ""
+
+#: inc/class_bssPlugin.php:133
+#, php-format
+msgid "Error: Social Share block with ID %d not found."
+msgstr ""
+
+#: build/shortcode.js:1
+msgid "Copied Successfully!"
+msgstr ""
+
+#: build/block.json
+msgctxt "block title"
+msgid "Social Share"
+msgstr ""
+
+#: build/block.json
+msgctxt "block description"
+msgid "Share your website/website-page link."
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "share"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "social share"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "page share"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "share buttons"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "social media share"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "share block"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "social sharing"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "wordpress share"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "share icons"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "share plugin"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "social buttons"
+msgstr ""
