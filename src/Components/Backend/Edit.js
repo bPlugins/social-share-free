@@ -5,8 +5,8 @@ import Style from '../Common/Style';
 import SocialShare from './SocialShare';
 import { useBlockProps } from '@wordpress/block-editor';
 import { withSelect } from "@wordpress/data";
-import ClipBoard from '../../shortcode/CopyShortcode';
 import useIframeAssetSync from '../../utils/useIframeAssetSync';
+import FrontShortCode from '../../shortcode/FrontShortCode';
 
 const Edit = props => {
 	const { attributes, setAttributes, clientId, isSelected, postType, postId } = props;
@@ -27,7 +27,7 @@ const Edit = props => {
 			<Style attributes={{ ...attributes, isBackend: true }} id={id} />
 			<div>
 				{postType == "social_share_cpt" && (
-					<ClipBoard shortcode={`[social-share id=${postId}]`} />
+					<FrontShortCode shortCode={`[social-share id=${postId}]`} />
 				)}
 			</div>
 			<SocialShare attributes={attributes} isBackend={true} custom={{ activeIndex, setActiveIndex }} />

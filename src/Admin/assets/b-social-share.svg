@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400" font-family="system-ui, 'Segoe UI', Roboto, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7C6BFF"/>
+      <stop offset="0.55" stop-color="#5A46E0"/>
+      <stop offset="1" stop-color="#3F2FB8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.15" r="0.7">
+      <stop offset="0" stop-color="#A99CFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#A99CFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF7AC6"/>
+      <stop offset="1" stop-color="#8E7BFF"/>
+    </linearGradient>
+    <linearGradient id="win" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241C57"/>
+      <stop offset="1" stop-color="#1A1440"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect width="600" height="400" fill="url(#glow)"/>
+
+  <!-- ===================== LEFT COLUMN ===================== -->
+
+  <!-- Badge -->
+  <g>
+    <rect x="34" y="34" width="176" height="26" rx="13" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-opacity="0.28"/>
+    <circle cx="52" cy="47" r="4" fill="#FF7AC6"/>
+    <text x="66" y="51" fill="#EDEAFF" font-size="11.5" font-weight="700" letter-spacing="1.2">SOCIAL SHARE BLOCK</text>
+  </g>
+
+  <!-- Title -->
+  <text x="33" y="106" fill="#ffffff" font-size="40" font-weight="800" letter-spacing="-0.5">B Social Share</text>
+
+  <!-- Subtitle -->
+  <text x="34" y="130" fill="#CFC7FF" font-size="12.5" font-weight="500">Lightweight · Responsive · Gutenberg-Native</text>
+
+  <!-- Accent bar -->
+  <rect x="34" y="140" width="92" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Feature chips -->
+  <g font-size="11.5" font-weight="600" fill="#F3F1FF">
+    <!-- row 1 -->
+    <g>
+      <rect x="34" y="160" width="128" height="30" rx="8" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.16"/>
+      <rect x="46" y="169" width="12" height="12" rx="3" fill="#8E7BFF"/>
+      <text x="66" y="179">Gutenberg Block</text>
+    </g>
+    <g>
+      <rect x="170" y="160" width="128" height="30" rx="8" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.16"/>
+      <rect x="182" y="169" width="12" height="12" rx="3" fill="#FF7AC6"/>
+      <text x="202" y="179">Shortcode</text>
+    </g>
+    <!-- row 2 -->
+    <g>
+      <rect x="34" y="198" width="128" height="30" rx="8" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.16"/>
+      <rect x="46" y="207" width="12" height="12" rx="3" fill="#4DD4FF"/>
+      <text x="66" y="217">30+ Networks</text>
+    </g>
+    <g>
+      <rect x="170" y="198" width="128" height="30" rx="8" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.16"/>
+      <rect x="182" y="207" width="12" height="12" rx="3" fill="#FFC24D"/>
+      <text x="202" y="217">6 Share Themes</text>
+    </g>
+    <!-- row 3 -->
+    <g>
+      <rect x="34" y="236" width="128" height="30" rx="8" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.16"/>
+      <rect x="46" y="245" width="12" height="12" rx="3" fill="#5CE0A8"/>
+      <text x="66" y="255">Row / Column</text>
+    </g>
+    <g>
+      <rect x="170" y="236" width="128" height="30" rx="8" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.16"/>
+      <rect x="182" y="245" width="12" height="12" rx="3" fill="#FF9E7A"/>
+      <text x="202" y="255">Style Controls</text>
+    </g>
+  </g>
+
+  <!-- Stats -->
+  <g>
+    <text x="34" y="300" fill="#ffffff" font-size="24" font-weight="800">6</text>
+    <text x="34" y="316" fill="#BDB4FF" font-size="10" font-weight="600">Themes</text>
+
+    <text x="118" y="300" fill="#ffffff" font-size="24" font-weight="800">30+</text>
+    <text x="118" y="316" fill="#BDB4FF" font-size="10" font-weight="600">Networks</text>
+
+    <text x="210" y="300" fill="#ffffff" font-size="24" font-weight="800">100%</text>
+    <text x="210" y="316" fill="#BDB4FF" font-size="10" font-weight="600">Lightweight</text>
+  </g>
+
+  <!-- Pills -->
+  <g font-size="10.5" font-weight="600" fill="#EDEAFF">
+    <rect x="34" y="332" width="146" height="24" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.20"/>
+    <text x="48" y="348">Box-Shadow &amp; Border</text>
+    <rect x="188" y="332" width="96" height="24" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.20"/>
+    <text x="202" y="348">SEO Friendly</text>
+  </g>
+
+  <!-- ===================== RIGHT COLUMN (browser mock) ===================== -->
+  <g>
+    <rect x="322" y="44" width="244" height="268" rx="14" fill="url(#win)" stroke="#ffffff" stroke-opacity="0.14"/>
+
+    <!-- window top bar -->
+    <circle cx="342" cy="66" r="4" fill="#FF6058"/>
+    <circle cx="356" cy="66" r="4" fill="#FEBC2E"/>
+    <circle cx="370" cy="66" r="4" fill="#28C840"/>
+    <rect x="392" y="59" width="158" height="15" rx="7.5" fill="#ffffff" fill-opacity="0.10"/>
+    <text x="404" y="70" fill="#9A92D6" font-size="9.5" font-weight="500">yoursite.com/blog</text>
+
+    <!-- article mock -->
+    <rect x="342" y="94" width="150" height="10" rx="5" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="342" y="112" width="204" height="6" rx="3" fill="#ffffff" fill-opacity="0.22"/>
+    <rect x="342" y="124" width="204" height="6" rx="3" fill="#ffffff" fill-opacity="0.22"/>
+    <rect x="342" y="136" width="150" height="6" rx="3" fill="#ffffff" fill-opacity="0.22"/>
+
+    <!-- share label -->
+    <text x="342" y="170" fill="#C9C2FF" font-size="10" font-weight="700" letter-spacing="0.8">SHARE THIS POST</text>
+
+    <!-- horizontal share buttons -->
+    <g>
+      <!-- Facebook -->
+      <circle cx="356" cy="196" r="15" fill="#1877F2"/>
+      <path d="M359 188 h-3.2 c-2 0 -3.4 1.3 -3.4 3.4 v2.2 h-2.4 v3 h2.4 v7.4 h3.2 v-7.4 h2.5 l0.5 -3 h-3 v-1.7 c0 -0.9 0.3 -1.5 1.6 -1.5 h1.5 z" fill="#fff"/>
+      <!-- Twitter / X -->
+      <circle cx="394" cy="196" r="15" fill="#111827"/>
+      <path d="M388 189 l5 6.4 l-5 6.6 h1.9 l4 -5.3 l4.1 5.3 h4.1 l-5.3 -6.9 l4.9 -6.1 h-1.9 l-3.8 4.8 l-3.7 -4.8 z" fill="#fff"/>
+      <!-- LinkedIn -->
+      <rect x="417" y="181" width="30" height="30" rx="15" fill="#0A66C2"/>
+      <rect x="425" y="192" width="3" height="10" fill="#fff"/>
+      <circle cx="426.5" cy="188" r="1.8" fill="#fff"/>
+      <path d="M431 192 h3 v1.3 c0.6 -0.9 1.7 -1.6 3.1 -1.6 c2.4 0 3.4 1.5 3.4 3.9 v6.4 h-3 v-5.7 c0 -1.2 -0.5 -1.9 -1.6 -1.9 c-1.1 0 -1.9 0.8 -1.9 1.9 v5.7 h-3 z" fill="#fff"/>
+      <!-- WhatsApp -->
+      <circle cx="470" cy="196" r="15" fill="#25D366"/>
+      <path d="M470 187 c-5 0 -9 4 -9 9 c0 1.7 0.5 3.3 1.3 4.7 l-1.4 4.3 l4.5 -1.4 c1.3 0.7 2.9 1.1 4.6 1.1 c5 0 9 -4 9 -9 s-4 -8.7 -9 -8.7 z m0 16 c-1.5 0 -2.9 -0.4 -4.1 -1.1 l-0.3 -0.2 l-2.6 0.8 l0.8 -2.6 l-0.2 -0.3 c-0.8 -1.2 -1.2 -2.7 -1.2 -4.2 c0 -4 3.3 -7.3 7.3 -7.3 s7.3 3.3 7.3 7.3 s-3.3 7.6 -7 7.6 z" fill="#fff"/>
+      <circle cx="470" cy="196" r="15" fill="none"/>
+      <!-- Pinterest -->
+      <circle cx="508" cy="196" r="15" fill="#BD081C"/>
+      <text x="508" y="201" fill="#fff" font-size="15" font-weight="800" text-anchor="middle">P</text>
+      <!-- Copy link -->
+      <circle cx="540" cy="196" r="15" fill="#6B7280"/>
+      <path d="M536 196 a3 3 0 0 1 3 -3 h2 v2 h-2 a1 1 0 0 0 0 2 h2 v2 h-2 a3 3 0 0 1 -3 -3 z m8 0 a3 3 0 0 0 -3 -3 h-1 v2 h1 a1 1 0 0 1 0 2 h-1 v2 h1 a3 3 0 0 0 3 -3 z" fill="#fff"/>
+      <rect x="539.5" y="195" width="3" height="2" fill="#fff"/>
+    </g>
+
+    <!-- share count card -->
+    <rect x="342" y="232" width="204" height="52" rx="10" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="356" y="256" fill="#ffffff" font-size="18" font-weight="800">1.2k</text>
+    <text x="356" y="271" fill="#9A92D6" font-size="9.5" font-weight="600">Total Shares</text>
+    <rect x="430" y="247" width="102" height="8" rx="4" fill="#ffffff" fill-opacity="0.12"/>
+    <rect x="430" y="247" width="70" height="8" rx="4" fill="url(#accent)"/>
+    <rect x="430" y="263" width="102" height="8" rx="4" fill="#ffffff" fill-opacity="0.12"/>
+    <rect x="430" y="263" width="44" height="8" rx="4" fill="#5CE0A8"/>
+  </g>
+
+  <!-- ===================== FOOTER STRIP ===================== -->
+  <g>
+    <text x="34" y="384" fill="#CFC7FF" font-size="9.5" font-weight="700" letter-spacing="0.8">SUPPORTED</text>
+    <g font-size="9.5" font-weight="600" fill="#EDEAFF" opacity="0.92">
+      <text x="112" y="384">Facebook</text>
+      <text x="176" y="384">Twitter / X</text>
+      <text x="252" y="384">LinkedIn</text>
+      <text x="316" y="384">WhatsApp</text>
+      <text x="388" y="384">Pinterest</text>
+      <text x="452" y="384">Telegram</text>
+      <text x="520" y="384">Reddit</text>
+    </g>
+  </g>
+</svg>
