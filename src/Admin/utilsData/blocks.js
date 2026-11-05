@@ -9,7 +9,8 @@ import {
 	qrCodeIcon,
 	highlightShareIcon,
 	clickToChatIcon,
-	shareLockerIcon
+	shareLockerIcon,
+	aiShareIcon
 } from './icon';
 
 const docsURL = 'https://bblockswp.com/docs/social-share-block';
@@ -104,6 +105,13 @@ export default [
 		icon: shareLockerIcon,
 		isPremium: true,
 		demo: 'https://bblockswp.com/demo/social-share-share-locker/',
+		status: 'published',
+	},
+	{
+		name: 'ai-social-share',
+		title: 'AI Social Sharing',
+		icon: aiShareIcon,
+		isPremium: true,
 		status: 'published',
 	},
 ];

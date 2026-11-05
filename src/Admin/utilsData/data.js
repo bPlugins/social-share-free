@@ -115,7 +115,20 @@ export const welcomeInfo = (adminUrl) => ({
     },
 
     changelogs: [
-         {
+        {
+            version: "2.5.0 - 05 Nov 26",
+            type: "new",
+            list: [
+                "<strong>New:</strong> Share Analytics, Auto Post and Share Display menus with a preview of each Pro screen.",
+                "<strong>New:</strong> AI Social Sharing block added to the Blocks list (Pro).",
+                "<strong>New:</strong> Pro features panel in the block settings sidebar.",
+                "<strong>Pro:</strong> Share Display – auto-insert share buttons, share popup and animated fly-ins from one screen.",
+                "<strong>Pro:</strong> Auto Post – publish new posts to Facebook, LinkedIn, X, Threads, Pinterest, Telegram, Discord, Bluesky & Mastodon.",
+                "<strong>Pro:</strong> Share Analytics – share trends, top networks and top shared content.",
+                "<strong>Pro:</strong> AI Social Sharing – ChatGPT, Claude, Perplexity, Google AI, Grok & Mistral."
+            ]
+        },
+        {
             version: "2.4.0 - 22 July 26",
             type: "new",
             list: [

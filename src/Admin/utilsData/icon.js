@@ -92,3 +92,8 @@ export const shareModalIcon = <svg xmlns='http://www.w3.org/2000/svg' className=
 	<line x1='12' y1='2' x2='12' y2='15' />
 </svg>;
 
+export const aiShareIcon = <svg xmlns='http://www.w3.org/2000/svg' className='bPlBlockIcon' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+	<path d='M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z' />
+	<path d='M18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z' />
+	<path d='M5 16.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z' />
+</svg>;

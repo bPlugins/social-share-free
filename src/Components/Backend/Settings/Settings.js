@@ -13,6 +13,7 @@ import { themes, networkTypes, socialNetworks, mobileNetworks, iconClassList, ic
 import { compareAndReturn } from '../../../utils/functions';
 import BlockPreview from '../../../utils/panel/BlockPreview';
 import AdvertiseCard from "../../../../../bpl-tools/ProControls/AdvertiseCard";
+import ProFeatures from './ProFeatures';
 
 
 
@@ -177,6 +178,8 @@ const Settings = ({ attributes, setAttributes, activeIndex, setActiveIndex }) =>
 						}
 					</PanelBody>
 
+					<Notice status='premium' isIcon={true}>{__('Premium Themes, Floating Social Share Button, and Static Total Share Counter features are available in the Premium version.', 'b-social-share')}</Notice>
+
 					<PanelBody className='bPlPanelBody addRemoveItems editItem' title={__('Add or Remove socials', 'b-social-share')}>
 						{null !== activeIndex && <>
 							<h3 className='bplItemTitle'>{__(`Social No ${activeIndex + 1}:`, 'b-social-share')}</h3>
@@ -231,7 +234,7 @@ const Settings = ({ attributes, setAttributes, activeIndex, setActiveIndex }) =>
 						</div>
 					</PanelBody>
 
-					<Notice status='premium' isIcon={true}>{__('Premium Themes, Floating Social Share Button, and Static Total Share Counter features are available in the Premium version.', 'b-social-share')}</Notice>
+					<ProFeatures pricingUrl={pricingUrl} />
 					{/* advertiseCard */}
 					<AdvertiseCard planLink={pricingUrl} />
 				</>}

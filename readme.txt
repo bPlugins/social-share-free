@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, share, social share, share buttons, social sharing
 Requires at least: 6.5
 Tested up to: 7.0
-Stable tag: 2.4.0
+Stable tag: 2.5.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -12,12 +12,11 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 Share your website/website-page link to social networks and mobile messengers.
 
 == Description ==
-
+ 
 Share your website or pages on social networks and messaging apps. Social Share Block is a lightweight, Gutenberg-native solution designed to boost your social signals without slowing down your site.
 
 Forget bulky scripts that bloat your page. Our block is built specifically for the modern WordPress editor, giving you full control over how your share buttons look—from colors and sizes to layouts and shadows. Whether you need a simple row of icons or a vertical sidebar, you can set it up in seconds.
 
- 
 [Live Demos](https://bblockswp.com/demo/social-share-all-demo/) | [Pricing](https://bplugins.com/products/b-social-share/pricing/) | [Support](https://bplugins.com/support/) |  [Social Share](https://bplugins.com/products/b-social-share/) 
 
 
@@ -50,6 +49,11 @@ Upgrade to the Pro version to unlock a full suite of social engagement blocks:
 - **Interactive Animations** : professional hover transform effects to catch the user's eye.
 - **Network Labels** : show network names (e.g., "Share on Facebook") for higher CTR.
 - **One-Click Copy** : a dedicated "Copy URL" button for easy link sharing.
+- **AI Social Sharing** : let readers summarize or discuss your post in ChatGPT, Claude, Perplexity, Google AI, Grok and Mistral with one click.
+- **Share Display** : auto-insert share buttons on posts, pages and WooCommerce products, plus a share popup (scroll, time delay, exit-intent) and animated fly-ins — managed from one screen.
+- **Auto Post** : automatically publish new posts to Facebook, LinkedIn, X, Threads, Pinterest, Telegram, Discord, Bluesky and Mastodon with rules, schedules and logs.
+- **Share Templates & Smart Tags** : per-network share text with tags like {title}, {hashtags} and {price}, plus a "Share Now" button in the editor.
+- **Share Analytics** : share trends, top networks and top shared content in your dashboard.
 
 
 = How to use =
@@ -142,7 +146,16 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 10. Gutenberg Block Settings
 
 
-== Changelog == 
+== Changelog ==
+
+= 2.5.0 - 2026-11-05 =
+* New: Share Analytics, Auto Post and Share Display menus with a preview of each Pro screen.
+* New: AI Social Sharing block added to the dashboard Blocks list (Pro).
+* New: Pro features panel in the Social Share block settings sidebar.
+* Pro: Share Display — auto-insert share buttons, share popup and animated fly-ins from one screen.
+* Pro: Auto Post — publish new posts to Facebook, LinkedIn, X, Threads, Pinterest, Telegram, Discord, Bluesky and Mastodon.
+* Pro: Share Analytics — share trends, top networks and top shared content.
+* Pro: AI Social Sharing block — ChatGPT, Claude, Perplexity, Google AI, Grok and Mistral.
 
 = 2.4.0 - 2026-07-22 =
 * New: Added 10 brand-new Gutenberg blocks to expand social sharing options:
