@@ -1,7 +1,7 @@
 === Social Share Block – Social Sharing Buttons for Posts and Pages ===
 Contributors: bplugins, abuhayat, charlescormier , prosanta10
 Donate link: https://www.buymeacoffee.com/abuhayat
-Tags: block, share, social share, share buttons, social sharing
+Tags: share, social share, share buttons, social sharing, block 
 Requires at least: 6.5
 Tested up to: 7.0
 Stable tag: 2.5.0
@@ -9,34 +9,42 @@ Requires PHP: 7.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
-Share your website/website-page link to social networks and mobile messengers.
+Add lightweight social share buttons to WordPress posts and pages. Gutenberg-native, fully customizable, with shortcode support and share themes.
 
 == Description ==
  
-Share your website or pages on social networks and messaging apps. Social Share Block is a lightweight, Gutenberg-native solution designed to boost your social signals without slowing down your site.
+**Turn every reader into a promoter – add fast, fully customizable social share buttons to any post or page without slowing your site down.**
 
-Forget bulky scripts that bloat your page. Our block is built specifically for the modern WordPress editor, giving you full control over how your share buttons look—from colors and sizes to layouts and shadows. Whether you need a simple row of icons or a vertical sidebar, you can set it up in seconds.
+[**Social Share**](https://bplugins.com/products/b-social-share/) | [**Pricing**](https://bplugins.com/products/b-social-share/pricing/) | [**Support**](https://bplugins.com/support/) | [**Live Demos**](https://bblockswp.com/demo/social-share-all-demo/)
 
-[Live Demos](https://bblockswp.com/demo/social-share-all-demo/) | [Pricing](https://bplugins.com/products/b-social-share/pricing/) | [Support](https://bplugins.com/support/) |  [Social Share](https://bplugins.com/products/b-social-share/) 
+Help visitors share your content through supported social networks and messaging services. Choose a ready-made theme, customize button colors and icon sizes, switch between row and column layouts, and configure the block directly in the WordPress Gutenberg editor.
+
+The plugin also supports shortcodes for displaying social sharing buttons in supported areas outside the standard block editor workflow.
+
+Use Social Share Block to add social sharing to blogs, business websites, marketing pages, developer documentation, portfolios, and other content-focused WordPress websites.
+
+### What Is Social Share Block?
+
+Social Share Block is a Gutenberg-based WordPress social sharing plugin for adding share buttons to your website. It helps visitors share articles, tutorials, pages, products, and other content using the available sharing options.
+
+The free plugin includes customizable social share buttons, ready-made themes, row and column layouts, styling controls, and shortcode support. Additional social engagement blocks are available through the optional Pro offering.
+
+Need more than standard share buttons? The optional Pro offering adds social engagement blocks for floating share bars, click-to-chat links, QR code sharing, text highlighting, share-to-unlock content, follow buttons, share cards, and share modals.
+
+### Free Features
+
+- **4 Free Share Themes:** Ready-made button styles you can apply in one click.
+- **Popular Social Networks:** Share to the networks and mobile messengers your audience actually uses.
+- **Row or Column Layouts:** Choose the layout direction that fits your design.
+- **Full Style Control:** Customize icon size, color, background color, box-shadow, and borders.
+- **Lightweight & Fast:** Optimized for speed and performance – no heavy external scripts.
+- **Gutenberg Block:** Native block editor support with live preview and sidebar settings.
+- **Shortcode Support:** Place share buttons in any page, post, or widget.  
 
 
-= Features =
-- **Fully Customizable**: All the options you need to arrange the showcase to your liking are available here.
+### Pro Version – A Full Suite of Social Engagement Blocks
 
-### ⭐ Key Features
-- 4 **Free** Social Share themes  
-- 2 **Premium** Social Share themes in Pro   
-- Popular Social Networks Support
-- Layout Direction – Row , Column
-- Lightweight & Fast – Optimized for speed and performance
-- Gutenberg Block support 
-- Icon Size , Color , background-color customization option 
-- Box-shadow & border customization
-- Shortcode support for any page or widget  
-
-
-### 🔥 Premium Features & Pro Blocks
-Upgrade to the Pro version to unlock a full suite of social engagement blocks:
+Upgrade to [**Social Share Block Pro**](https://bplugins.com/products/b-social-share/pricing/) to unlock:
 
 - **Floating Share Bar** : a sticky, viewport-pinned share bar that follows the scroll, with show-on-all-pages / home / specific-pages visibility control.
 - **Click to Chat** : a floating WhatsApp, Messenger, Telegram, phone, SMS, or email contact button you can show site-wide.
@@ -56,13 +64,112 @@ Upgrade to the Pro version to unlock a full suite of social engagement blocks:
 - **Share Analytics** : share trends, top networks and top shared content in your dashboard.
 
 
-= How to use =
-- First, install the B Social Share plugin
-- Add the Social Share block from the block category called "Widgets" in the Gutenberg editor.
-- You can change block settings from the right-side settings sidebar.
-- Enjoy!
+== Social Engagement Blocks ==
 
-* For installation help click on Installation Tab.
+Social Share Block Pro provides multiple ways to encourage visitors to interact with and distribute your content.
+
+Use the blocks together to build a complete social engagement strategy:
+
+- Floating Share Bar
+- Share Locker
+- Highlight to Share
+- QR Code Share
+- Follow Buttons
+- Click to Share
+- Share Card
+- Share Count Total
+- Share Modal Trigger
+- Click to Chat
+
+### Highlight to Share
+
+Allow visitors to select text on a page and share the selected content using a floating sharing interface.
+
+### QR Code Share 
+
+Generate a QR code for the current page so visitors can scan and open the content on another device.
+
+### Follow Buttons
+
+Add social profile buttons that direct visitors to your social media profiles.
+
+### Click to Share
+
+Create call-to-action blocks that make selected text or content easier for visitors to share.
+
+### Share Card
+
+Display sharing options inside pre-designed share card layouts.
+
+### Share Count Total
+
+Display an aggregated sharing count as social proof.
+
+###Share Modal Trigger
+
+Open sharing options inside a modal when visitors click a trigger.
+
+### Why Use Social Share Block?
+
+Adding social sharing buttons to WordPress should be simple, fast, and flexible.
+
+**Social Share Block** gives you a Gutenberg-native way to add social sharing buttons without relying on a complicated page builder.
+
+You can:
+
+- Add social media share buttons to posts and pages.
+- Let visitors share your content with one click.
+- Customize share button colors, sizes, layouts, and styles.
+- Display buttons horizontally or vertically.
+- Add sharing buttons using a Gutenberg block.
+- Use shortcodes to place social sharing buttons in supported areas.
+- Add floating sharing buttons with Pro.
+- Create share-to-unlock content with Pro.
+- Let visitors share selected text with Pro.
+- Generate QR codes for mobile sharing with Pro.
+- Display social proof with a share counter.
+- Create custom share cards and share modals.
+
+### How to Customize Social Share Buttons
+
+ - Open the post or page containing the Social Share block.
+ - Select the block in the Gutenberg editor.
+ - Open the block settings sidebar.
+ - Choose a share theme.
+ - Adjust the layout and available styling options.
+ - Preview your changes.
+ - Save or update the page.
+
+Available customization options depend on the selected block and its settings.
+
+### Use Cases
+
+- **Blogs & Magazines:** Help readers share articles, stories, and news.
+- **Business Websites:** Increase the reach of company pages, services, and resources.
+- **Marketing Websites:** Add social sharing calls to action to landing pages and campaigns.
+- **Content Creators:** Encourage audiences to share valuable articles, guides, and resources.
+- **Developer Websites:** Add sharing options to tutorials, documentation, and technical articles.
+- **Portfolio Websites:** Make projects and case studies easier to share.
+- **Online Courses:** Let students share useful lessons and resources.
+- **Lead Generation:** Use Share Locker for share-to-unlock campaigns, downloads, and offers.
+- **Mobile Audiences:** Use QR Code Share and messaging options for mobile-friendly sharing.
+- **Community Websites:** Encourage visitors to distribute useful content across their social networks.
+
+## Happy User of Social Share Block? ## 
+
+- Join our [Facebook Community Group](https://www.facebook.com/share/g/18kgVFabgK/)
+- Learn from our tutorials on [YouTube Channel](https://www.youtube.com/@bplugins)
+- Or rate [Social Share Block](https://wordpress.org/support/plugin/b-social-share/reviews/#new-post) on WordPress
+
+
+### How to Use – Quick Start
+
+1. Install and activate the **B Social Share** plugin.
+2. In the Gutenberg editor, add the **Social Share** block from the "Widgets" block category.
+3. Pick a theme and adjust colors, sizes, and layout from the right-side settings sidebar.
+4. Publish – or use the shortcode to place buttons anywhere. Enjoy!
+
+For installation help, see the Installation tab.
 
 
 = Feedback =
@@ -148,7 +255,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
-= 2.5.0 - 2026-11-05 =
+= 2.5.0 - 2026-11-08 =
 * New: Share Analytics, Auto Post and Share Display menus with a preview of each Pro screen.
 * New: AI Social Sharing block added to the dashboard Blocks list (Pro).
 * New: Pro features panel in the Social Share block settings sidebar.

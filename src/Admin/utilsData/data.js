@@ -116,7 +116,7 @@ export const welcomeInfo = (adminUrl) => ({
 
     changelogs: [
         {
-            version: "2.5.0 - 05 Nov 26",
+            version: "2.5.0 - 08 Nov 26",
             type: "new",
             list: [
                 "<strong>New:</strong> Share Analytics, Auto Post and Share Display menus with a preview of each Pro screen.",
