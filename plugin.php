@@ -11,14 +11,14 @@
  * Text Domain: b-social-share
  * Domain Path: /languages
  * Requires at least: 6.5
- * Tested up to: 7.0
+ * Tested up to: 7.1
  * Requires PHP: 7.4
  */ 
  
 if (!defined('ABSPATH')) {
     exit;
 }
- 
+
 define('BSSB_PLUGIN_VERSION', '2.5.0');
 define('BSSB_DIR_PATH', plugin_dir_path(__FILE__));
 define('BSSB_DIR_URL', plugin_dir_url(__FILE__)); 

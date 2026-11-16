@@ -23,7 +23,12 @@
     "share counter",
     "share analytics",
     "auto post",
-    "share display"
+    "share display",
+    "whatsapp share",
+    "messenger share",
+    "share link",
+    "auto post sharing",
+    "custom share buttons"
   ],
   "textdomain": "b-social-share",
   "attributes": {

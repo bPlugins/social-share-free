@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-08T05:25:32+00:00\n"
+"POT-Creation-Date: 2026-11-16T03:51:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: b-social-share\n"
@@ -39,307 +39,245 @@ msgstr ""
 msgid "https://bplugins.com"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:22
-#: b-social-share/inc/class_bssAdmin.php:23
 #: inc/class_bssAdmin.php:22
 #: inc/class_bssAdmin.php:23
 msgid "Share Analytics"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:25
 #: inc/class_bssAdmin.php:25
 msgid "See how often visitors click your share buttons, which networks they prefer and which posts get shared the most."
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:27
 #: inc/class_bssAdmin.php:27
 msgid "Today / 7 / 15 / 30 day share trends"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:28
 #: inc/class_bssAdmin.php:28
 msgid "Top networks and top shared content"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:29
 #: inc/class_bssAdmin.php:29
 msgid "Privacy-friendly: no personal data stored"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:33
 #: inc/class_bssAdmin.php:33
 msgid "Auto Post"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:34
 #: inc/class_bssAdmin.php:34
 msgid "B Social Share Auto Post"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:36
 #: inc/class_bssAdmin.php:36
 msgid "Share every new post automatically to your social accounts — no copying links."
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:38
 #: inc/class_bssAdmin.php:38
 msgid "Facebook, LinkedIn, X, Threads, Pinterest, Telegram, Discord, Bluesky & Mastodon"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:39
 #: inc/class_bssAdmin.php:39
 msgid "Rules, schedules and delivery logs"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:40
 #: inc/class_bssAdmin.php:40
 msgid "Share templates with smart tags"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:44
-#: b-social-share/inc/class_bssAdmin.php:45
 #: inc/class_bssAdmin.php:44
 #: inc/class_bssAdmin.php:45
 msgid "Share Display"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:47
 #: inc/class_bssAdmin.php:47
 msgid "Show share buttons across your whole site from one screen — inline, in a popup or in a fly-in."
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:49
 #: inc/class_bssAdmin.php:49
 msgid "Auto-insert buttons on posts, pages and WooCommerce products"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:50
 #: inc/class_bssAdmin.php:50
 msgid "Share popup on scroll, time delay or exit-intent"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:51
 #: inc/class_bssAdmin.php:51
 msgid "Animated fly-in at the bottom left or right"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:68
 #: inc/class_bssAdmin.php:68
 msgid "Pro"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:77
-#: b-social-share/inc/class_bssAdmin.php:78
 #: inc/class_bssAdmin.php:77
 #: inc/class_bssAdmin.php:78
 msgid "Demo & Help"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:98
 #: inc/class_bssAdmin.php:98
 msgid "JavaScript is required to load the B Social Share Dashboard."
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:102
 #: inc/class_bssAdmin.php:102
 msgid "Loading Dashboard..."
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:125
 #: inc/class_bssAdmin.php:125
 msgid "Pro Feature"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:134
 #: inc/class_bssAdmin.php:134
 msgid "Buy Now"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:145
 #: inc/class_bssAdmin.php:145
 msgid "Shortcode"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:146
 #: inc/class_bssAdmin.php:146
 msgid "Date"
 msgstr ""
 
-#: b-social-share/inc/class_bssAdmin.php:158
 #: inc/class_bssAdmin.php:158
-#: b-social-share/build/shortcode.js:1
 #: build/shortcode.js:1
 msgid "Copy to Clipboard"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:29
-#: b-social-share/inc/class_bssPlugin.php:32
-#: b-social-share/inc/class_bssPlugin.php:34
 #: inc/class_bssPlugin.php:29
 #: inc/class_bssPlugin.php:32
 #: inc/class_bssPlugin.php:34
 msgid "B Social Share"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:30
 #: inc/class_bssPlugin.php:30
 msgid "This is a Social Share and SEO-friendly card"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:33
 #: inc/class_bssPlugin.php:33
 msgid "Social Share"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:35
 #: inc/class_bssPlugin.php:35
 msgid "All Social Shares"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:36
 #: inc/class_bssPlugin.php:36
 msgid "Add New"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:37
 #: inc/class_bssPlugin.php:37
 msgid "Add New Social Share"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:38
 #: inc/class_bssPlugin.php:38
 msgid "Edit Social Share"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:39
 #: inc/class_bssPlugin.php:39
 msgid "New Social Share"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:40
 #: inc/class_bssPlugin.php:40
 msgid "View Social Share"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:41
 #: inc/class_bssPlugin.php:41
 msgid "View Social Shares"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:42
 #: inc/class_bssPlugin.php:42
 msgid "Search Social Share"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:43
 #: inc/class_bssPlugin.php:43
 msgid "Sorry, we couldn't find the ShortCode you are looking for."
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:44
 #: inc/class_bssPlugin.php:44
 msgid "Parent Social Share"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:45
 #: inc/class_bssPlugin.php:45
 msgid "Parent Social Share:"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:46
 #: inc/class_bssPlugin.php:46
 msgid "Update Social Share"
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:107
 #: inc/class_bssPlugin.php:107
 msgid "Please provide a valid numeric ID."
 msgstr ""
 
-#: b-social-share/inc/class_bssPlugin.php:133
 #: inc/class_bssPlugin.php:133
 #, php-format
 msgid "Error: Social Share block with ID %d not found."
 msgstr ""
 
-#: b-social-share/build/shortcode.js:1
 #: build/shortcode.js:1
 msgid "Copied Successfully!"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block title"
 msgid "Social Share"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block description"
 msgid "Share your website/website-page link."
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "share"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "social share"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "page share"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "share buttons"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "social media share"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "share block"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "social sharing"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "wordpress share"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "share icons"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "share plugin"
 msgstr ""
 
-#: b-social-share/build/block.json
 #: build/block.json
 msgctxt "block keyword"
 msgid "social buttons"
@@ -378,4 +316,29 @@ msgstr ""
 #: build/block.json
 msgctxt "block keyword"
 msgid "share display"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "whatsapp share"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "messenger share"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "share link"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "auto post sharing"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "custom share buttons"
 msgstr ""

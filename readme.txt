@@ -1,9 +1,9 @@
-=== Social Share Block – Social Sharing Buttons for Posts and Pages ===
-Contributors: bplugins, abuhayat, charlescormier , prosanta10
+=== Social Share Block – Help Visitors Spread Your Content Everywhere ===
+Contributors: bplugins, abuhayat,  prosanta10
 Donate link: https://www.buymeacoffee.com/abuhayat
-Tags: share, social share, share buttons, social sharing, block 
+Tags: social share, share buttons, whatsapp share, auto post, block 
 Requires at least: 6.5
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 2.5.0
 Requires PHP: 7.4
 License: GPLv3 or later
@@ -22,7 +22,7 @@ Help visitors share your content through supported social networks and messaging
 The plugin also supports shortcodes for displaying social sharing buttons in supported areas outside the standard block editor workflow.
 
 Use Social Share Block to add social sharing to blogs, business websites, marketing pages, developer documentation, portfolios, and other content-focused WordPress websites.
-
+  
 ### What Is Social Share Block?
 
 Social Share Block is a Gutenberg-based WordPress social sharing plugin for adding share buttons to your website. It helps visitors share articles, tutorials, pages, products, and other content using the available sharing options.
@@ -218,44 +218,78 @@ We’d love to hear from you:
 
 == Frequently Asked Questions ==
 
-= Is B Social Share Block free? =
-
-Yes, B Social Share Block is a free Gutenberg block plugin.
+= Is Social Share Block free? =
+Yes, Social Share Block is a free Gutenberg block plugin. A Pro version adds a floating share bar, share locker, click to chat, and more engagement blocks.
 
 = Does it work with any WordPress theme? =
+Yes, it works with any standard WordPress theme.
 
-Yes, it will work with any standard WordPress theme.
+= Can I change the block settings? =
+Yes, you can change all block settings – theme, layout, colors, icon size, shadows, and borders – from the Gutenberg editor's right sidebar.
 
-= Can I change block settings? =
+= How many times can I reuse the block? =
+There is no limit – you can use the block as many times as you want, on as many pages as you want.
 
-Yes, you can change block settings from the Gutenberg block editor's right sidebar.
+= Will the share buttons slow down my website? =
+No. The plugin is lightweight and optimized for speed – it is built for the modern block editor without the bulky scripts that bloat pages.
 
-= How many times can I reuse a block? =
+= Can I add social sharing buttons without Gutenberg? =
+Yes. The plugin supports shortcodes, allowing you to place social sharing buttons in supported WordPress areas outside the standard block editor workflow.
 
-You can use unlimited times as you want.
+= Can I create floating social share buttons? =
+Yes. The Pro version includes a Floating Share Bar that can remain visible while visitors scroll.
+
+= Can I add share buttons outside the block editor? =
+Yes. Shortcode support lets you place share buttons in any page, post, or widget.
+
+= Can visitors share selected text from my website? =
+Yes. The Pro Highlight to Share block allows visitors to select text and share it using a floating sharing tooltip.
+
+= Can I add a QR code for sharing a WordPress page? =
+Yes. The Pro QR Code Share block generates a scannable QR code for sharing the current page.
+
+= Can I create a share-to-unlock campaign? =
+Yes. The optional Pro offering includes Share Locker for creating supported share-to-unlock experiences.
+
+= Can I customize the look of the share buttons? =
+Yes. You can choose from ready-made themes, switch between row and column layouts, and customize icon size, colors, background, box-shadow, and borders.
 
 = Where can I get support? =
-
 You can post your questions on the [support forum here](https://wordpress.org/support/plugin/b-social-share/)
 
 
 == Screenshots ==
 
-1. Social Share Admin Dashboard
-2. Add New Social Share (ShortCode)
-3. Default 
-4. Theme One
-5. Theme Two
-6. Theme Three
-7. Theme Four
-8. Theme Five
-9. Gutenberg Block Support
-10. Gutenberg Block Settings
+1. 12 Sharing Blocks in One Plugin: Social Share, Share Count, Share Modal, Floating Bar, Click to Share, Follow Buttons, Share Card, QR Code, Highlight, Click to Chat, Share Locker and AI Sharing.
+2. Beautiful Share Buttons Anywhere: Add the Social Share block to any post or page, with 30+ networks, ready-made themes, sizes and hover effects.
+3. Full Control in the Block Editor: Choose networks, theme, layout, colors, spacing and animations from the block sidebar, with a live preview.
+4. Show Your Total Shares: Add social proof with a live counter of how many times your page has been shared.
+5. Share Modal on One Click: A single Share button opens a clean popup with every network and a copy-link option.
+6. Floating Share Bar: A sticky share bar that follows readers as they scroll, so sharing is always one tap away.
+7. Click to Share Quotes: Turn your best lines into quotes that readers can share to X, Facebook, LinkedIn or WhatsApp in one click.
+8. Follow Buttons with Counts: Grow your audience with branded follow buttons for Facebook, Instagram, YouTube, X and more.
+9. Share Card: A friendly call-to-action card that invites readers to share your content on their favourite network.
+10. QR Code Share: Let visitors scan a QR code to open your page instantly on their phone.
+11. Highlight to Share: Readers select any text and share it straight away, with no copy and paste.
+12. Click to Chat: A floating chat button for WhatsApp, Messenger, Telegram, Viber, phone, SMS and email.
+13. Share Locker: Unlock bonus content with a share, a proven way to grow your reach and your list.
+14. AI Social Sharing: Let readers summarize your article with ChatGPT, Claude, Perplexity, Google AI or Grok.
+15. Auto Post to 9 Social Networks: Connect Facebook Pages, LinkedIn, Threads, Pinterest, X, Telegram, Discord, Bluesky and Mastodon.
+16. All Your Accounts in One Place: See every connected account, its status and when its token renews, at a glance.
+17. Share Every New Post Automatically: Rules decide which posts go where: by post type, category, delay and an optional custom message.
+18. Re-Share Evergreen Posts on a Schedule: Share older posts one at a time, with intervals, random order, sleep hours and sleep days.
+19. A Log for Every Share: Track every share, filter by result or network, open it on the network and retry failures.
+20. Smart Share Templates: Write the message once per network with smart tags, and preview exactly how it will look.
+21. Share & Post Right from the Editor: Share buttons, Post now to your connected accounts, or skip auto-posting for a single post.
+22. Share Analytics Dashboard: See shares over time and compare today, 7, 15 and 30 days. Cookie-free, with no personal data.
+23. Top Networks, Blocks & Content: Find out which networks, which blocks and which posts get shared the most.
+24. Share Display: Inline, Popup & Fly-in: Add share buttons across your whole site from one screen, with no blocks needed.
+25. Guided Dashboard, Demos & Support: A quick-start screen, release notes and one-click links to the docs and the support team.
 
 
 == Changelog ==
 
-= 2.5.0 - 2026-11-08 =
+= 2.5.0 - 2026-11-16 =
 * New: Share Analytics, Auto Post and Share Display menus with a preview of each Pro screen.
 * New: AI Social Sharing block added to the dashboard Blocks list (Pro).
 * New: Pro features panel in the Social Share block settings sidebar.

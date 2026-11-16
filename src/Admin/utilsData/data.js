@@ -53,7 +53,7 @@ export const welcomeInfo = (adminUrl) => ({
 
     gettingStarted: {
         tabs: [
-             {
+            {
                 key: 'gutenberg',
                 label: 'Gutenberg',
                 icon: gutenbergTabIcon,
@@ -116,7 +116,7 @@ export const welcomeInfo = (adminUrl) => ({
 
     changelogs: [
         {
-            version: "2.5.0 - 08 Nov 26",
+            version: "2.5.0 - 16 Nov 26",
             type: "new",
             list: [
                 "<strong>New:</strong> Share Analytics, Auto Post and Share Display menus with a preview of each Pro screen.",
@@ -285,7 +285,9 @@ export const welcomeInfo = (adminUrl) => ({
         'Hover Transform Animation',
         'Shortcode support to display posts anywhere.',
         'Absolute / Fixed Position Option',
-        'Color, icon, spacing & typography controls.'
+        'Color, icon, spacing & typography controls.',
+        'Auto Post - automatically publish new posts to social media',
+        'Share Analytics - share trends, top networks and top shared content in your dashboard.'
     ]
 });
 
