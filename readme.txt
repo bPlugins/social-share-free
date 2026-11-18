@@ -10,7 +10,7 @@ License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
 Add lightweight social share buttons to WordPress posts and pages. Gutenberg-native, fully customizable, with shortcode support and share themes.
-
+ 
 == Description ==
  
 **Turn every reader into a promoter – add fast, fully customizable social share buttons to any post or page without slowing your site down.**
@@ -289,10 +289,11 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
-= 2.5.0 - 2026-11-16 =
+= 2.5.0 - 2026-11-18 =
 * New: Share Analytics, Auto Post and Share Display menus with a preview of each Pro screen.
 * New: AI Social Sharing block added to the dashboard Blocks list (Pro).
 * New: Pro features panel in the Social Share block settings sidebar.
+* Update SDK and Add Discount Banner.
 * Pro: Share Display — auto-insert share buttons, share popup and animated fly-ins from one screen.
 * Pro: Auto Post — publish new posts to Facebook, LinkedIn, X, Threads, Pinterest, Telegram, Discord, Bluesky and Mastodon.
 * Pro: Share Analytics — share trends, top networks and top shared content.

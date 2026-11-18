@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="A share network: a central node sending pulses out to heart, hashtag and link chips">
+  <title>Social Share Block — share network pulse</title>
+  <defs>
+    <linearGradient id="bssATile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#146ef5"/>
+      <stop offset="1" stop-color="#ff7a00"/>
+    </linearGradient>
+    <linearGradient id="bssAHub" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9f0ff"/>
+    </linearGradient>
+    <radialGradient id="bssAGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="bssATileClip"><rect x="0" y="0" width="256" height="256" rx="56"/></clipPath>
+    <style>
+      :root { --bss: 3.6s; }
+      #bssA-hub    { animation: bssA-hub    var(--bss) ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      #bssA-ring   { animation: bssA-ring   var(--bss) ease-out     infinite; transform-box: fill-box; transform-origin: center; }
+      #bssA-c1     { animation: bssA-c1     var(--bss) ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      #bssA-c2     { animation: bssA-c2     var(--bss) ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      #bssA-c3     { animation: bssA-c3     var(--bss) ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      #bssA-p1     { animation: bssA-p1     var(--bss) ease-in-out infinite; }
+      #bssA-p2     { animation: bssA-p2     var(--bss) ease-in-out infinite; }
+      #bssA-p3     { animation: bssA-p3     var(--bss) ease-in-out infinite; }
+      @keyframes bssA-hub { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+      @keyframes bssA-ring {
+        0%,68% { opacity: 0; transform: scale(0.55); }
+        6% { opacity: 0.55; }
+        34% { opacity: 0; transform: scale(1.5); }
+        100% { opacity: 0; transform: scale(1.5); }
+      }
+      @keyframes bssA-c1 { 0%,10%{transform:scale(0.6);opacity:0} 22%{transform:scale(1.12);opacity:1} 30%,100%{transform:scale(1);opacity:1} }
+      @keyframes bssA-c2 { 0%,26%{transform:scale(0.6);opacity:0} 40%{transform:scale(1.12);opacity:1} 48%,100%{transform:scale(1);opacity:1} }
+      @keyframes bssA-c3 { 0%,42%{transform:scale(0.6);opacity:0} 56%{transform:scale(1.12);opacity:1} 64%,100%{transform:scale(1);opacity:1} }
+      @keyframes bssA-p1 { 0%{offset-distance:0%;opacity:0} 4%{opacity:1} 18%{opacity:1} 22%{offset-distance:100%;opacity:0} 100%{offset-distance:100%;opacity:0} }
+      @keyframes bssA-p2 { 0%,18%{offset-distance:0%;opacity:0} 22%{opacity:1} 36%{opacity:1} 40%{offset-distance:100%;opacity:0} 100%{offset-distance:100%;opacity:0} }
+      @keyframes bssA-p3 { 0%,34%{offset-distance:0%;opacity:0} 38%{opacity:1} 52%{opacity:1} 56%{offset-distance:100%;opacity:0} 100%{offset-distance:100%;opacity:0} }
+      #bssA-p1 { offset-path: path('M92 128 L172 78'); }
+      #bssA-p2 { offset-path: path('M92 128 L176 128'); }
+      #bssA-p3 { offset-path: path('M92 128 L172 178'); }
+      @media (prefers-reduced-motion: reduce) {
+        #bssA-hub,#bssA-ring,#bssA-c1,#bssA-c2,#bssA-c3,#bssA-p1,#bssA-p2,#bssA-p3 { animation: none; }
+        #bssA-c1,#bssA-c2,#bssA-c3 { transform: scale(1); opacity: 1; }
+        #bssA-ring,#bssA-p1,#bssA-p2,#bssA-p3 { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#bssATileClip)">
+    <rect x="0" y="0" width="256" height="256" fill="url(#bssATile)"/>
+    <circle cx="70" cy="60" r="96" fill="url(#bssAGlow)"/>
+    <circle cx="64" cy="52" r="30" fill="#ffffff" opacity="0.09"/>
+    <ellipse cx="140" cy="140" rx="104" ry="80" fill="#ffffff" opacity="0.05"/>
+
+    <!-- connectors -->
+    <line x1="92" y1="128" x2="172" y2="78"  stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <line x1="92" y1="128" x2="176" y2="128" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <line x1="92" y1="128" x2="172" y2="178" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- pulse dots -->
+    <circle id="bssA-p1" cx="0" cy="0" r="5" fill="#ffffff"/>
+    <circle id="bssA-p2" cx="0" cy="0" r="5" fill="#ffffff"/>
+    <circle id="bssA-p3" cx="0" cy="0" r="5" fill="#ffffff"/>
+
+    <!-- outer chips -->
+    <!-- heart chip (top-right) -->
+    <g id="bssA-c1">
+      <circle cx="184" cy="72" r="26" fill="#ff5a5f"/>
+      <path d="M184 84 C170 74 172 60 181 62 C183 62 184 64 184 65 C184 64 185 62 187 62 C196 60 198 74 184 84 Z" fill="#ffffff"/>
+    </g>
+    <!-- hashtag chip (right) -->
+    <g id="bssA-c2">
+      <circle cx="188" cy="128" r="26" fill="#146ef5"/>
+      <g stroke="#ffffff" stroke-width="3.4" stroke-linecap="round">
+        <line x1="183" y1="116" x2="180" y2="140"/>
+        <line x1="196" y1="116" x2="193" y2="140"/>
+        <line x1="177" y1="122" x2="199" y2="122"/>
+        <line x1="176" y1="134" x2="198" y2="134"/>
+      </g>
+    </g>
+    <!-- link chip (bottom-right) -->
+    <g id="bssA-c3">
+      <circle cx="184" cy="184" r="26" fill="#ff7a00"/>
+      <g fill="none" stroke="#ffffff" stroke-width="4.4" stroke-linecap="round">
+        <path d="M178 178 l-8 8 a8 8 0 0 0 11 11 l4 -4"/>
+        <path d="M190 190 l8 -8 a8 8 0 0 0 -11 -11 l-4 4"/>
+      </g>
+    </g>
+
+    <!-- hub -->
+    <circle id="bssA-ring" cx="92" cy="128" r="40" fill="none" stroke="#ffffff" stroke-width="4"/>
+    <g id="bssA-hub">
+      <circle cx="92" cy="128" r="38" fill="url(#bssAHub)"/>
+      <!-- share arrow glyph -->
+      <path d="M96 108 l16 14 -16 14 v-8 c-14 0 -22 4 -26 12 c0 -18 10 -26 26 -26 z" fill="#146ef5"/>
+    </g>
+  </g>
+</svg>

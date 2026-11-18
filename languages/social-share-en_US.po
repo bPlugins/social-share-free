@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-16T03:51:40+00:00\n"
+"POT-Creation-Date: 2026-11-18T05:29:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: b-social-share\n"
@@ -37,6 +37,57 @@ msgstr ""
 #. Author URI of the plugin
 #: plugin.php
 msgid "https://bplugins.com"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:426
+#: inc/class_bssPlugin.php:29
+#: inc/class_bssPlugin.php:32
+#: inc/class_bssPlugin.php:34
+msgid "B Social Share"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:434
+msgid "Social Share Block Biggest Black Friday Sale is Live – Up to 45% OFF!"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:437
+msgid "Upgrade to Social Share Block Pro at an exclusive Black Friday price! Unlock automated social posting, advanced share analytics, floating & popup displays, and 40+ stylish share buttons!"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:440
+msgid "Auto Post to 9+ Social Networks"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:441
+msgid "Click & Share Analytics"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:442
+msgid "Floating, Inline & Popup Display"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:443
+msgid "40+ Social Networks & Messengers"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:444
+msgid "Custom Colors, Shapes & Counter"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:450
+msgid "Unlock PRO Features →"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:457
+msgid "Dismiss"
+msgstr ""
+
+#: inc/class-bss-promo-banner.php:458
+msgid "Dismiss banner"
+msgstr ""
+
+#: inc/class-bss-promo-link.php:118
+msgid "Black Friday Sale – Up to 45% OFF!"
 msgstr ""
 
 #: inc/class_bssAdmin.php:22
@@ -143,12 +194,6 @@ msgstr ""
 msgid "Copy to Clipboard"
 msgstr ""
 
-#: inc/class_bssPlugin.php:29
-#: inc/class_bssPlugin.php:32
-#: inc/class_bssPlugin.php:34
-msgid "B Social Share"
-msgstr ""
-
 #: inc/class_bssPlugin.php:30
 msgid "This is a Social Share and SEO-friendly card"
 msgstr ""
@@ -205,11 +250,11 @@ msgstr ""
 msgid "Update Social Share"
 msgstr ""
 
-#: inc/class_bssPlugin.php:107
+#: inc/class_bssPlugin.php:114
 msgid "Please provide a valid numeric ID."
 msgstr ""
 
-#: inc/class_bssPlugin.php:133
+#: inc/class_bssPlugin.php:140
 #, php-format
 msgid "Error: Social Share block with ID %d not found."
 msgstr ""

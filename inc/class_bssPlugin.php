@@ -75,6 +75,13 @@ if (!class_exists('BSSB_Plugin')) {
             if (is_admin()) {
                 require_once BSSB_DIR_PATH . 'inc/class_bssAdmin.php';
                 new BSSB_Admin();
+
+                if ( file_exists( BSSB_DIR_PATH . 'inc/class-bss-promo-banner.php' ) ) {
+                    require_once BSSB_DIR_PATH . 'inc/class-bss-promo-banner.php';
+                }
+                if ( file_exists( BSSB_DIR_PATH . 'inc/class-bss-promo-link.php' ) ) {
+                    require_once BSSB_DIR_PATH . 'inc/class-bss-promo-link.php';
+                }
             }
         }
 

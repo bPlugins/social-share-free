@@ -13,6 +13,8 @@
  * Requires at least: 6.5
  * Tested up to: 7.1
  * Requires PHP: 7.4
+ * @fs_free_only /vendor/freemius-lite, /inc/class-bss-promo-banner.php, /inc/class-bss-promo-link.php
+ * @fs_premium_only /vendor/freemius
  */ 
  
 if (!defined('ABSPATH')) {
@@ -22,6 +24,7 @@ if (!defined('ABSPATH')) {
 define('BSSB_PLUGIN_VERSION', '2.5.0');
 define('BSSB_DIR_PATH', plugin_dir_path(__FILE__));
 define('BSSB_DIR_URL', plugin_dir_url(__FILE__)); 
+define('BSSB_PLUGIN_BASENAME', plugin_basename(__FILE__)); 
 
 if (function_exists('bssb_fs')) {
     bssb_fs()->set_basename(true, __FILE__);
@@ -56,6 +59,16 @@ if (function_exists('bssb_fs')) {
 
     bssb_fs();
     do_action('bssb_fs_loaded');
+}
+
+// Promotional Banner & Action Link (Free Version Only)
+if ( is_admin() ) {
+    if ( file_exists( BSSB_DIR_PATH . 'inc/class-bss-promo-banner.php' ) ) {
+        require_once BSSB_DIR_PATH . 'inc/class-bss-promo-banner.php';
+    }
+    if ( file_exists( BSSB_DIR_PATH . 'inc/class-bss-promo-link.php' ) ) {
+        require_once BSSB_DIR_PATH . 'inc/class-bss-promo-link.php';
+    }
 }
 
 require_once BSSB_DIR_PATH . 'inc/class_bssPlugin.php';
